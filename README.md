@@ -16,10 +16,14 @@ You may need to install additional packages. Depending on your Python version us
 
 ## Usage
 
-The bot has three core functions
+The bot has four core functions
+- /trainername - Allows the user to set a trainername
 - /pvp  - Create PvP-polls
 - /iv   - Check the rank of a Pokémon for the great league according to [Go Stadium] (https://gostadium.club/pvp/iv)
 - /rank - Check the [Silph Arena rank](hhttps://sil.ph/) of a player 
+
+### Trainernames
+```/trainername``` can be used by players who's telegram username differs from their Pokemon Go username. After setting the trainername, the bot will mention the user with that name
 
 ### PvP-polls
 With ```/pvp``` a user can create a PvP-poll. Other users can join and leave these polls by clicking the **fight** button below the PvP request. The creator of a poll can additionally customise the poll by providing additional information such as the league or specifying rules ```/pvp Great Mirror Cup```
