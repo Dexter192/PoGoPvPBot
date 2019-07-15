@@ -21,7 +21,7 @@ Lastly, you have to insert your telegram token in the config.json file.
 The bot has four core functions
 - /trainername - Allows the user to set a trainername
 - /pvp  - Create PvP-polls
-- /iv   - Check the rank of a Pokémon for the great league according to [Go Stadium] (https://gostadium.club/pvp/iv)
+- /iv   - Check the rank of a Pokémon for the great league according to [Go Stadium](https://gostadium.club/pvp/iv)
 - /rank - Check the [Silph Arena rank](hhttps://sil.ph/) of a player 
 
 ### Trainernames
@@ -33,7 +33,7 @@ If the creator of the poll has an open chat with the bot, it will send him a dir
 
 ### IV checks
 The bot can perform two types of IV-checks. The first one returns the optimal IV distribution for a Pokémon in the grat league which can be performed by ```/iv Shuckle```. 
-A player can also check where a specific IV distribution ranks in the great league according to [Go Stadium] (https://gostadium.club/pvp/iv). Such a request can be performed by specifying the IVs (A/D/S) ```/iv Shuckle 12 12 12```
+A player can also check where a specific IV distribution ranks in the great league according to [Go Stadium](https://gostadium.club/pvp/iv). Such a request can be performed by specifying the IVs (A/D/S) ```/iv Shuckle 12 12 12```
 To check the rank of alolan pokémon, ```+alolan``` must be appended to the pokémons name.
 
 ### Silph Ranks
