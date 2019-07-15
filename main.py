@@ -68,7 +68,7 @@ Example: /pvp Great Mirror Cup
 You can check alolan forms by appending +Alolan to the Pokémon
 Example: /iv Pidgey ; /iv Geodude+alolan 12 12 12
 
-/rank - Check the current Silph Arena rank of a player
+/rank - Check the current Silph Arena rank of a player 
 Example: /rank ValorAsh
 
 If you want to host the bot yourself, feel free to clone the Github repository https://github.com/DanielKaestner/PoGoPvPBot.
