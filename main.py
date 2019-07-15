@@ -73,7 +73,7 @@ Example: /rank ValorAsh
 
 If you want to host the bot yourself, feel free to clone the Github repository https://github.com/DanielKaestner/PoGoPvPBot.
 
-If you have any questions, whishes or problems contact me (@Dexter192) via Telegram.
+Feedback, Suggestions or Problems can be posted in this [Telegram Group](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ).
 
 I hope the bot enhances the PvP experience in your community!
 """)    
