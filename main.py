@@ -51,7 +51,7 @@ def bop(update, context):
     context.bot.send_photo(chat_id=update.message.chat_id, photo=url)    
 
 def start(update, context):
-    context.bot.send_message(chat_id=update.message.chat_id, text="""
+    context.bot.send_message(parse_mode='Markdown', chat_id=update.message.chat_id, text="""
 Hello! 
 
 With me you can create PvP-Polls for Pokémon Go in your Telegram group, check PvP-IV-ranks of your Pokémon and check the Silph Arena ranks of trainers!
