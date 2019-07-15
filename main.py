@@ -64,14 +64,14 @@ Example: /trainername Dexter
 /pvp - Creates a PvP-poll. Polls will be deleted automatically after approximately one hour. Additionally you can add some more information to your request such as the league or specific rules.
 Example: /pvp Great Mirror Cup
 
-/iv - Retrieve the optimal IVs for a Pokémon in the great league or check where your Pokémon ranks according to https://gostadium.club/pvp/iv.
+/iv - Retrieve the optimal IVs for a Pokémon in the great league or check where your Pokémon ranks according to [Go Stadium](https://gostadium.club/pvp/iv).
 You can check alolan forms by appending +Alolan to the Pokémon
 Example: /iv Pidgey ; /iv Geodude+alolan 12 12 12
 
 /rank - Check the current Silph Arena rank of a player 
 Example: /rank ValorAsh
 
-If you want to host the bot yourself, feel free to clone the Github repository https://github.com/DanielKaestner/PoGoPvPBot.
+If you want to host the bot yourself, feel free to clone this [Github repository](https://github.com/Dexter192/PoGoPvPBot).
 
 Feedback, Suggestions or Problems can be posted in this [Telegram Group](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ).
 
