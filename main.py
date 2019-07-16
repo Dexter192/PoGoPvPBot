@@ -71,6 +71,8 @@ Example: /iv Pidgey ; /iv Geodude+alolan 12 12 12
 /rank - Check the current Silph Arena rank of a player 
 Example: /rank ValorAsh
 
+Admins of groups can en-/disable iv and rank requests with /iv enable, /iv disable, /rank enable and /rank disable
+
 If you want to host the bot yourself, feel free to clone this [Github repository](https://github.com/Dexter192/PoGoPvPBot).
 
 Feedback, Suggestions or Problems can be posted in this [Telegram Group](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ).

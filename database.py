@@ -58,7 +58,7 @@ def toggle_groups(update, context, type):
     #Check, if chat_id is negative. Otherwise return false
     if update.message.chat_id > 0:
         logger.info("/%s in private chat", type)
-        response = "Das kann nur in Gruppen eingestellt werden"
+        response = "This can only be done in groups"
         context.bot.send_message(chat_id=update.message.chat_id, text=response)
         return
     
