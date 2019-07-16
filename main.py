@@ -80,6 +80,11 @@ Feedback, Suggestions or Problems can be posted in this [Telegram Group](https:/
 I hope the bot enhances the PvP experience in your community!
 """)    
 
+def silph_rank(update, context):
+    context.bot.delete_message(chat_id=update.message.chat_id,message_id=update.message.message_id)
+    bot_message = context.bot.send_message(chat_id=update.message.chat_id, text="This feature is disabled until a public API is released by TSA")
+    job.run_once(delete_message, 30, context=(bot_message.chat_id, bot_message.message_id))
+
 def delete_message(context):
     logger.info("Deleted message %s %s", context.job.context[0], context.job.context[1])
     context.bot.delete_message(chat_id=context.job.context[0], message_id=context.job.context[1])
@@ -106,7 +111,7 @@ def main():
     
     dispatcher.add_handler(CommandHandler("iv", iv_check.iv_rank))    
 
-    dispatcher.add_handler(CommandHandler("rank", silph.silph_rank))
+    dispatcher.add_handler(CommandHandler("rank", silph_rank))
 
     dispatcher.add_handler(CommandHandler("trainername", trainernames.add_trainername))
     dispatcher.add_handler(CommandHandler("trainercode", trainernames.add_trainercode))
