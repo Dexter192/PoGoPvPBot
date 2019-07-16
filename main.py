@@ -79,6 +79,7 @@ I hope the bot enhances the PvP experience in your community!
 """)    
 
 def delete_message(context):
+    logger.info("Deleted message %s %s", context.job.context[0], context.job.context[1])
     context.bot.delete_message(chat_id=context.job.context[0], message_id=context.job.context[1])
 
 def unknown(update, context):
