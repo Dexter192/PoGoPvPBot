@@ -14,7 +14,7 @@ You may need to install additional packages. Depending on your Python version us
 - pandas
 - lxml
 
-Lastly, you have to insert your telegram token in the config.json file.
+Lastly, you have to insert your telegram token in the config.json.example file and rename it to config.json.
 
 ## Usage
 
