@@ -5,36 +5,43 @@ logger = logging.getLogger('Info')
 import requests
 import pandas as pd
 import database
-    
-def optimal_iv(pokemon_name):
-    url = 'https://gostadium.club/pvp/iv?pokemon=' + pokemon_name + '&max_cp=1500'
-    html = requests.get(url).content
-    if "Please Choose a valid pokemon" in str(html):
-        return "I could not find " + pokemon_name
-    df_list = pd.read_html(html)
-    df = df_list[-1]
-    df = df[1:2]
-    response = "Optimal IVs for " + pokemon_name + "\n"
-    return iv_string(df, response)
+import language_support
 
-def iv_given(pokemon_name, att, de, sta):
-    url = 'https://gostadium.club/pvp/iv?pokemon=' + pokemon_name + '&max_cp=1500&att_iv=' + att + '&def_iv=' + de + '&sta_iv=' + sta
-    html = requests.get(url).content
-    df_list = pd.read_html(html)
-    df = df_list[-1]
-    df = df[0:1]
-    response = "Your " + pokemon_name + " is on rank <b>"  + str(df['Rank'].values[0]) + "</b>\n"
-    return iv_string(df, response)
+jsonresponse = language_support.responses
 
     
-def iv_string(df, response):
-    response += "<b>(A/D/S):</b> "  + str(df['IVs (A/D/S)'].values[0]) + "\n"
-    response += "<b>CP:</b> "   + str(df['CP'].values[0]) + "\n"
-    response += "<b>Stat Product:</b> " + str(df['Stat Product'].values[0]) + "\n"
-    response += "<b>Percent:</b> " + str(df['% Max Stat'].values[0]) + "\n"
+def optimal_iv(pokemon_name, responses):
+    try:
+        df = pd.read_csv('ranking/'+pokemon_name+'.csv')
+        response = responses['iv_optimal']
+        response += responses['iv_stats']
+        response = response.format(pokemon_name, df.iloc[0]['ivs'], df.iloc[0]['cp'], df.iloc[0]['stat-product'], '100%')
+        return response
+    except:
+        response = responses['iv_no_pokemon']
+        return response.format(pokemon_name)
+
+def iv_given(pokemon_name, att, de, sta, responses):
+    df = pd.read_csv('ranking/'+pokemon_name+'.csv')
+    iv = att + ' ' + de + ' ' + sta
+    row = df.loc[df['ivs'] == iv]
+    optimal_stat_product = df.iloc[0]['stat-product']
+    percent = round((100/optimal_stat_product)*row.iloc[0]['stat-product'], 2)
+    response = responses['iv_given']
+    response = response.format(pokemon_name, row.iloc[0]['rank'])
+    response += responses['iv_stats']
+    response = response.format(df.iloc[0]['ivs'], df.iloc[0]['cp'], df.iloc[0]['stat-product'], percent)
+    return response
+
+    
+def iv_string(df, percent, response, responses):
+    response += responses['iv_stats']
+    response = response.format(df.iloc[0]['ivs'], df.iloc[0]['cp'], df.iloc[0]['stat-product'], percent)
     return response
 
 def iv_rank(update, context):
+    language = database.get_language(update.message.chat_id)
+    responses = jsonresponse[language]
     logger.info('IV request by %s with query %s', update._effective_user.username, context.args)
     #Check, if the setting should be updated
     if len(context.args) == 1 and (context.args[0] == 'enable' or context.args[0] == 'disable'):
@@ -49,14 +56,14 @@ def iv_rank(update, context):
     
     if(len(context.args) == 0):
         logger.info("Invalid pokemon")
-        response = "Please specify a Pokémon"
+        response = responses['iv_no_argument']
     elif(len(context.args) == 1):
-        response = optimal_iv(context.args[0])
+        response = optimal_iv(context.args[0].lower(), responses)
     elif(len(context.args) == 4):
-        response = iv_given(context.args[0], context.args[1], context.args[2], context.args[3])
+        response = iv_given(context.args[0], context.args[1], context.args[2], context.args[3], responses)
     else:
         logger.info("Could not perform /iv request")
-        response = "I could not perform the request"
+        response = responses['iv_error']
         #contents = requests.get('https://gostadium.club/pvp/iv?pokemon=pidgey&max_cp=1500')
     logger.info('Return %s', response)
     context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response)
