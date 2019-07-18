@@ -9,9 +9,9 @@ import urllib
 import json 
 import database
 
-pvprequests = {}
-competitors = {}
-
+"""
+Not too interesting - This scrapes the silph website and returns the players rank. This will change once there is an API
+"""
 def silph_rank(update, context):
     if len(context.args) != 1:
         logger.info("Invalid rank request by %s (%s)", update._effective_user.username, context.args)
