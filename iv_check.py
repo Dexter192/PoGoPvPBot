@@ -30,7 +30,7 @@ def iv_given(pokemon_name, att, de, sta, responses):
     response = responses['iv_given']
     response = response.format(pokemon_name.capitalize(), row.iloc[0]['rank'])
     response += responses['iv_stats']
-    response = response.format(df.iloc[0]['ivs'], df.iloc[0]['cp'], df.iloc[0]['stat-product'], percent)
+    response = response.format(row.iloc[0]['ivs'], row.iloc[0]['cp'], row.iloc[0]['stat-product'], percent)
     return response
 
     
