@@ -13,6 +13,7 @@ You may need to install additional packages. Depending on your Python version us
 - python-telegram-bot==12.0.0b1
 - pandas
 - lxml
+- requests
 
 Lastly, you have to insert your telegram token in the config.json.example file and rename it to config.json.
 
