@@ -22,7 +22,7 @@ The bot has four core functions
 - /trainername - Allows the user to set a trainername
 - /pvp  - Create PvP-polls
 - /iv   - Check the rank of a Pokémon for the great league according to [Go Stadium](https://gostadium.club/pvp/iv)
-- /rank - Check the [Silph Arena rank](hhttps://sil.ph/) of a player 
+- ~~/rank - Check the [Silph Arena rank](hhttps://sil.ph/) of a player~~ - This will be reactivated once a public API by the TSA is released
 
 ### Trainernames
 ```/trainername``` can be used by players who's telegram username differs from their Pokemon Go username. After setting the trainername, the bot will mention the user with that name
@@ -36,8 +36,8 @@ The bot can perform two types of IV-checks. The first one returns the optimal IV
 A player can also check where a specific IV distribution ranks in the great league according to [Go Stadium](https://gostadium.club/pvp/iv). Such a request can be performed by specifying the IVs (A/D/S) ```/iv Shuckle 12 12 12```
 To check the rank of alolan pokémon, ```+alolan``` must be appended to the pokémons name.
 
-### Silph Ranks
-Users can retrieve the current [Silph Arena rank](hhttps://sil.ph/) of any player who's profile is not set to private. ```/rank``` followed by the player name returns the current rank of a player - E.g. ```/rank ValorAsh``` 
+~~### Silph Ranks
+Users can retrieve the current [Silph Arena rank](hhttps://sil.ph/) of any player who's profile is not set to private. ```/rank``` followed by the player name returns the current rank of a player - E.g. ```/rank ValorAsh``` ~~
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
