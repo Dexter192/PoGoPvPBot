@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import logging
 logging.basicConfig(filename='log.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger('Info')
