@@ -15,7 +15,7 @@ def optimal_iv(pokemon_name, responses):
         df = pd.read_csv('ranking/'+pokemon_name+'.csv')
         response = responses['iv_optimal']
         response += responses['iv_stats']
-        response = response.format(pokemon_name, df.iloc[0]['ivs'], df.iloc[0]['cp'], df.iloc[0]['stat-product'], '100%')
+        response = response.format(pokemon_name.capitalize(), df.iloc[0]['ivs'], df.iloc[0]['cp'], df.iloc[0]['stat-product'], '100%')
         return response
     except:
         response = responses['iv_no_pokemon']
@@ -28,7 +28,7 @@ def iv_given(pokemon_name, att, de, sta, responses):
     optimal_stat_product = df.iloc[0]['stat-product']
     percent = round((100/optimal_stat_product)*row.iloc[0]['stat-product'], 2)
     response = responses['iv_given']
-    response = response.format(pokemon_name, row.iloc[0]['rank'])
+    response = response.format(pokemon_name.capitalize(), row.iloc[0]['rank'])
     response += responses['iv_stats']
     response = response.format(df.iloc[0]['ivs'], df.iloc[0]['cp'], df.iloc[0]['stat-product'], percent)
     return response
@@ -60,7 +60,7 @@ def iv_rank(update, context):
     elif(len(context.args) == 1):
         response = optimal_iv(context.args[0].lower(), responses)
     elif(len(context.args) == 4):
-        response = iv_given(context.args[0], context.args[1], context.args[2], context.args[3], responses)
+        response = iv_given(context.args[0].lower(), context.args[1], context.args[2], context.args[3], responses)
     else:
         logger.info("Could not perform /iv request")
         response = responses['iv_error']

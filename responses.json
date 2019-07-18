@@ -1,5 +1,5 @@
 {
-	"supported_languages":"en, de, ukr",
+	"supported_languages":"en, de, nl",
 	"en": {
 		"start":["Hello!\n\n", 
 				"With me you can create PvP-Polls for Pokémon Go in your Telegram group, ",
@@ -85,7 +85,7 @@
 		"trainercode_length":"Dein Trainercode muss 12 Zeichen lang sein",
 		"trainercode_success":"Trainercode erfolgreich gesetzt",
 		"trainercode_fail":"Trainercode konnte nicht gesetzt werden",
-		"iv_no_pokemon":"Ich konnte %s nicht finden",
+		"iv_no_pokemon":"Ich konnte {} nicht finden",
 		"iv_optimal":"Optimale IVs für {} \n",
 		"iv_given":"Dein {} ist auf Platz <b>{}</b>\n",
 		"iv_stats": "<b>(A/D/S):</b> {}\n<b>WP:</b> {}\n<b>Stat Product:</b> {}\n<b>Prozent:</b> {}\n",
@@ -93,7 +93,7 @@
 		"iv_error":"Ich konnte die Anfrage nicht ausführen",
 		"language_not_supported":"Es tut mir leid aber diese Sprache wird noch nicht unterstützt.\nDie aktuell unterstützten Sprachen sind: *{}*\nWenn du meine Antworten in deine Sprache übersetzen willst kannst du dieser [Telegram Gruppe](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ) beitreten!"
 	},
-	"ukr":{
+	"nl":{
 		"_comment":"Please translate this part :) Thanks a lot!",
 		"start":["Hello!\n\n", 
 		"With me you can create PvP-Polls for Pokémon Go in your Telegram group, ",
