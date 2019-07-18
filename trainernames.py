@@ -5,10 +5,14 @@ logger = logging.getLogger('Info')
 import json
 import os, sys, sqlite3
 import database
+import language_support
+jsonresponse = language_support.responses
 
 def add_trainername(update, context):
+    language = database.get_language(update.message.chat_id)
+    responses = jsonresponse[language]
     if len(context.args) != 1 or len(context.args[0]) > 15 or len(context.args[0]) < 4:
-        context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text="Your trainername has to be between 4 and 15 characters")
+        context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=responses['trainername_length'])
     else:
         logger.info("Setting Trainername")
         try:
@@ -23,19 +27,21 @@ def add_trainername(update, context):
                 cursor.execute(query, (context.args[0], update._effective_user.id, ))
                 logger.info("Update entry %s (%s, %s)", query, context.args[0], update._effective_user.id)
             conn.commit()
-            context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text="Trainername set successfully")
+            context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=responses['trainername_success'])
         except:
             logger.warn("Could not set Trainername")
-            context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text="Trainername could not be set")
+            context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=responses['trainername_fail'])
         finally:
             if conn is not None:
                 conn.close()
 
 def add_trainercode(update, context):
+    language = database.get_language(update.message.chat_id)
+    responses = jsonresponse[language]
     code = ' '.join(context.args)
     code = code.replace(" ", "")
     if len(code) != 12:
-        context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text="Your trainercode must be 12 characters long!")
+        context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=responses['trainercode_length'])
     else:
         conn = database.connect()
         try:
@@ -49,10 +55,10 @@ def add_trainercode(update, context):
                 cursor.execute(query, (code, update._effective_user.id,))
                 logger.info("Update entry %s (%s, %s)", query, code, update._effective_user.id)
             conn.commit()
-            context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text="Trainercode set successfully")
+            context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=responses['trainercode_success'])
         except:
             logger.warn("Could not set Trainercode")
-            context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text="Trainercode could not be set")
+            context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=responses['trainername_fail'])
         finally:
             conn.close()
     

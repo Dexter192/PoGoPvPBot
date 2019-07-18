@@ -8,18 +8,21 @@ import iv_check
 import silph
 import pvp_poll
 import re
+import database
 import requests
 import trainernames
-
+import language_support as lan
 pvprequests = {}
 competitors = {}
 
 with open('config.json') as json_config_file:
     config = json.load(json_config_file)
+responses = lan.responses
+supported_languages = lan.supported_languages
+    
 updater = Updater(config['token'], use_context=True)
 job = updater.job_queue
 dispatcher = updater.dispatcher
-    
 
 def get_dog():
     contents = requests.get('https://random.dog/woof.json').json()
@@ -51,46 +54,44 @@ def bop(update, context):
     context.bot.send_photo(chat_id=update.message.chat_id, photo=url)    
 
 def start(update, context):
-    context.bot.send_message(parse_mode='Markdown', chat_id=update.message.chat_id, text="""
-Hello! 
+    language = database.get_language(update.message.chat_id)
+    response = ''
+    response = response.join(responses[language]['start'])
+    context.bot.send_message(parse_mode='Markdown', chat_id=update.message.chat_id, text=response)    
 
-With me you can create PvP-Polls for Pokémon Go in your Telegram group, check PvP-IV-ranks of your Pokémon and check the Silph Arena ranks of trainers!
-
-I do respond to the following commands:
-
-/trainername - Sets your trainername. This is useful for players who have a different username in Telegram and will replace your Telegram name with the name you set.
-Example: /trainername Dexter
-
-/pvp - Creates a PvP-poll. Polls will be deleted automatically after approximately one hour. Additionally you can add some more information to your request such as the league or specific rules.
-Example: /pvp Great Mirror Cup
-
-/iv - Retrieve the optimal IVs for a Pokémon in the great league or check where your Pokémon ranks according to [Go Stadium](https://gostadium.club/pvp/iv).
-You can check alolan forms by appending +Alolan to the Pokémon
-Example: /iv Pidgey ; /iv Geodude+alolan 12 12 12
-
-/rank - Check the current Silph Arena rank of a player 
-Example: /rank ValorAsh
-
-Admins of groups can en-/disable iv and rank requests with /iv enable, /iv disable, /rank enable and /rank disable
-
-If you want to host the bot yourself, feel free to clone this [Github repository](https://github.com/Dexter192/PoGoPvPBot).
-
-Feedback, Suggestions or Problems can be posted in this [Telegram Group](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ).
-
-I hope the bot enhances the PvP experience in your community!
-""")    
-
+def language(update, context):
+    if len(context.args) == 1 and context.args[0].lower() in supported_languages:
+        database.toggle_groups(update, context, 'Language')
+    else:
+        try:
+               context.bot.delete_message(chat_id=update.message.chat_id,message_id=update.message.message_id)
+        except:
+            logger.info("Cannot delete message Chat:%s MessageID:%s", update.message.chat_id, update.message.message_id)
+        language = database.get_language(update.message.chat_id)
+        response = responses[language]['language_not_supported']
+        response = response.format(supported_languages)
+        bot_message = context.bot.send_message(parse_mode='Markdown', chat_id=update.message.chat_id, text=response)
+        
 def silph_rank(update, context):
-    context.bot.delete_message(chat_id=update.message.chat_id,message_id=update.message.message_id)
-    bot_message = context.bot.send_message(chat_id=update.message.chat_id, text="This feature is disabled until a public API is released by TSA")
+    try:
+        context.bot.delete_message(chat_id=update.message.chat_id,message_id=update.message.message_id)
+    except:
+        logger.info("Cannot delete message Chat:%s MessageID:%s", update.message.chat_id, update.message.message_id)
+    bot_message = context.bot.send_message(chat_id=update.message.chat_id, text=responses['de']['poll'])#text="This feature is disabled until a public API is released by TSA")
     job.run_once(delete_message, 30, context=(bot_message.chat_id, bot_message.message_id))
 
 def delete_message(context):
-    logger.info("Deleted message %s %s", context.job.context[0], context.job.context[1])
-    context.bot.delete_message(chat_id=context.job.context[0], message_id=context.job.context[1])
-
+    try:
+        context.bot.delete_message(chat_id=context.job.context[0], message_id=context.job.context[1])
+        logger.info("Deleted message %s %s", context.job.context[0], context.job.context[1])
+    except:
+        logger.info("Cannot delete message %s %s", context.job.context[0], context.job.context[1])
+        
 def unknown(update, context):
-    context.bot.delete_message(chat_id=update.message.chat_id,message_id=update.message.message_id)
+    try:
+        context.bot.delete_message(chat_id=update.message.chat_id, message_id=update.message.message_id)
+    except:
+        logger.info("Cannot delete message Chat:%s MessageID:%s", update.message.chat_id, update.message.message_id)
     bot_message = context.bot.send_message(chat_id=update.message.chat_id, text="I'm sorry! I don't understand that command. You can get a list of commands with /help.")
     job.run_once(delete_message, 30, context=(bot_message.chat_id, bot_message.message_id))
 
@@ -110,6 +111,8 @@ def main():
     auto_del = job.run_repeating(pvp_poll.auto_delete, interval=900, first=0)
     
     dispatcher.add_handler(CommandHandler("iv", iv_check.iv_rank))    
+    
+    dispatcher.add_handler(CommandHandler("language", language))    
 
     dispatcher.add_handler(CommandHandler("rank", silph_rank))
 

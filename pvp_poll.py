@@ -6,26 +6,36 @@ from telegram.ext import Updater, MessageHandler, JobQueue
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from datetime import datetime
 import trainernames
+import database
+import language_support
 
 pvprequests = {}
 competitors = {}
+jsonresponse = language_support.responses
+
 
 def pvp(update, context):
-    context.bot.delete_message(chat_id=update.message.chat_id,
+    language = database.get_language(update.message.chat_id)
+    responses = jsonresponse[language]
+    try:
+        context.bot.delete_message(chat_id=update.message.chat_id,
                           message_id=update._effective_message['message_id'])
+    except:
+        context.bot.send_message(chat_id=update.message.chat_id, text=responses['pvp_cant_delete'])
+        logger.info('Cannot delete message Chat:%s MessageID:%s', update.message.chat_id, update._effective_message['message_id'])
     name = trainernames.get_trainername(update.effective_user.id)
     if name is not None:
-        response = "[" + name + "](tg://user?id=" + str(update.effective_user.id) + ") wants to fight! Are you ready to battle?"
+        response = "[" + name + "](tg://user?id=" + str(update.effective_user.id) + ")" + responses['poll']
     else:
-        response = update.effective_user.name + " wants to fight! Are you ready to battle?"
+        response = update.effective_user.name + responses['poll']
     if len(context.args) > 0:
-        if context.args[0].lower() == 'great' or context.args[0].lower() == 'ultra' or context.args[0].lower() == 'master':
-            response += "\n*League: *" + context.args[0]
+        if context.args[0].lower() == responses['greatleague'] or context.args[0].lower() == responses['ultraleague'] or context.args[0].lower() == responses['masterleague']:
+            response += responses['league'] + context.args[0]
             if len(context.args) > 1:
-                response += "\n*Info:* " + ' '.join(context.args[1:])
+                response += responses['pollinfo'] + ' '.join(context.args[1:])
         else:
-            response += "\n*Info: *" + ' '.join(context.args)
-    bot_message = context.bot.send_message(parse_mode='Markdown', chat_id=update.message.chat_id, text=response, reply_markup=pvp_keyboard())
+            response += responses['pollinfo'] + ' '.join(context.args)
+    bot_message = context.bot.send_message(parse_mode='Markdown', chat_id=update.message.chat_id, text=response, reply_markup=pvp_keyboard(responses))
     logger.info('PvP request by %s (MessageID: %s, ChatID: %s) with arguments %s', update._effective_user.username, bot_message.message_id, bot_message.chat_id, context.args)
     pvprequests[bot_message.message_id, bot_message.chat_id] = {'user' : update.effective_user.id, 'date' : datetime.now(), 'text' : response}
     competitors[bot_message.message_id, bot_message.chat_id] = []
@@ -47,7 +57,8 @@ def add_competitor(update, context):
             direct_message = "[" + name + "](tg://user?id=" + str(user.id) + ")"
         else:
             direct_message = '@' + user.username
-        direct_message += " has accepted your PvP-request!"
+        language = database.get_language(update._effective_chat.id)
+        direct_message += jsonresponse[language]['accepted']
         try:
             context.bot.send_message(parse_mode='Markdown', chat_id=pvprequests[update.effective_message.message_id, update.effective_chat.id]['user'], text=direct_message)
             logger.info("Sent a private notification to %s", pvprequests[update.effective_message.message_id, update.effective_chat.id]['text'].split()[0])
@@ -64,7 +75,7 @@ def add_competitor(update, context):
     context.bot.edit_message_text(parse_mode='Markdown', chat_id=query.message.chat_id,
                           message_id=query.message.message_id,
                           text=response,
-                          reply_markup=pvp_keyboard())
+                          reply_markup=pvp_keyboard(jsonresponse[language]))
 
 def delete_poll(update, context):
     try:
@@ -83,12 +94,15 @@ def delete_poll(update, context):
         return
     query = update.callback_query
     logger.info('%s deleted his PvP request (MessageID: %s, ChatID: %s)', update.effective_user.username, update.effective_message.message_id, update.effective_chat.id)
-    context.bot.delete_message(chat_id=query.message.chat_id,
-                          message_id=update.effective_message.message_id)    
+    try:
+        context.bot.delete_message(chat_id=query.message.chat_id, message_id=update.effective_message.message_id)    
+    except:    
+        logger.info('Cannot delete message Chat:%s MessageID:%s', update.message.chat_id, update._effective_message['message_id'])
 
-def pvp_keyboard():
-    keyboard = [[InlineKeyboardButton('Fight', callback_data='fight')],
-                [InlineKeyboardButton('Delete', callback_data='delete')]]
+
+def pvp_keyboard(response):
+    keyboard = [[InlineKeyboardButton(response['fight'], callback_data='fight')],
+                [InlineKeyboardButton(response['delete'], callback_data='delete')]]
     return InlineKeyboardMarkup(keyboard)
 
 def get_user_name(telegramid):

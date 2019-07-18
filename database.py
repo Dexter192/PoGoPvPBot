@@ -4,7 +4,9 @@ logging.basicConfig(filename='log.log', format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger('Info')
 import json
 import os, sys, sqlite3
-import main
+import language_support
+
+jsonresponse = language_support.responses
 
 def create_db():
     connection = sqlite3.connect("www/names.db")
@@ -13,7 +15,7 @@ def create_db():
     cursor.execute(sql)
     sql = "CREATE TABLE `Silph` (`Username` TEXT, `SilphID` INT PRIMARY KEY NOT NULL)"
     cursor.execute(sql)
-    sql = "CREATE TABLE `Groups` (`GroupID` INT PRIMARY KEY NOT NULL, `Rank` BOOLEAN, `IV` BOOLEAN)"
+    sql = "CREATE TABLE `Groups` (`GroupID` INT PRIMARY KEY NOT NULL, `Rank` BOOLEAN, `IV` BOOLEAN, `Attacks` BOOLEAN)"
     cursor.execute(sql)
     connection.commit()
     connection.close()
@@ -56,36 +58,47 @@ def get_silph_id(name):
 
 def toggle_groups(update, context, type):
     #Check, if chat_id is negative. Otherwise return false
-    if update.message.chat_id > 0:
+    if update.message.chat_id > 0 and not type == 'Language':
         logger.info("/%s in private chat", type)
         response = "This can only be done in groups"
+        language = get_language(update.message.chat_id)
+        response = jsonresponse[language]['group_notice']
         context.bot.send_message(chat_id=update.message.chat_id, text=response)
         return
     
     #Only continue, if the user is an admin
-    admins = (admin.user.id for admin in context.bot.get_chat_administrators(update.message.chat.id))     
-    if update._effective_user.id in admins:
+    if update.message.chat_id < 0:
+        admins = (admin.user.id for admin in context.bot.get_chat_administrators(update.message.chat.id))     
+    if update.message.chat_id > 0 or update._effective_user.id in admins:
         conn = connect()
         cursor = conn.cursor()
         insert = "INSERT INTO `Groups` (GroupID," + type + ") VALUES (?,?);"             
         change = "UPDATE `Groups` SET " + type + "=? WHERE GroupID=?;";
         try:
-            cursor.execute(insert, (update.message.chat_id, context.args[0] == 'enable',))
+            value = context.args[0] if (type=='Language') else context.args[0] == 'enable'  
+            cursor.execute(insert, (update.message.chat_id, value,))
             logger.info("Insert new entry %s (%s, %s)", insert, update.message.chat_id, (context.args[0] == 'enable'))
         except:
-            cursor.execute(change, (context.args[0] == 'enable', update.message.chat_id,))
+            value = context.args[0] if (type=='Language') else context.args[0] == 'enable'  
+            cursor.execute(change, (value, update.message.chat_id,))
             logger.info("Update entry %s (%s, %s)", change, (context.args[0] == 'enable'), update.message.chat_id)
 
         conn.commit()
         conn.close()
         logger.info("/%s by a admin %s changed to %s", type, update._effective_chat.username, context.args[0] == 'enable')
         response = "Settings updated"
+        language = get_language(update.message.chat_id)
+        response = jsonresponse[language]['settings_updated']
         context.bot.send_message(chat_id=update.message.chat_id, text=response)
     else:
         logger.info("/%s by a non-admin %s", type, update._effective_user.username)
         context.bot.delete_message(chat_id=update.message.chat_id,message_id=update.message.message_id)
 
 def group_enabled(group_id, type):
+    enabled = get_group_setting(group_id, type)
+    return bool(enabled)
+
+def get_group_setting(group_id, type):
     conn = connect()
     cursor = conn.cursor()
     query = "SELECT " + type + " FROM Groups WHERE GroupID="+str(group_id)
@@ -97,8 +110,25 @@ def group_enabled(group_id, type):
     rows = cursor.fetchall()
     conn.close()
     try:
-        enabled = bool(rows[0][0])
-        logger.info("%s is on state %s for group %s", type, enabled, group_id)
-        return enabled
+        logger.info("%s is on state %s for group %s", type, rows[0][0], group_id)
+        return rows[0][0]
     except:
         return True
+
+def get_language(group_id):
+    language = get_group_setting(group_id, "Language")
+    if str(language) not in language_support.supported_languages:
+        return 'en'
+    else:
+        return language
+    
+#def add_column_to_table():
+#    connection = sqlite3.connect("www/names.db")
+#    cursor = connection.cursor()
+#    sql = "ALTER TABLE `Groups` ADD `Language` TEXT"
+#    cursor.execute(sql)
+#    connection.commit()
+#    connection.close()
+
+#if __name__ == '__main__':
+#    add_column_to_table()
