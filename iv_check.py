@@ -57,7 +57,9 @@ def iv_given(pokemon_name, att, de, sta, responses):
     except:
         response = responses['iv_no_pokemon']
         return response.format(pokemon_name)
-    
+
+def get_english_name(local_name):
+    idx = df.apply(lambda x: x.str.contains('title'))    
 """
 This method is called when the user types /iv
 - It retrieves the language
@@ -96,6 +98,6 @@ def iv_rank(update, context):
     else:
         logger.info("Could not perform /iv request")
         response = responses['iv_error']
-    logger.info('Return %s', response)
+    logger.info('Return %s', response.encode("utf-8"))
     #Send the response to the user
     context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response)

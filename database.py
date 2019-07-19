@@ -79,7 +79,6 @@ def toggle_groups(update, context, type):
     #Check, if chat_id is negative (which is a telegram group) or if we want to set the language. 
     if update.message.chat_id > 0 and not type == 'Language':
         logger.info("/%s in private chat", type)
-        response = "This can only be done in groups"
         language = get_language(update.message.chat_id)
         response = jsonresponse[language]['group_notice']
         context.bot.send_message(chat_id=update.message.chat_id, text=response)
