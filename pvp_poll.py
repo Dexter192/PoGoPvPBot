@@ -62,6 +62,9 @@ If a user clicks on the fight button, we will either add or revoke him from the 
 def add_competitor(update, context):
     #Get the info about the message that was clicked
     query = update.callback_query
+    #Get the current language 
+    language = database.get_language(update._effective_chat.id)
+        
     #remove user from competitor list
     if update.effective_user in competitors[query.message.message_id, update._effective_chat.id]:
         logger.info('%s revokes the PvP request from %s', update.effective_user.username, pvprequests[update.effective_message.message_id, update.effective_chat.id]['text'].split()[0])
@@ -79,8 +82,7 @@ def add_competitor(update, context):
             direct_message = "[" + name + "](tg://user?id=" + str(user.id) + ")"
         else:
             direct_message = '@' + user.username
-        #Get the current language and load the direct message to notifiy the creator
-        language = database.get_language(update._effective_chat.id)
+        #load the direct message to notifiy the creator
         direct_message += jsonresponse[language]['accepted']
         #Try to send a private notification to the creator of the poll
         try:
