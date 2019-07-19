@@ -123,7 +123,7 @@ Return if iv or rank checks are enabled in a given group
 """
 def group_enabled(group_id, type):
     enabled = get_group_setting(group_id, type)
-    return bool(enabled)
+    return True if (enabled is None) else bool(enabled)
 
 """
 Queries the database and returns if we have an entry for a specific group
