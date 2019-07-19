@@ -141,7 +141,7 @@
 		"iv_no_argument":"Per favore, indica un Pokémon",
 		"iv_error":"Non sono riuscito ad effettuare la richiesta",
 		"language_not_supported":"Mi dispiace, non parlo ancora questa lingua! \nLe lingue attualmente supportate sono: *{}* \nUnisciti a questo [gruppo Telegram Group](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ) se vuoi aggiungere la tua lingua!",
-		"rank_disabled":"This feature is disabled until there is an open API by TSA"
+		"rank_disabled":"Questa funzionalità è disattivata finché TSA non fornirà un accesso pubblico ai dati"
 	},
 	"nl":{
 		"start":["Hallo!\n\n", 
