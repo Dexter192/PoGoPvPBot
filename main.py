@@ -97,7 +97,8 @@ def silph_rank(update, context):
         context.bot.delete_message(chat_id=update.message.chat_id,message_id=update.message.message_id)
     except:
         logger.info("Cannot delete message Chat:%s MessageID:%s", update.message.chat_id, update.message.message_id)
-    bot_message = context.bot.send_message(chat_id=update.message.chat_id, text=responses['de']['poll'])#text="This feature is disabled until a public API is released by TSA")
+    language = database.get_language(update.message.chat_id)
+    bot_message = context.bot.send_message(chat_id=update.message.chat_id, text=responses[language]['rank_disabled'])
     job.run_once(delete_message, 30, context=(bot_message.chat_id, bot_message.message_id))
 
 """
