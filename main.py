@@ -15,15 +15,33 @@ import language_support as lan
 pvprequests = {}
 competitors = {}
 
+<<<<<<< HEAD
 with open('config.json') as json_config_file:
     config = json.load(json_config_file)
 responses = lan.responses
 supported_languages = lan.supported_languages
     
+=======
+""" Load the token that we use to communicate with our bot """
+with open('config.json') as json_config_file:
+    config = json.load(json_config_file)
+""" Load the responses by our bot for each languages """
+responses = lan.responses
+""" Load the currently supported languages """
+supported_languages = lan.supported_languages
+
+""" Initialise our Telegram tools"""    
+>>>>>>> d1bb3fba0ad7646660d4d02a0badf80d2df74ada
 updater = Updater(config['token'], use_context=True)
 job = updater.job_queue
 dispatcher = updater.dispatcher
 
+<<<<<<< HEAD
+=======
+""" 
+This part until start is just an easter egg
+"""
+>>>>>>> d1bb3fba0ad7646660d4d02a0badf80d2df74ada
 def get_dog():
     contents = requests.get('https://random.dog/woof.json').json()
     url = contents['url']
@@ -53,12 +71,20 @@ def bop(update, context):
     url = get_image_url('dog')
     context.bot.send_photo(chat_id=update.message.chat_id, photo=url)    
 
+<<<<<<< HEAD
+=======
+""" 
+Send the start message to a user is he starts the bot. This message is also sent 
+when a user types /help
+"""
+>>>>>>> d1bb3fba0ad7646660d4d02a0badf80d2df74ada
 def start(update, context):
     language = database.get_language(update.message.chat_id)
     response = ''
     response = response.join(responses[language]['start'])
     context.bot.send_message(parse_mode='Markdown', chat_id=update.message.chat_id, text=response)    
 
+<<<<<<< HEAD
 def language(update, context):
     if len(context.args) == 1 and context.args[0].lower() in supported_languages:
         database.toggle_groups(update, context, 'Language')
@@ -67,26 +93,68 @@ def language(update, context):
                context.bot.delete_message(chat_id=update.message.chat_id,message_id=update.message.message_id)
         except:
             logger.info("Cannot delete message Chat:%s MessageID:%s", update.message.chat_id, update.message.message_id)
+=======
+"""
+Change the language setting of a group/user
+"""
+def language(update, context):
+    #Make sure that we only handle messages that we can speak
+    if len(context.args) == 1 and context.args[0].lower() in supported_languages:
+        database.toggle_groups(update, context, 'Language')
+    #If we reject the input we try to delete the users message and let him know which languages we speak
+    else:
+        try:
+            context.bot.delete_message(chat_id=update.message.chat_id,message_id=update.message.message_id)
+        except:
+            logger.info("Cannot delete message Chat:%s MessageID:%s", update.message.chat_id, update.message.message_id)
+        #Get the language that we are speaking in this group and tell the user which languages we can speak
+>>>>>>> d1bb3fba0ad7646660d4d02a0badf80d2df74ada
         language = database.get_language(update.message.chat_id)
         response = responses[language]['language_not_supported']
         response = response.format(supported_languages)
         bot_message = context.bot.send_message(parse_mode='Markdown', chat_id=update.message.chat_id, text=response)
+<<<<<<< HEAD
         
+=======
+
+""" 
+Just a notice that Silph ranks are disabled until there is an open API
+"""        
+>>>>>>> d1bb3fba0ad7646660d4d02a0badf80d2df74ada
 def silph_rank(update, context):
     try:
         context.bot.delete_message(chat_id=update.message.chat_id,message_id=update.message.message_id)
     except:
         logger.info("Cannot delete message Chat:%s MessageID:%s", update.message.chat_id, update.message.message_id)
+<<<<<<< HEAD
     bot_message = context.bot.send_message(chat_id=update.message.chat_id, text=responses['de']['poll'])#text="This feature is disabled until a public API is released by TSA")
     job.run_once(delete_message, 30, context=(bot_message.chat_id, bot_message.message_id))
 
+=======
+    language = database.get_language(update.message.chat_id)
+    bot_message = context.bot.send_message(chat_id=update.message.chat_id, text=responses[language]['rank_disabled'])
+    job.run_once(delete_message, 30, context=(bot_message.chat_id, bot_message.message_id))
+
+"""
+Deletes a message 
+Called as a job which is executed with some delay to enable the user to read the response
+"""
+>>>>>>> d1bb3fba0ad7646660d4d02a0badf80d2df74ada
 def delete_message(context):
     try:
         context.bot.delete_message(chat_id=context.job.context[0], message_id=context.job.context[1])
         logger.info("Deleted message %s %s", context.job.context[0], context.job.context[1])
     except:
         logger.info("Cannot delete message %s %s", context.job.context[0], context.job.context[1])
+<<<<<<< HEAD
         
+=======
+
+"""
+Any commands that we cannot process will just be deleted and a notice to the user.
+The response will be deleted after 30 seconds
+"""        
+>>>>>>> d1bb3fba0ad7646660d4d02a0badf80d2df74ada
 def unknown(update, context):
     try:
         context.bot.delete_message(chat_id=update.message.chat_id, message_id=update.message.message_id)
@@ -99,6 +167,7 @@ def unknown(update, context):
 def main():
     logger.info('Started bot')
     
+<<<<<<< HEAD
     dispatcher.add_handler(CommandHandler('pbp',bop))
     dispatcher.add_handler(CommandHandler('pcp',meow))
     
@@ -116,6 +185,35 @@ def main():
 
     dispatcher.add_handler(CommandHandler("rank", silph_rank))
 
+=======
+    #Easter egg commands
+    dispatcher.add_handler(CommandHandler('pbp',bop))
+    dispatcher.add_handler(CommandHandler('pcp',meow))
+    
+    #/start and /help to give the introduction
+    dispatcher.add_handler(CommandHandler("start", start))
+    dispatcher.add_handler(CommandHandler("help", start))
+
+    #Create a pvp request
+    updater.dispatcher.add_handler(CommandHandler('pvp', pvp_poll.pvp))
+    #Add/removes a competitor if he clicks on fight
+    updater.dispatcher.add_handler(CallbackQueryHandler(pvp_poll.add_competitor, pattern='fight'))
+    #Deletes a pvp request - TODO: Admins should be able to delete requests
+    updater.dispatcher.add_handler(CallbackQueryHandler(pvp_poll.delete_poll, pattern='delete'))
+    #Check if tehre are any outdated pvp requests which we want to delete
+    auto_del = job.run_repeating(pvp_poll.auto_delete, interval=900, first=0)
+    
+    #Handle /iv
+    dispatcher.add_handler(CommandHandler("iv", iv_check.iv_rank))    
+    
+    #Handle /language
+    dispatcher.add_handler(CommandHandler("language", language))    
+
+    #Handle /rank
+    dispatcher.add_handler(CommandHandler("rank", silph_rank))
+
+    #Set trainername and trainercode
+>>>>>>> d1bb3fba0ad7646660d4d02a0badf80d2df74ada
     dispatcher.add_handler(CommandHandler("trainername", trainernames.add_trainername))
     dispatcher.add_handler(CommandHandler("trainercode", trainernames.add_trainercode))
 
