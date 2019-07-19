@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 import json 
+
 """
 Just a file which allows easier access to the language json file
 """
