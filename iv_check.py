@@ -19,10 +19,13 @@ some information about the pokemon with the optimal IVs
 def optimal_iv(pokemon_name, responses):
     try:
         df = pd.read_csv('ranking/'+pokemon_name+'.csv')
+        index_worst = df.shape[0]-1
+        percent_worst = round((100/df.iloc[0]['stat-product'])*df.iloc[index_worst]['stat-product'], 2)
         response = responses['iv_optimal']
         response += responses['iv_stats']
-        response = response.format(pokemon_name.capitalize(), df.iloc[0]['ivs'], df.iloc[0]['cp'], df.iloc[0]['stat-product'], '100%')
+        response = response.format(pokemon_name.capitalize(), df.iloc[0]['ivs'], df.iloc[0]['cp'], df.iloc[0]['stat-product'], '100', percent_worst)
         return response
+    #We cannot find this pokemon
     except:
         response = responses['iv_no_pokemon']
         return response.format(pokemon_name)
@@ -37,17 +40,24 @@ If the user has given IVs additional to the pokemon we want to see where this IV
 @return: A formatted response for the IV distribution of this pokemon
 """
 def iv_given(pokemon_name, att, de, sta, responses):
-    df = pd.read_csv('ranking/'+pokemon_name+'.csv')
-    iv = att + ' ' + de + ' ' + sta
-    row = df.loc[df['ivs'] == iv]
-    optimal_stat_product = df.iloc[0]['stat-product']
-    percent = round((100/optimal_stat_product)*row.iloc[0]['stat-product'], 2)
-    response = responses['iv_given']
-    response = response.format(pokemon_name.capitalize(), row.iloc[0]['rank'])
-    response += responses['iv_stats']
-    response = response.format(row.iloc[0]['ivs'], row.iloc[0]['cp'], row.iloc[0]['stat-product'], percent)
-    return response
-
+    try:
+        df = pd.read_csv('ranking/'+pokemon_name+'.csv')
+        iv = att + ' ' + de + ' ' + sta
+        row = df.loc[df['ivs'] == iv]
+        optimal_stat_product = df.iloc[0]['stat-product']
+        percent = round((100/optimal_stat_product)*row.iloc[0]['stat-product'], 2)
+        index_worst = df.shape[0]-1
+        percent_worst = round((100/optimal_stat_product)*df.iloc[index_worst]['stat-product'], 2)
+        response = responses['iv_given']
+        response = response.format(pokemon_name.capitalize(), row.iloc[0]['rank'])
+        response += responses['iv_stats']
+        response = response.format(row.iloc[0]['ivs'], row.iloc[0]['cp'], row.iloc[0]['stat-product'], percent, percent_worst)
+        return response
+    #We cannot find this pokemon
+    except:
+        response = responses['iv_no_pokemon']
+        return response.format(pokemon_name)
+    
 """
 This method is called when the user types /iv
 - It retrieves the language
