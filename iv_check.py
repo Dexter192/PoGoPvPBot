@@ -18,7 +18,8 @@ some information about the pokemon with the optimal IVs
 """
 def optimal_iv(pokemon_name, responses):
     try:
-        df = pd.read_csv('ranking/'+pokemon_name+'.csv')
+        eng_name = get_english_name(pokemon_name)
+        df = pd.read_csv('ranking/'+eng_name+'.csv')
         index_worst = df.shape[0]-1
         percent_worst = round((100/df.iloc[0]['stat-product'])*df.iloc[index_worst]['stat-product'], 2)
         response = responses['iv_optimal']
@@ -41,7 +42,8 @@ If the user has given IVs additional to the pokemon we want to see where this IV
 """
 def iv_given(pokemon_name, att, de, sta, responses):
     try:
-        df = pd.read_csv('ranking/'+pokemon_name+'.csv')
+        eng_name = get_english_name(pokemon_name)
+        df = pd.read_csv('ranking/'+eng_name+'.csv')
         iv = att + ' ' + de + ' ' + sta
         row = df.loc[df['ivs'] == iv]
         optimal_stat_product = df.iloc[0]['stat-product']
@@ -58,8 +60,17 @@ def iv_given(pokemon_name, att, de, sta, responses):
         response = responses['iv_no_pokemon']
         return response.format(pokemon_name)
 
+
 def get_english_name(local_name):
-    idx = df.apply(lambda x: x.str.contains('title'))    
+    name = local_name.lower().capitalize()
+    df = pd.read_csv('pokemon_info/translations.csv')
+    idx = df.where(df == name).dropna(how='all').index
+    try:
+        return df.iloc[idx[0], 0]
+    except:
+        logger.info("Cannot find english name for (%s)", local_name)
+        
+        
 """
 This method is called when the user types /iv
 - It retrieves the language
