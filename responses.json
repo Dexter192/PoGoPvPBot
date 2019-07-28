@@ -43,11 +43,12 @@
 		"iv_no_pokemon":"I could not find {}",
 		"iv_optimal":"Optimal IVs for {} \n",
 		"iv_given":"Your {} is on rank <b> {}</b>\n",
-		"iv_stats": "<b>(A/D/S):</b> {}\n<b>CP:</b> {}\n<b>Stat Product:</b> {}\n<b>Percent:</b> {}%\n<b>Percent minimum:</b> {}%\n",
+		"iv_stats": "<b>(A/D/S):</b> {}\n<b>CP:</b> {}\n<b>Level:</b> {}\n<b>Stat Product:</b> {}\n<b>Percent:</b> {}%\n<b>Percent minimum:</b> {}%\n",
 		"iv_no_argument":"Please specify a Pokémon",
 		"iv_error":"I could not perform the request",
 		"language_not_supported":"I am afraid don't support that language yet! \nThe current supported languages are: *{}* \nJoin this [Telegram Group](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ) if you want to add your language!",
-		"rank_disabled":"This feature is disabled until there is an open API by TSA"	
+		"rank_disabled":"This feature is disabled until there is an open API by TSA",
+		"language_hint":"I have noticed that you speak a different language. You can set your bot to your language using the /language command"
 	},
 	"de": {
 		"start":["Hallo!\n\n", 
@@ -89,11 +90,12 @@
 		"iv_no_pokemon":"Ich konnte %s nicht finden",
 		"iv_optimal":"Optimale IVs für {} \n",
 		"iv_given":"Dein {} ist auf Platz <b>{}</b>\n",
-		"iv_stats": "<b>(A/D/S):</b> {}\n<b>WP:</b> {}\n<b>Stat Product:</b> {}\n<b>Prozent:</b> {}%\n<b>Prozent minimum:</b> {}%\n",
+		"iv_stats": "<b>(A/D/S):</b> {}\n<b>WP:</b> {}\n<b>Level:</b> {}\n<b>Stat Product:</b> {}\n<b>Prozent:</b> {}%\n<b>Prozent minimum:</b> {}%\n",
 		"iv_no_argument":"Bitte wähle ein Pokémon",
 		"iv_error":"Ich konnte die Anfrage nicht ausführen",
 		"language_not_supported":"Es tut mir leid aber diese Sprache wird noch nicht unterstützt.\nDie aktuell unterstützten Sprachen sind: *{}*\nWenn du meine Antworten in deine Sprache übersetzen willst kannst du dieser [Telegram Gruppe](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ) beitreten!",
-		"rank_disabled":"This feature is disabled until there is an open API by TSA"
+		"rank_disabled":"This feature is disabled until there is an open API by TSA",
+		"language_hint":"I have noticed that you speak a different language. You can set your bot to your language using the /language command"
 	},
 	"it":{
 		"start":["Ciao!\n\n", 
@@ -137,11 +139,12 @@
 		"iv_no_pokemon":"Non sono riuscito a trovare {}",
 		"iv_optimal":"IV ottimali per {} \n",
 		"iv_given":"Il tuo {} è di rank <b> {}</b>\n",
-		"iv_stats": "<b>(A/D/S):</b> {}\n<b>PL:</b> {}\n<b>Stat Product:</b> {}\n<b>Percentuale:</b> {}%\n<b>Percentuale minimo:</b> {}%\n",
+		"iv_stats": "<b>(A/D/S):</b> {}\n<b>PL:</b> {}\n<b>Livello:</b> {}\n<b>Stat Product:</b> {}\n<b>Percentuale:</b> {}%\n<b>Percentuale minimo:</b> {}%\n",
 		"iv_no_argument":"Per favore, indica un Pokémon",
 		"iv_error":"Non sono riuscito ad effettuare la richiesta",
 		"language_not_supported":"Mi dispiace, non parlo ancora questa lingua! \nLe lingue attualmente supportate sono: *{}* \nUnisciti a questo [gruppo Telegram Group](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ) se vuoi aggiungere la tua lingua!",
-		"rank_disabled":"Questa funzionalità è disattivata finché TSA non fornirà un accesso pubblico ai dati"
+		"rank_disabled":"Questa funzionalità è disattivata finché TSA non fornirà un accesso pubblico ai dati",
+		"language_hint":"I have noticed that you speak a different language. You can set your bot to your language using the /language command"
 	},
 	"nl":{
 		"start":["Hallo!\n\n", 
@@ -186,11 +189,12 @@
 		"iv_no_pokemon":"Ik kan {} niet vinden",
 		"iv_optimal":"Optimale IVs voor {} \n",
 		"iv_given":"Jouw {} rankt <b> {}</b>\n",
-		"iv_stats": "<b>(A/D/S):</b> {}\n<b>CP:</b> {}\n<b>Stat Product:</b> {}\n<b>Percent:</b> {}%\n<b>Percent minimum:</b> {}%\n",
+		"iv_stats": "<b>(A/D/S):</b> {}\n<b>CP:</b> {}\n<b>Level:</b> {}\n<b>Stat Product:</b> {}\n<b>Percent:</b> {}%\n<b>Percent minimum:</b> {}%\n",
 		"iv_no_argument":"Alstublieft specificeer een Pokémon",
 		"iv_error":"Ik kan je verzoek niet uitvoeren",
 		"language_not_supported":"Ik ben bang dat ik deze taal nog niet ondersteun: *{}* \nJoin this [Telegram Group](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ) if you want to add your language!",
-		"rank_disabled":"This feature is disabled until there is an open API by TSA"
+		"rank_disabled":"This feature is disabled until there is an open API by TSA",
+		"language_hint":"I have noticed that you speak a different language. You can set your bot to your language using the /language command"
 	},
 	"prt":{
 		"start":["Olá!\n\n", 
@@ -235,10 +239,11 @@
 		"iv_no_pokemon":"Eu não consegui encontrar {}",
 		"iv_optimal":"Melhores IVs para {} \n",
 		"iv_given":"Seu {} está no rank <b> {}</b>\n",
-		"iv_stats": "<b>(A/D/S):</b> {}\n<b>CP:</b> {}\n<b>Produto estátistico:</b> {}\n<b>Percentual:</b> {}%\n<b>Percentual mínimo:</b> {}%\n",
+		"iv_stats": "<b>(A/D/S):</b> {}\n<b>CP:</b> {}\n<b><b>Nível:</b> {}\nProduto estátistico:</b> {}\n<b>Percentual:</b> {}%\n<b>Percentual mínimo:</b> {}%\n",
 		"iv_no_argument":"Por favor, especifique um Pokémon",
 		"iv_error":"Não consegui I could not efetuar o pedido",
-		"language_not_supported":"Eu acredito que ainda não suporto esse idioma!\nAtualmente suportamos os seguintes idiomas: *{}* \nEntre nesse [Grupo do Telegram](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ) se você quer adicionar seu idioma!"
+		"language_not_supported":"Eu acredito que ainda não suporto esse idioma!\nAtualmente suportamos os seguintes idiomas: *{}* \nEntre nesse [Grupo do Telegram](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ) se você quer adicionar seu idioma!",
+		"language_hint":"I have noticed that you speak a different language. You can set your bot to your language using the /language command"
 	},
 	"ukr":{
 		"start":["Привіт!\n\n", 
@@ -284,10 +289,11 @@
 		"iv_no_pokemon":"Я не зміг знайти покемона {}",
 		"iv_optimal":"Оптимальний айві для вашого {} \n",
 		"iv_given":"Ваш {} <b> {}</b>-ий за рейтингом.\n",
-		"iv_stats": "<b>(A/D/S):</b> {}\n<b>CP:</b> {}\n<b>Stat Product:</b> {}\n<b>Відсоток:</b> {}\n",
+		"iv_stats": "<b>(A/D/S):</b> {}\n<b>CP:</b> {}\n<b>Level:</b> {}\n<b>Stat Product:</b> {}\n<b>Відсоток:</b> {}\n",
 		"iv_no_argument":"Будь ласка, визначте вашого покемона",
 		"iv_error":"На жаль, не зміг виконати ваш запит",
 		"language_not_supported":"На жаль, цей бот поки що не підтримує вашу мову. \nВтім, ви можете подивитися на список підтримуваних цим ботом мов: *{}* \nПриєднуйтеся до цього [телеґрам-чату](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ), якщо хочете, щоб цей бот розмовляв вашою мовою!",
-		"rank_disabled":"ця команда деактивована доти, доки Сілф-Арена не стане надавати відкриті API"	
+		"rank_disabled":"ця команда деактивована доти, доки Сілф-Арена не стане надавати відкриті API",
+		"language_hint":"I have noticed that you speak a different language. You can set your bot to your language using the /language command"	
 	}
 }

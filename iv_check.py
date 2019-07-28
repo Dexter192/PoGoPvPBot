@@ -9,30 +9,10 @@ import language_support
 #The json file of currently supported language responses
 jsonresponse = language_support.responses
     
-"""
-Performs a query to the csv file of iv distributions and returns 
-some information about the pokemon with the optimal IVs
-@param pokemon_name: The name of the pokemon that we are insterested in
-@param responses: The json responses of the current language
-@return: A formatted response for the optimal IV distribution
-"""
-def optimal_iv(pokemon_name, responses):
-    try:
-        eng_name = get_english_name(pokemon_name)
-        df = pd.read_csv('ranking/'+eng_name+'.csv')
-        index_worst = df.shape[0]-1
-        percent_worst = round((100/df.iloc[0]['stat-product'])*df.iloc[index_worst]['stat-product'], 2)
-        response = responses['iv_optimal']
-        response += responses['iv_stats']
-        response = response.format(pokemon_name.capitalize(), df.iloc[0]['ivs'], df.iloc[0]['cp'], df.iloc[0]['stat-product'], '100', percent_worst)
-        return response
-    #We cannot find this pokemon
-    except:
-        response = responses['iv_no_pokemon']
-        return response.format(pokemon_name)
 
 """
 If the user has given IVs additional to the pokemon we want to see where this IV distribution ranks
+When the user does not give IVs, return the optimal IVs for that pokemon
 @param pokemon_name: The name of the pokemon that we are interested in 
 @param att: The attack stat of the pokemon
 @param de: The defense stat of the pokemon (def is predefined)
@@ -40,37 +20,73 @@ If the user has given IVs additional to the pokemon we want to see where this IV
 @param responses: The json responses of the current language
 @return: A formatted response for the IV distribution of this pokemon
 """
-def iv_given(pokemon_name, att, de, sta, responses):
-    try:
-        eng_name = get_english_name(pokemon_name)
-        df = pd.read_csv('ranking/'+eng_name+'.csv')
-        iv = att + ' ' + de + ' ' + sta
-        row = df.loc[df['ivs'] == iv]
+def iv_given(pokemon_name, initial_language, responses, att=None, de=None, sta=None):
+    try:            
+        df = pd.read_csv('ranking/'+pokemon_name+'.csv')
+        #Check, if we want to get optimal IVs or given
+        if att is None:
+            row = df.loc[df['rank'] == 1]
+            response = responses['iv_optimal']
+        #Find the Pokemon with the give IV-Distribution
+        else:
+            iv = att + ' ' + de + ' ' + sta
+            row = df.loc[df['ivs'] == iv]
+            response = responses['iv_given']
+
+        #Compute the Stat product on the fly 
         optimal_stat_product = df.iloc[0]['stat-product']
         percent = round((100/optimal_stat_product)*row.iloc[0]['stat-product'], 2)
         index_worst = df.shape[0]-1
         percent_worst = round((100/optimal_stat_product)*df.iloc[index_worst]['stat-product'], 2)
-        response = responses['iv_given']
-        response = response.format(pokemon_name.capitalize(), row.iloc[0]['rank'])
+        
+        local_name = get_local_name(pokemon_name, initial_language)
+        response = response.format(local_name.capitalize(), row.iloc[0]['rank'])
         response += responses['iv_stats']
-        response = response.format(row.iloc[0]['ivs'], row.iloc[0]['cp'], row.iloc[0]['stat-product'], percent, percent_worst)
+        response = response.format(row.iloc[0]['ivs'], row.iloc[0]['cp'], row.iloc[0]['maxlevel'], row.iloc[0]['stat-product'], percent, percent_worst)
         return response
     #We cannot find this pokemon
     except:
         response = responses['iv_no_pokemon']
         return response.format(pokemon_name)
 
-
-def get_english_name(local_name):
-    name = local_name.lower().capitalize()
+def get_local_name(eng_name, col_index):
+    name = eng_name.lower().capitalize()
     df = pd.read_csv('pokemon_info/translations.csv')
     idx = df.where(df == name).dropna(how='all').index
     try:
-        return df.iloc[idx[0], 0]
+        return df.loc[idx[0], col_index]
+    except:
+        logger.info("Cannot find local name for (%s)", local_name)
+
+
+def get_english_name(local_name, group_language):
+    name = local_name.lower().capitalize()
+    df = pd.read_csv('pokemon_info/translations.csv')
+    idx = df.where(df == name).dropna(how='all').index
+    #Drop all entries which don't match the local name
+    localized = df.where(df == name).dropna(how='all')
+    #Return a tuple of the first appearance of the name
+    index_tuple = list(df[localized.notnull()].stack().index)
+    different_language = True
+    for nationality in index_tuple:
+        if nationality[1] == group_language or nationality[1] not in language_support.supported_languages:
+            different_language = False
+            break
+    try:
+        return df.iloc[localized.index[0], 0], index_tuple[0][1], different_language
     except:
         logger.info("Cannot find english name for (%s)", local_name)
-        
-        
+    
+"""
+This message takes a single pokemon and returns the whole family as a list
+"""        
+def get_pokemon_family(pokemon_name, group_language):
+    eng_name, initial_language, different_language = get_english_name(pokemon_name, group_language)
+    eng_name = eng_name.capitalize()
+    df = pd.read_csv('pokemon_info/evolutions.csv')
+    index = df.where(df == eng_name).dropna(how='all').index
+    return df.loc[index[0]].dropna(), initial_language, different_language
+
 """
 This method is called when the user types /iv
 - It retrieves the language
@@ -99,16 +115,35 @@ def iv_rank(update, context):
     if(len(context.args) == 0):
         logger.info("Invalid pokemon")
         response = responses['iv_no_argument']
-    #If the user just specified a Pokemon - Return the optimal distribution
-    elif(len(context.args) == 1):
-        response = optimal_iv(context.args[0].lower(), responses)
-    #If the user gave IVs with the pokemon - Return where this one ranks
-    elif(len(context.args) == 4):
-        response = iv_given(context.args[0].lower(), context.args[1], context.args[2], context.args[3], responses)
-    #We got some weird input which we cannot perform
+        context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response)
     else:
-        logger.info("Could not perform /iv request")
-        response = responses['iv_error']
-    logger.info('Return %s', response.encode("utf-8"))
-    #Send the response to the user
-    context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response)
+        try:
+            if context.args[0][0] is '+':
+                evolutions, initial_language, different_language = get_pokemon_family(context.args[0][1:], language)
+            else:
+                
+                evolutions, initial_language, different_language = get_english_name(context.args[0], language)
+                evolutions = [evolutions]
+            for evo in evolutions:
+                #If the user just specified a Pokemon - Return the optimal distribution
+                if(len(context.args) == 1):
+                   response = iv_given(evo.lower(), initial_language, responses)
+                #If the user gave IVs with the pokemon - Return where this one ranks
+                elif(len(context.args) == 4):
+                    response = iv_given(evo.lower(), initial_language, responses, context.args[1], context.args[2], context.args[3])
+                logger.info('Return %s', response.encode("utf-8"))
+                
+                if different_language:
+                    language_hint = responses['language_hint']
+                    context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=responses['language_hint'])
+
+                #Send the response to the user
+                context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response)
+
+
+        #We got some weird input which we cannot perform
+        except:
+            logger.info("Could not perform /iv request")
+            response = responses['iv_error']
+            context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response)
+    
