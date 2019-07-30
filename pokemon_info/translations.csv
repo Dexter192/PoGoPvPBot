@@ -89,10 +89,14 @@ cyndaquil,Cyndaquil,Feurigel,Cyndaquil,Héricendre,Cyndaquil,ヒノアラシ,브
 darkrai,Darkrai,Darkrai,Darkrai,Darkrai,Darkrai,ダークライ,다크라이,Darkrai,達克萊伊
 delcatty,Delcatty,Enekoro,Delcatty,Delcatty,Delcatty,エネコロロ,델케티,Delcatty,優雅貓
 delibird,Delibird,Botogel,Delibird,Cadoizo,Delibird,デリバード,딜리버드,Delibird,信使鳥
-deoxys,Deoxys,Deoxys,Deoxys,Deoxys,Deoxys,デオキシス,테오키스,Deoxys,代歐奇希斯
+deoxys+attack,Deoxys+attack,Deoxys+attack,Deoxys+attack,Deoxys+attack,Deoxys+attack,デオキシス,테오키스,Deoxys+attack,代歐奇希斯
+deoxys+defense,Deoxys+defense,Deoxys+defense,Deoxys+defense,Deoxys+defense,Deoxys+defense,デオキシス,테오키스,Deoxys+defense,代歐奇希斯
+deoxys+speed,Deoxys+speed,Deoxys+speed,Deoxys+speed,Deoxys+speed,Deoxys+speed,デオキシス,테오키스,Deoxys+speed,代歐奇希斯
+deoxys+normal,Deoxys+normal,Deoxys+normal,Deoxys+normal,Deoxys+normal,Deoxys+normal,デオキシス,테오키스,Deoxys+normal,代歐奇希斯
 dewgong,Dewgong,Jugong,Dewgong,Lamantine,Dewgong,ジュゴン,쥬레곤,Dewgong,白海獅
 dialga,Dialga,Dialga,Dialga,Dialga,Dialga,ディアルガ,디아루가,Dialga,帝牙盧卡
 diglett,Diglett,Digda,Diglett,Taupiqueur,Diglett,ディグダ,디그다,Diglett,地鼠
+diglett+alolan,Diglett+alolan,Digda+alolan,Diglett+alolan,Taupiqueur+alolan,Diglett+alolan,ディグダ,디그다,Diglett+alolan,地鼠
 ditto,Ditto,Ditto,Ditto,Métamorph,Ditto,メタモン,메타몽,Ditto,百變怪
 dodrio,Dodrio,Dodri,Dodrio,Dodrio,Dodrio,ドードリオ,두트리오,Dodrio,嘟嘟利
 doduo,Doduo,Dodu,Doduo,Doduo,Doduo,ドードー,두두,Doduo,嘟嘟
@@ -105,6 +109,7 @@ drifblim,Drifblim,Drifzepeli,Drifblim,Grodrive,Drifblim,フワライド,둥실�
 drifloon,Drifloon,Driftlon,Drifloon,Baudrive,Drifloon,フワンテ,흔들풍손,Drifloon,飄飄球
 drowzee,Drowzee,Traumato,Drowzee,Soporifik,Drowzee,スリープ,슬리프,Drowzee,催眠貘
 dugtrio,Dugtrio,Digdri,Dugtrio,Triopikeur,Dugtrio,ダグトリオ,닥트리오,Dugtrio,三地鼠
+dugtrio+alolan,Dugtrio+alolan,Digdri+alolan,Dugtrio+alolan,Triopikeur+alolan,Dugtrio+alolan,ダグトリオ,닥트리오,Dugtrio+alolan,三地鼠
 dunsparce,Dunsparce,Dummisel,Dunsparce,Insolourdo,Dunsparce,ノコッチ,노고치,Dunsparce,土龍弟弟
 dusclops,Dusclops,Zwirrklop,Dusclops,Téraclope,Dusclops,サマヨール,미라몽,Dusclops,彷徨夜靈
 dusknoir,Dusknoir,Zwirrfinst,Dusknoir,Noctunoir,Dusknoir,ヨノワール,야느와르몽,Dusknoir,黑夜魔靈
@@ -122,6 +127,7 @@ entei,Entei,Entei,Entei,Entei,Entei,エンテイ,앤테이,Entei,炎帝
 espeon,Espeon,Psiana,Espeon,Mentali,Espeon,エーフィ,에브이,Espeon,太陽伊布
 exeggcute,Exeggcute,Owei,Exeggcute,Noeunoeuf,Exeggcute,タマタマ,아라리,Exeggcute,蛋蛋
 exeggutor,Exeggutor,Kokowei,Exeggutor,Noadkoko,Exeggutor,ナッシー,나시,Exeggutor,椰蛋樹
+exeggutor+alolan,Exeggutor+alolan,Kokowei+alolan,Exeggutor+alolan,Noadkoko+alolan,Exeggutor+alolan,ナッシー,나시,Exeggutor+alolan,椰蛋樹
 exploud,Exploud,Krawumms,Exploud,Brouhabam,Exploud,バクオング,폭음룡,Exploud,爆音怪
 farfetchd,Farfetch'd,Porenta,Farfetch'd,Canarticho,Farfetch’d,カモネギ,파오리,Farfetch'd,大蔥鴨
 fearow,Fearow,Ibitak,Fearow,Rapasdepic,Fearow,オニドリル,깨비드릴조,Fearow,大嘴雀
@@ -143,9 +149,11 @@ gastly,Gastly,Nebulak,Gastly,Fantominus,Gastly,ゴース,고오스,Gastly,鬼斯
 gastrodon,Gastrodon,Gastrodon,Gastrodon,Tritosor,Gastrodon,トリトドン,트리토돈,Gastrodon,海兔獸
 gengar,Gengar,Gengar,Gengar,Ectoplasma,Gengar,ゲンガー,팬텀,Gengar,耿鬼
 geodude,Geodude,Kleinstein,Geodude,Racaillou,Geodude,イシツブテ,꼬마돌,Geodude,小拳石
+geodude+alolan,Geodude+alolan,Kleinstein+alolan,Geodude+alolan,Racaillou+alolan,Geodude+alolan,イシツブテ,꼬마돌,Geodude+alolan,小拳石
 gible,Gible,Kaumalat,Gible,Griknot,Gible,フカマル,딥상어동,Gible,圓陸鯊
 girafarig,Girafarig,Girafarig,Girafarig,Girafarig,Girafarig,キリンリキ,키링키,Girafarig,麒麟奇
-giratina,Giratina,Giratina,Giratina,Giratina,Giratina,ギラティナ,기라티나,Giratina,騎拉帝納
+giratina+altered,Giratina+altered,Giratina+altered,Giratina+altered,Giratina+altered,Giratina+altered,ギラティナ,기라티나,Giratina+altered,騎拉帝納
+giratina+origin,Giratina+origin,Giratina+origin,Giratina+origin,Giratina+origin,Giratina+origin,ギラティナ,기라티나,Giratina+origin,騎拉帝納
 glaceon,Glaceon,Glaziola,Glaceon,Givrali,Glaceon,グレイシア,글레이시아,Glaceon,冰伊布
 glalie,Glalie,Firnontor,Glalie,Oniglali,Glalie,オニゴーリ,얼음귀신,Glalie,冰鬼護
 glameow,Glameow,Charmian,Glameow,Chaglam,Glameow,ニャルマー,나옹마,Glameow,魅力喵
@@ -156,9 +164,11 @@ golbat,Golbat,Golbat,Golbat,Nosferalto,Golbat,ゴルバット,골뱃,Golbat,大�
 goldeen,Goldeen,Goldini,Goldeen,Poissirène,Goldeen,トサキント,콘치,Goldeen,角金魚
 golduck,Golduck,Entoron,Golduck,Akwakwak,Golduck,ゴルダック,골덕,Golduck,哥達鴨
 golem,Golem,Geowaz,Golem,Grolem,Golem,ゴローニャ,딱구리,Golem,隆隆岩
+golem+alolan,Golem+alolan,Geowaz+alolan,Golem+alolan,Grolem+alolan,Golem+alolan,ゴローニャ,딱구리,Golem+alolan,隆隆岩
 gorebyss,Gorebyss,Saganabyss,Gorebyss,Rosabyss,Gorebyss,サクラビス,분홍장이,Gorebyss,櫻花魚
 granbull,Granbull,Granbull,Granbull,Granbull,Granbull,グランブル,그랑블루,Granbull,布魯皇
 graveler,Graveler,Georok,Graveler,Gravalanch,Graveler,ゴローン,데구리,Graveler,隆隆石
+graveler+alolan,Graveler+alolan,Georok+alolan,Graveler+alolan,Gravalanch+alolan,Graveler+alolan,ゴローン,데구리,Graveler+alolan,隆隆石
 grimer,Grimer,Sleima,Grimer,Tadmorv,Grimer,ベトベター,질퍽이,Grimer,臭泥
 grotle,Grotle,Chelcarain,Grotle,Boskara,Grotle,ハヤシガメ,수풀부기,Grotle,樹林龜
 groudon,Groudon,Groudon,Groudon,Groudon,Groudon,グラードン,그란돈,Groudon,固拉多
@@ -255,6 +265,7 @@ mantyke,Mantyke,Mantirps,Mantyke,Babimanta,Mantyke,タマンタ,타만타,Mantyk
 mareep,Mareep,Voltilamm,Mareep,Wattouat,Mareep,メリープ,메리프,Mareep,咩利羊
 marill,Marill,Marill,Marill,Marill,Marill,マリル,마릴,Marill,瑪力露
 marowak,Marowak,Knogga,Marowak,Ossatueur,Marowak,ガラガラ,텅구리,Marowak,嘎啦嘎啦
+marowak+alolan,Marowak+alolan,Knogga+alolan,Marowak+alolan,Ossatueur+alolan,Marowak+alolan,ガラガラ,텅구리,Marowak+alolan,嘎啦嘎啦
 marshtomp,Marshtomp,Moorabbel,Marshtomp,Flobio,Marshtomp,ヌマクロー,늪짱이,Marshtomp,沼躍魚
 masquerain,Masquerain,Maskeregen,Masquerain,Maskadra,Masquerain,アメモース,비나방,Masquerain,雨翅蛾
 mawile,Mawile,Flunkifer,Mawile,Mysdibule,Mawile,クチート,입치트,Mawile,大嘴娃
@@ -264,12 +275,14 @@ meganium,Meganium,Meganie,Meganium,Méganium,Meganium,メガニウム,메가니�
 melmetal,Melmetal,Melmetal,Melmetal,Melmetal,Melmetal,メルメタル,멜메탈,Melmetal,美錄梅塔
 meltan,Meltan,Meltan,Meltan,Meltan,Meltan,メルタン,멜탄,Meltan,美錄坦
 meowth,Meowth,Mauzi,Meowth,Miaouss,Meowth,ニャース,나옹,Meowth,喵喵
+meowth+alolan,Meowth+alolan,Mauzi+alolan,Meowth+alolan,Miaouss+alolan,Meowth+alolan,ニャース,나옹,Meowth+alolan,喵喵
 mesprit,Mesprit,Vesprit,Mesprit,Créfollet,Mesprit,エムリット,엠라이트,Mesprit,艾姆利多
 metagross,Metagross,Metagross,Metagross,Métalosse,Metagross,メタグロス,메타그로스,Metagross,巨金怪
 metang,Metang,Metang,Metang,Métang,Metang,メタング,메탕구,Metang,金屬怪
 metapod,Metapod,Safcon,Metapod,Chrysacier,Metapod,トランセル,단데기,Metapod,鐵甲蛹
 mew,Mew,Mew,Mew,Mew,Mew,ミュウ,뮤,Mew,夢幻
 mewtwo,Mewtwo,Mewtu,Mewtwo,Mewtwo,Mewtwo,ミュウツー,뮤츠,Mewtwo,超夢
+mewtwo+armored,Mewtwo+armored,Mewtu+armored,Mewtwo+armored,Mewtwo+armored,Mewtwo+armored,ミュウツー,뮤츠,Mewtwo+armored,超夢
 mightyena,Mightyena,Magnayen,Mightyena,Grahyèna,Mightyena,グラエナ,그라에나,Mightyena,大狼犬
 milotic,Milotic,Milotic,Milotic,Milobellus,Milotic,ミロカロス,밀로틱,Milotic,美納斯
 miltank,Miltank,Miltank,Miltank,Écrémeuh,Miltank,ミルタンク,밀탱크,Miltank,大奶罐
@@ -283,6 +296,7 @@ mothim,Mothim,Moterpel,Mothim,Papilord,Mothim,ガーメイル,나메일,Mothim,�
 mr.mime,Mr.mime,Pantimos,Mr.mime,M.mime,Mr.mime,バリヤード,마임맨,Mr.mime,魔牆人偶
 mudkip,Mudkip,Hydropi,Mudkip,Gobou,Mudkip,ミズゴロウ,물짱이,Mudkip,水躍魚
 muk,Muk,Sleimok,Muk,Grotadmorv,Muk,ベトベトン,질뻐기,Muk,臭臭泥
+muk+alolan,Muk+alolan,Sleimok+alolan,Muk+alolan,Grotadmorv+alolan,Muk+alolan,ベトベトン,질뻐기,Muk+alolan,臭臭泥
 munchlax,Munchlax,Mampfaxo,Munchlax,Goinfrex,Munchlax,ゴンベ,먹고자,Munchlax,小卡比獸
 murkrow,Murkrow,Kramurx,Murkrow,Cornèbre,Murkrow,ヤミカラス,니로우,Murkrow,黑暗鴉
 natu,Natu,Natu,Natu,Natu,Natu,ネイティ,네이티,Natu,天然雀
@@ -293,6 +307,7 @@ nidoran+male,Nidoran♂,Nidoran♂,Nidoran♂,Nidoran♂,Nidoran♂,ニドラン
 nidorina,Nidorina,Nidorina,Nidorina,Nidorina,Nidorina,ニドリーナ,니드리나,Nidorina,尼多娜
 nidorino,Nidorino,Nidorino,Nidorino,Nidorino,Nidorino,ニドリーノ,니드리노,Nidorino,尼多力諾
 nincada,Nincada,Nincada,Nincada,Ningale,Nincada,ツチニン,토중몬,Nincada,土居忍士
+ninetales+alolan,Ninetales+alolan,Vulnona+alolan,Ninetales+alolan,Feunard+alolan,Ninetales+alolan,キュウコン,나인테일,Ninetales+alolan,九尾
 ninetales,Ninetales,Vulnona,Ninetales,Feunard,Ninetales,キュウコン,나인테일,Ninetales,九尾
 ninjask,Ninjask,Ninjask,Ninjask,Ninjask,Ninjask,テッカニン,아이스크,Ninjask,鐵面忍者
 noctowl,Noctowl,Noctuh,Noctowl,Noarfang,Noctowl,ヨルノズク,야부엉,Noctowl,貓頭夜鷹
@@ -310,6 +325,7 @@ paras,Paras,Paras,Paras,Paras,Paras,パラス,파라스,Paras,派拉斯
 parasect,Parasect,Parasek,Parasect,Parasect,Parasect,パラセクト,파라섹트,Parasect,派拉斯特
 pelipper,Pelipper,Pelipper,Pelipper,Bekipan,Pelipper,ペリッパー,패리퍼,Pelipper,大嘴鷗
 persian,Persian,Snobilikat,Persian,Persian,Persian,ペルシアン,페르시온,Persian,貓老大
+persian+alolan,Persian+alolan,Snobilikat+alolan,Persian+alolan,Persian+alolan,Persian+alolan,ペルシアン,페르시온,Persian+alolan,貓老大
 phanpy,Phanpy,Phanpy,Phanpy,Phanpy,Phanpy,ゴマゾウ,코코리,Phanpy,小小象
 phione,Phione,Phione,Phione,Phione,Phione,フィオネ,피오네,Phione,霏歐納
 pichu,Pichu,Pichu,Pichu,Pichu,Pichu,ピチュー,피츄,Pichu,皮丘
@@ -341,12 +357,15 @@ quagsire,Quagsire,Morlord,Quagsire,Maraiste,Quagsire,ヌオー,누오,Quagsire,�
 quilava,Quilava,Igelavar,Quilava,Feurisson,Quilava,マグマラシ,마그케인,Quilava,火岩鼠
 qwilfish,Qwilfish,Baldorfish,Qwilfish,Qwilfish,Qwilfish,ハリーセン,침바루,Qwilfish,千針魚
 raichu,Raichu,Raichu,Raichu,Raichu,Raichu,ライチュウ,라이츄,Raichu,雷丘
+raichu+alolan,Raichu+alolan,Raichu+alolan,Raichu+alolan,Raichu+alolan,Raichu+alolan,ライチュウ,라이츄,Raichu+alolan,雷丘
 raikou,Raikou,Raikou,Raikou,Raikou,Raikou,ライコウ,라이코,Raikou,雷公
 ralts,Ralts,Trasla,Ralts,Tarsal,Ralts,ラルトス,랄토스,Ralts,拉魯拉絲
 rampardos,Rampardos,Rameidon,Rampardos,Charkos,Rampardos,ラムパルド,램펄드,Rampardos,戰槌龍
 rapidash,Rapidash,Gallopa,Rapidash,Galopa,Rapidash,ギャロップ,날쌩마,Rapidash,烈焰馬
 raticate,Raticate,Rattikarl,Raticate,Rattatac,Raticate,ラッタ,레트라,Raticate,拉達
+raticate+alolan,Raticate+alolan,Rattikarl+alolan,Raticate+alolan,Rattatac+alolan,Raticate+alolan,ラッタ,레트라,Raticate+alolan,拉達
 rattata,Rattata,Rattfratz,Rattata,Rattata,Rattata,コラッタ,꼬렛,Rattata,小拉達
+rattata+alolan,Rattata+alolan,Rattfratz+alolan,Rattata+alolan,Rattata+alolan,Rattata+alolan,コラッタ,꼬렛,Rattata+alolan,小拉達
 rayquaza,Rayquaza,Rayquaza,Rayquaza,Rayquaza,Rayquaza,レックウザ,레쿠쟈,Rayquaza,烈空坐
 regice,Regice,Regice,Regice,Regice,Regice,レジアイス,레지아이스,Regice,雷吉艾斯
 regigigas,Regigigas,Regigigas,Regigigas,Regigigas,Regigigas,レジギガス,레지기가스,Regigigas,雷吉奇卡斯
@@ -361,10 +380,13 @@ riolu,Riolu,Riolu,Riolu,Riolu,Riolu,リオル,리오르,Riolu,利歐路
 roselia,Roselia,Roselia,Roselia,Rosélia,Roselia,ロゼリア,로젤리아,Roselia,毒薔薇
 roserade,Roserade,Roserade,Roserade,Roserade,Roserade,ロズレイド,로즈레이드,Roserade,羅絲雷朵
 rotom,Rotom,Rotom,Rotom,Motisma,Rotom,ロトム,로토무,Rotom,洛托姆
+rotom+forms,Rotom+forms,Rotom+forms,Rotom+forms,Motisma+forms,Rotom+forms,ロトム,로토무,Rotom+forms,洛托姆
 sableye,Sableye,Zobiris,Sableye,Ténéfix,Sableye,ヤミラミ,깜까미,Sableye,勾魂眼
 salamence,Salamence,Brutalanda,Salamence,Drattak,Salamence,ボーマンダ,보만다,Salamence,暴飛龍
 sandshrew,Sandshrew,Sandan,Sandshrew,Sabelette,Sandshrew,サンド,모래두지,Sandshrew,穿山鼠
+sandshrew+alolan,Sandshrew+alolan,Sandan+alolan,Sandshrew+alolan,Sabelette+alolan,Sandshrew+alolan,サンド,모래두지,Sandshrew+alolan,穿山鼠
 sandslash,Sandslash,Sandamer,Sandslash,Sablaireau,Sandslash,サンドパン,고지,Sandslash,穿山王
+sandslash+alolan,Sandslash+alolan,Sandamer+alolan,Sandslash+alolan,Sablaireau+alolan,Sandslash+alolan,サンドパン,고지,Sandslash+alolan,穿山王
 sceptile,Sceptile,Gewaldro,Sceptile,Jungko,Sceptile,ジュカイン,나무킹,Sceptile,蜥蜴王
 scizor,Scizor,Scherox,Scizor,Cizayox,Scizor,ハッサム,핫삼,Scizor,巨鉗螳螂
 scyther,Scyther,Sichlor,Scyther,Insécateur,Scyther,ストライク,스라크,Scyther,飛天螳螂
@@ -376,7 +398,8 @@ seel,Seel,Jurob,Seel,Otaria,Seel,パウワウ,쥬쥬,Seel,小海獅
 sentret,Sentret,Wiesor,Sentret,Fouinette,Sentret,オタチ,꼬리선,Sentret,尾立
 seviper,Seviper,Vipitis,Seviper,Séviper,Seviper,ハブネーク,세비퍼,Seviper,飯匙蛇
 sharpedo,Sharpedo,Tohaido,Sharpedo,Sharpedo,Sharpedo,サメハダー,샤크니아,Sharpedo,巨牙鯊
-shaymin,Shaymin,Shaymin,Shaymin,Shaymin,Shaymin,シェイミ,쉐이미,Shaymin,謝米
+shaymin+land,Shaymin+land,Shaymin+land,Shaymin+land,Shaymin+land,Shaymin+land,シェイミ,쉐이미,Shaymin+land,謝米
+shaymin+sky,Shaymin+sky,Shaymin+sky,Shaymin+sky,Shaymin+sky,Shaymin+sky,シェイミ,쉐이미,Shaymin+sky,謝米
 shedinja,Shedinja,Ninjatom,Shedinja,Munja,Shedinja,ヌケニン,껍질몬,Shedinja,脫殼忍者
 shelgon,Shelgon,Draschel,Shelgon,Drackhaus,Shelgon,コモルー,쉘곤,Shelgon,甲殼龍
 shellder,Shellder,Muschas,Shellder,Kokiyas,Shellder,シェルダー,셀러,Shellder,大舌貝
@@ -470,6 +493,7 @@ vileplume,Vileplume,Giflor,Vileplume,Rafflesia,Vileplume,ラフレシア,라플�
 volbeat,Volbeat,Volbeat,Volbeat,Muciole,Volbeat,バルビート,볼비트,Volbeat,電螢蟲
 voltorb,Voltorb,Voltobal,Voltorb,Voltorbe,Voltorb,ビリリダマ,찌리리공,Voltorb,霹靂電球
 vulpix,Vulpix,Vulpix,Vulpix,Goupix,Vulpix,ロコン,식스테일,Vulpix,六尾
+vulpix+alolan,Vulpix+alolan,Vulpix+alolan,Vulpix+alolan,Goupix+alolan,Vulpix+alolan,ロコン,식스테일,Vulpix+alolan,六尾
 wailmer,Wailmer,Wailmer,Wailmer,Wailmer,Wailmer,ホエルコ,고래왕자,Wailmer,吼吼鯨
 wailord,Wailord,Wailord,Wailord,Wailord,Wailord,ホエルオー,고래왕,Wailord,吼鯨王
 walrein,Walrein,Walraisa,Walrein,Kaimorse,Walrein,トドゼルガ,씨카이저,Walrein,帝牙海獅
@@ -484,7 +508,9 @@ wigglytuff,Wigglytuff,Knuddeluff,Wigglytuff,Grodoudou,Wigglytuff,プクリン,�
 wingull,Wingull,Wingull,Wingull,Goélise,Wingull,キャモメ,갈모매,Wingull,長翅鷗
 wobbuffet,Wobbuffet,Woingenau,Wobbuffet,Qulbutoké,Wobbuffet,ソーナンス,마자용,Wobbuffet,果然翁
 wooper,Wooper,Felino,Wooper,Axoloto,Wooper,ウパー,우파,Wooper,烏波
-wormadam,Wormadam,Burmadame,Wormadam,Cheniselle,Wormadam,ミノマダム,도롱마담,Wormadam,結草貴婦
+wormadam+trash,Wormadam+trash,Burmadame+trash,Wormadam+trash,Cheniselle+trash,Wormadam+trash,ミノマダム,도롱마담,Wormadam+trash,結草貴婦
+wormadam+sandy,Wormadam+sandy,Burmadame+sandy,Wormadam+sandy,Cheniselle+sandy,Wormadam+sandy,ミノマダム,도롱마담,Wormadam+sandy,結草貴婦
+wormadam+plant,Wormadam+plant,Burmadame+plant,Wormadam+plant,Cheniselle+plant,Wormadam+plant,ミノマダム,도롱마담,Wormadam+plant,結草貴婦
 wurmple,Wurmple,Waumpel,Wurmple,Chenipotte,Wurmple,ケムッソ,개무소,Wurmple,刺尾蟲
 wynaut,Wynaut,Isso,Wynaut,Okéoké,Wynaut,ソーナノ,마자,Wynaut,小果然
 xatu,Xatu,Xatu,Xatu,Xatu,Xatu,ネイティオ,네이티오,Xatu,天然鳥
