@@ -146,4 +146,54 @@ def iv_rank(update, context):
             logger.info("Could not perform /iv request")
             response = responses['iv_error']
             context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response)
-    
+
+"""
+This method converts a given IV in a number in the range 0..15.
+It accepts standard numbers (no operation is done), hexadecimal representation, or the circled
+numbers (white background/black background) that is used in apps such as CalcyIV.
+"""    
+def normalize_iv(iv):
+    if(iv.isdigit()):
+        # Note: we're not checking if the value is in the range 0..15.
+        return iv
+    else:
+        # Try to convert from common app representations.
+        # Hexadecimal:
+        val = "0123456789ABCDEF".find(iv)
+        if (val != -1):
+            return val
+        # Rounded white numbers
+        if (iv == "⓪" || iv == "⓿"):
+            return 0
+        elif (iv == "①" || iv == "❶"):
+            return 1
+        elif (iv == "②" || iv == "❷"):
+            return 2
+        elif (iv == "③" || iv == "❸"):
+            return 3
+        elif (iv == "④" || iv == "❹"):
+            return 4
+        elif (iv == "⑤" || iv == "❺"):
+            return 5
+        elif (iv == "⑥" || iv == "❻"):
+            return 6
+        elif (iv == "⑦" || iv == "❼"):
+            return 7
+        elif (iv == "⑧" || iv == "❽"):
+            return 8
+        elif (iv == "⑨" || iv == "❾"):
+            return 9
+        elif (iv == "⑩" || iv == "❿"):
+            return 10
+        elif (iv == "⑪" || iv == "⓫"):
+            return 11
+        elif (iv == "⑫" || iv == "⓬"):
+            return 12
+        elif (iv == "⑬" || iv == "⓭"):
+            return 13
+        elif (iv == "⑭" || iv == "⓮"):
+            return 14
+        elif (iv == "⑮" || iv == "⓯"):
+            return 15
+        else:
+            return iv
