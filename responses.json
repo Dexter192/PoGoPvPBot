@@ -144,7 +144,7 @@
 		"iv_error":"Non sono riuscito ad effettuare la richiesta",
 		"language_not_supported":"Mi dispiace, non parlo ancora questa lingua! \nLe lingue attualmente supportate sono: *{}* \nUnisciti a questo [gruppo Telegram Group](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ) se vuoi aggiungere la tua lingua!",
 		"rank_disabled":"Questa funzionalità è disattivata finché TSA non fornirà un accesso pubblico ai dati",
-		"language_hint":"I have noticed that you speak a different language. You can set your bot to your language using the /language command"
+		"language_hint":"Vedo che parli un'altra lingua, se vuoi puoi impostare il bot nella tua lingua usando il comando /language"
 	},
 	"nl":{
 		"start":["Hallo!\n\n", 
