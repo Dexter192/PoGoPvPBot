@@ -171,8 +171,8 @@ def main():
 
 
     #This is the last methon and should be used to refer to info
-    unknown_handler = MessageHandler(Filters.command, unknown)
-    dispatcher.add_handler(unknown_handler)    
+    #unknown_handler = MessageHandler(Filters.command, unknown)
+    #dispatcher.add_handler(unknown_handler)    
     updater.start_polling()
     updater.idle()
 
