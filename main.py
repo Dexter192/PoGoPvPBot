@@ -116,14 +116,21 @@ def delete_message(context):
 Any commands that we cannot process will just be deleted and a notice to the user.
 The response will be deleted after 30 seconds
 """        
-def unknown(update, context):
-    try:
-        context.bot.delete_message(chat_id=update.message.chat_id, message_id=update.message.message_id)
-    except:
-        logger.info("Cannot delete message Chat:%s MessageID:%s", update.message.chat_id, update.message.message_id)
-    bot_message = context.bot.send_message(chat_id=update.message.chat_id, text="I'm sorry! I don't understand that command. You can get a list of commands with /help.")
-    job.run_once(delete_message, 30, context=(bot_message.chat_id, bot_message.message_id))
+#def unknown(update, context):
+#    try:
+#        context.bot.delete_message(chat_id=update.message.chat_id, message_id=update.message.message_id)
+#    except:
+#        logger.info("Cannot delete message Chat:%s MessageID:%s", update.message.chat_id, update.message.message_id)
+#    bot_message = context.bot.send_message(chat_id=update.message.chat_id, text="I'm sorry! I don't understand that command. You can get a list of commands with /help.")
+#    job.run_once(delete_message, 30, context=(bot_message.chat_id, bot_message.message_id))
 
+#def test(update, context):
+#    context.bot.sendGame(chat_id=update.message.chat_id, game_short_name='PvPSimulator')
+#    print('Test')
+
+#def callback(update, context):
+#    context.bot.answer_callback_query(update.callback_query.id, url="https://www.gamee.com/game-bot/9lEE0Oh-22e00710a2e28256ba019865f2b7e186d3abb749#tgShareScoreUrl=tgb://share_game_score?hash=zmCEIujbgBWbyMMPqeLL")
+#    print()
 
 def main():
     logger.info('Started bot')
@@ -144,6 +151,10 @@ def main():
     updater.dispatcher.add_handler(CallbackQueryHandler(pvp_poll.delete_poll, pattern='delete'))
     #Check if tehre are any outdated pvp requests which we want to delete
     auto_del = job.run_repeating(pvp_poll.auto_delete, interval=900, first=0)
+    
+    #Start the game sim
+    #updater.dispatcher.add_handler(CommandHandler('test', test))
+    #updater.dispatcher.add_handler(CallbackQueryHandler(callback))
     
     #Handle /iv
     dispatcher.add_handler(CommandHandler("iv", iv_check.iv_rank))    
