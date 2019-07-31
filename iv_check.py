@@ -163,37 +163,37 @@ def normalize_iv(iv):
         if (val != -1):
             return val
         # Rounded white numbers
-        if (iv == "⓪" || iv == "⓿"):
+        if (iv == "⓪" or iv == "⓿"):
             return 0
-        elif (iv == "①" || iv == "❶"):
+        elif (iv == "①" or iv == "❶"):
             return 1
-        elif (iv == "②" || iv == "❷"):
+        elif (iv == "②" or  iv == "❷"):
             return 2
-        elif (iv == "③" || iv == "❸"):
+        elif (iv == "③" or iv == "❸"):
             return 3
-        elif (iv == "④" || iv == "❹"):
+        elif (iv == "④" or iv == "❹"):
             return 4
-        elif (iv == "⑤" || iv == "❺"):
+        elif (iv == "⑤" or iv == "❺"):
             return 5
-        elif (iv == "⑥" || iv == "❻"):
+        elif (iv == "⑥" or iv == "❻"):
             return 6
-        elif (iv == "⑦" || iv == "❼"):
+        elif (iv == "⑦" or iv == "❼"):
             return 7
-        elif (iv == "⑧" || iv == "❽"):
+        elif (iv == "⑧" or iv == "❽"):
             return 8
-        elif (iv == "⑨" || iv == "❾"):
+        elif (iv == "⑨" or iv == "❾"):
             return 9
-        elif (iv == "⑩" || iv == "❿"):
+        elif (iv == "⑩" or iv == "❿"):
             return 10
-        elif (iv == "⑪" || iv == "⓫"):
+        elif (iv == "⑪" or iv == "⓫"):
             return 11
-        elif (iv == "⑫" || iv == "⓬"):
+        elif (iv == "⑫" or iv == "⓬"):
             return 12
-        elif (iv == "⑬" || iv == "⓭"):
+        elif (iv == "⑬" or iv == "⓭"):
             return 13
-        elif (iv == "⑭" || iv == "⓮"):
+        elif (iv == "⑭" or iv == "⓮"):
             return 14
-        elif (iv == "⑮" || iv == "⓯"):
+        elif (iv == "⑮" or iv == "⓯"):
             return 15
         else:
             return iv
