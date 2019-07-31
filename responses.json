@@ -239,9 +239,9 @@
 		"iv_no_pokemon":"Eu não consegui encontrar {}",
 		"iv_optimal":"Melhores IVs para {} \n",
 		"iv_given":"Seu {} está no rank <b> {}</b>\n",
-		"iv_stats": "<b>(A/D/S):</b> {}\n<b>CP:</b> {}\n<b><b>Nível:</b> {}\nProduto estátistico:</b> {}\n<b>Percentual:</b> {}%\n<b>Percentual mínimo:</b> {}%\n",
+		"iv_stats": "<b>(A/D/S):</b> {}\n<b>CP:</b> {}\n<b>Nível:</b> {}\n<b>Produto estátistico:</b> {}\n<b>Percentual:</b> {}%\n<b>Percentual mínimo:</b> {}%\n",
 		"iv_no_argument":"Por favor, especifique um Pokémon",
-		"iv_error":"Não consegui I could not efetuar o pedido",
+		"iv_error":"Não consegui! Efetuar o pedido",
 		"language_not_supported":"Eu acredito que ainda não suporto esse idioma!\nAtualmente suportamos os seguintes idiomas: *{}* \nEntre nesse [Grupo do Telegram](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ) se você quer adicionar seu idioma!",
 		"language_hint":"I have noticed that you speak a different language. You can set your bot to your language using the /language command"
 	},
