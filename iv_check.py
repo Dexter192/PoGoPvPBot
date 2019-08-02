@@ -29,7 +29,7 @@ def iv_given(pokemon_name, initial_language, responses, att=None, de=None, sta=N
             response = responses['iv_optimal']
         #Find the Pokemon with the give IV-Distribution
         else:
-            iv = att + ' ' + de + ' ' + sta
+            iv = str(att) + ' ' + str(de) + ' ' + str(sta)
             row = df.loc[df['ivs'] == iv]
             response = responses['iv_given']
 
@@ -130,7 +130,10 @@ def iv_rank(update, context):
                    response = iv_given(evo.lower(), initial_language, responses)
                 #If the user gave IVs with the pokemon - Return where this one ranks
                 elif(len(context.args) == 4):
-                    response = iv_given(evo.lower(), initial_language, responses, context.args[1], context.args[2], context.args[3])
+                    att = normalize_iv(context.args[1])
+                    de = normalize_iv(context.args[2])
+                    sta = normalize_iv(context.args[3])
+                    response = iv_given(evo.lower(), initial_language, responses, att, de, sta)
                 logger.info('Return %s', response.encode("utf-8"))
                 
                 if different_language:
@@ -153,7 +156,7 @@ It accepts standard numbers (no operation is done), hexadecimal representation, 
 numbers (white background/black background) that is used in apps such as CalcyIV.
 """    
 def normalize_iv(iv):
-    if(iv.isdigit()):
+    if(isinstance(iv, str) and iv.isdecimal()):
         # Note: we're not checking if the value is in the range 0..15.
         return iv
     else:
