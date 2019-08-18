@@ -22,7 +22,7 @@ When the user does not give IVs, return the optimal IVs for that pokemon
 """
 def iv_given(pokemon_name, initial_language, responses, att=None, de=None, sta=None):
     try:            
-        df = pd.read_csv('ranking/'+pokemon_name+'.csv')
+        df = pd.read_csv('ranking/1500/'+pokemon_name+'.csv')
         #Check, if we want to get optimal IVs or given
         if att is None:
             row = df.loc[df['rank'] == 1]
