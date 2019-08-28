@@ -158,6 +158,8 @@ numbers (white background/black background) that is used in apps such as CalcyIV
 def normalize_iv(iv):
     if(isinstance(iv, str) and iv.isdecimal()):
         # Note: we're not checking if the value is in the range 0..15.
+        iv = max(0, int(iv))
+        iv = min(15, int(iv))
         return iv
     else:
         # Try to convert from common app representations.
