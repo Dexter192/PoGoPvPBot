@@ -2,7 +2,6 @@
 import logging
 logging.basicConfig(filename='log.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger('Info')
-from telegram.ext import Updater, MessageHandler, JobQueue
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from datetime import datetime
 import trainernames
@@ -144,11 +143,11 @@ def pvp_keyboard(response):
                 [InlineKeyboardButton(response['delete'], callback_data='delete')]]
     return InlineKeyboardMarkup(keyboard)
 
-"""
-This looks like dead code
-"""
-def get_user_name(telegramid):
-    cursor.execute("SELECT Name FROM Names WHERE TelegramID = " + str(telegramid))
+#"""
+#This looks like dead code
+#"""
+#def get_user_name(telegramid):
+#    cursor.execute("SELECT Name FROM Names WHERE TelegramID = " + str(telegramid))
 
 """
 We want to make sure, that messages will be deleted if they exist for over an hour

@@ -56,13 +56,12 @@ def get_local_name(eng_name, col_index):
     try:
         return df.loc[idx[0], col_index]
     except:
-        logger.info("Cannot find local name for (%s)", local_name)
+        logger.info("Cannot find local name for (%s)", eng_name)
 
 
 def get_english_name(local_name, group_language):
     name = local_name.lower().capitalize()
     df = pd.read_csv('pokemon_info/translations.csv')
-    idx = df.where(df == name).dropna(how='all').index
     #Drop all entries which don't match the local name
     localized = df.where(df == name).dropna(how='all')
     #Return a tuple of the first appearance of the name
@@ -127,7 +126,7 @@ def iv_rank(update, context):
             for evo in evolutions:
                 #If the user just specified a Pokemon - Return the optimal distribution
                 if(len(context.args) == 1):
-                   response = iv_given(evo.lower(), initial_language, responses)
+                    response = iv_given(evo.lower(), initial_language, responses)
                 #If the user gave IVs with the pokemon - Return where this one ranks
                 elif(len(context.args) == 4):
                     att = normalize_iv(context.args[1])
@@ -137,7 +136,6 @@ def iv_rank(update, context):
                 logger.info('Return %s', response.encode("utf-8"))
                 
                 if different_language:
-                    language_hint = responses['language_hint']
                     context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=responses['language_hint'])
 
                 #Send the response to the user
