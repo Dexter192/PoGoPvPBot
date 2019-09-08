@@ -18,11 +18,12 @@ When the user does not give IVs, return the optimal IVs for that pokemon
 @param de: The defense stat of the pokemon (def is predefined)
 @param sta: The stamina stat of the pokemon 
 @param responses: The json responses of the current language
+@param league: The desired league CP cap ('1500' or '2500')
 @return: A formatted response for the IV distribution of this pokemon
 """
-def iv_given(pokemon_name, initial_language, responses, att=None, de=None, sta=None):
+def iv_given(pokemon_name, initial_language, responses, att=None, de=None, sta=None, league='1500'):
     try:            
-        df = pd.read_csv('ranking/1500/'+pokemon_name+'.csv')
+        df = pd.read_csv('ranking/'+league+'/'+pokemon_name+'.csv')
         #Check, if we want to get optimal IVs or given
         if att is None:
             row = df.loc[df['rank'] == 1]
