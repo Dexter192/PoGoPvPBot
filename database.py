@@ -2,8 +2,7 @@
 import logging
 logging.basicConfig(filename='log.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger('Info')
-import json
-import os, sys, sqlite3
+import os, sqlite3
 import language_support
 
 jsonresponse = language_support.responses
@@ -45,11 +44,11 @@ Adds the SilphID associated with a user to the database.
 This reduces the queries to Silph since the ID doesn't
 have to be searched on their website every time
 """
-def add_silph_id(name, id):
+def add_silph_id(name, silph_id):
     conn = connect()
     cursor = conn.cursor()
     query = "INSERT INTO `Silph` (Username, SilphID) VALUES (?,?);"             
-    cursor.execute(query, (name, id,))
+    cursor.execute(query, (name, silph_id,))
     conn.commit()
     conn.close()
 
@@ -65,8 +64,8 @@ def get_silph_id(name):
     rows = cursor.fetchall()
     conn.close()
     try:
-        id = rows[0][0]
-        logger.info("Return SilphID %s from user %s", id, name)
+        silph_id = rows[0][0]
+        logger.info("Return SilphID %s from user %s", silph_id, name)
         return id
     except:
         logger.info("No SilphID for user %s", name)
