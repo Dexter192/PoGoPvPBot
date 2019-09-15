@@ -54,6 +54,10 @@ def get_local_name(eng_name, col_index):
     name = eng_name.lower().capitalize()
     df = pd.read_csv('pokemon_info/translations.csv')
     idx = df.where(df == name).dropna(how='all').index
+    if idx.empty:
+        # not found in translations, return the given name.
+        return eng_name
+
     try:
         return df.loc[idx[0], col_index]
     except:
@@ -65,6 +69,11 @@ def get_english_name(local_name, group_language):
     df = pd.read_csv('pokemon_info/translations.csv')
     #Drop all entries which don't match the local name
     localized = df.where(df == name).dropna(how='all')
+
+    if localized.size == 0:
+        # Could not find localized name, possibly a new pokemon, return the given name.
+        return local_name, local_name, False
+
     #Return a tuple of the first appearance of the name
     index_tuple = list(df[localized.notnull()].stack().index)
     different_language = True
