@@ -111,6 +111,13 @@ def iv_rank(update, context):
         context.bot.delete_message(chat_id=update.message.chat_id,message_id=update.message.message_id)
         return
     
+    league = '1500'
+    if len(context.args) > 0 and context.args[0] == '2500':
+        context.args.pop(0)
+        league = '2500'
+#    else:
+#        league = '1500'
+        
     #The user didn't specify a pokemon
     if(len(context.args) == 0):
         logger.info("Invalid pokemon")
@@ -121,19 +128,18 @@ def iv_rank(update, context):
             if context.args[0][0] is '+':
                 evolutions, initial_language, different_language = get_pokemon_family(context.args[0][1:], language)
             else:
-                
                 evolutions, initial_language, different_language = get_english_name(context.args[0], language)
                 evolutions = [evolutions]
             for evo in evolutions:
                 #If the user just specified a Pokemon - Return the optimal distribution
                 if(len(context.args) == 1):
-                    response = iv_given(evo.lower(), initial_language, responses)
+                    response = iv_given(evo.lower(), initial_language, responses, None, None, None, league)
                 #If the user gave IVs with the pokemon - Return where this one ranks
                 elif(len(context.args) == 4):
                     att = normalize_iv(context.args[1])
                     de = normalize_iv(context.args[2])
                     sta = normalize_iv(context.args[3])
-                    response = iv_given(evo.lower(), initial_language, responses, att, de, sta)
+                    response = iv_given(evo.lower(), initial_language, responses, att, de, sta, league)
                 logger.info('Return %s', response.encode("utf-8"))
                 
                 if different_language:
