@@ -5,6 +5,7 @@ logger = logging.getLogger('Info')
 import pandas as pd
 import database
 import language_support
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 #The json file of currently supported language responses
 jsonresponse = language_support.responses
@@ -21,7 +22,7 @@ When the user does not give IVs, return the optimal IVs for that pokemon
 @param league: The desired league CP cap ('1500' or '2500')
 @return: A formatted response for the IV distribution of this pokemon
 """
-def iv_given(pokemon_name, initial_language, responses, att=None, de=None, sta=None, league='1500'):
+def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=None, sta=None, league='1500'):
     try:            
         df = pd.read_csv('ranking/'+league+'/'+pokemon_name+'.csv')
         #Check, if we want to get optimal IVs or given
@@ -42,8 +43,22 @@ def iv_given(pokemon_name, initial_language, responses, att=None, de=None, sta=N
         
         local_name = get_local_name(pokemon_name, initial_language)
         response = response.format(local_name.capitalize(), row.iloc[0]['rank'])
-        response += responses['iv_stats']
-        response = response.format(row.iloc[0]['ivs'], row.iloc[0]['cp'], row.iloc[0]['maxlevel'], row.iloc[0]['stat-product'], percent, percent_worst)
+        
+        if iv_config[1]:
+            response += responses['iv_stats_IV'].format(row.iloc[0]['ivs'])
+        if iv_config[2]:
+            response += responses['iv_stats_CP'].format(row.iloc[0]['cp'])
+        if iv_config[3]:
+            response += responses['iv_stats_Level'].format(row.iloc[0]['maxlevel'])
+        if iv_config[4]:
+            response += responses['iv_stats_StatProduct'].format(row.iloc[0]['stat-product'])
+        if iv_config[5]:
+            response += responses['iv_stats_Percent'].format(percent)
+        if iv_config[6]:
+            response += responses['iv_stats_PercentMinimum'].format(percent_worst)
+               
+#        response += responses['iv_stats']
+#        response = response.format(row.iloc[0]['ivs'], row.iloc[0]['cp'], row.iloc[0]['maxlevel'], row.iloc[0]['stat-product'], percent, percent_worst)
         return response
     #We cannot find this pokemon
     except:
@@ -122,9 +137,13 @@ def iv_rank(update, context):
     if(len(context.args) == 0):
         logger.info("Invalid pokemon")
         response = responses['iv_no_argument']
-        context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response)
+        context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=iv_keyboard())
+
     else:
         try:
+            #Load the IV_Config for the current chat id (i.e. which attributes should be returned)
+            iv_config = database.get_iv_config(update.message.chat_id)
+            
             if context.args[0][0] is '+':
                 evolutions, initial_language, different_language = get_pokemon_family(context.args[0][1:], language)
             else:
@@ -133,13 +152,13 @@ def iv_rank(update, context):
             for evo in evolutions:
                 #If the user just specified a Pokemon - Return the optimal distribution
                 if(len(context.args) == 1):
-                    response = iv_given(evo.lower(), initial_language, responses, None, None, None, league)
+                    response = iv_given(evo.lower(), initial_language, responses, iv_config, None, None, None, league)
                 #If the user gave IVs with the pokemon - Return where this one ranks
                 elif(len(context.args) == 4):
                     att = normalize_iv(context.args[1])
                     de = normalize_iv(context.args[2])
                     sta = normalize_iv(context.args[3])
-                    response = iv_given(evo.lower(), initial_language, responses, att, de, sta, league)
+                    response = iv_given(evo.lower(), initial_language, responses, iv_config, att, de, sta, league)
                 logger.info('Return %s', response.encode("utf-8"))
                 
                 if different_language:
@@ -207,3 +226,19 @@ def normalize_iv(iv):
             return 15
         else:
             return iv
+
+"""
+Button markup for IV response customisation
+"""
+def iv_keyboard():
+    keyboard = [[InlineKeyboardButton('IV', callback_data='IV')],
+                [InlineKeyboardButton('CP', callback_data='CP')], 
+                [InlineKeyboardButton('Level', callback_data='Level')], 
+                [InlineKeyboardButton('Stat Product', callback_data='Stat Product')], 
+                [InlineKeyboardButton('Percent', callback_data='Percent')], 
+                [InlineKeyboardButton('Percent minimum', callback_data='Percent minimum')]]
+    return InlineKeyboardMarkup(keyboard)
+
+def update_response(update, context):
+    database.configure_iv_response(update._effective_chat.id, context.matches[0].string)
+    return

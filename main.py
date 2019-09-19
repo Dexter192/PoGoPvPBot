@@ -159,6 +159,14 @@ def main():
     #Handle /iv
     dispatcher.add_handler(CommandHandler("iv", iv_check.iv_rank))    
     
+    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='IV'))
+    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='CP'))
+    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Level'))
+    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Stat Product'))
+    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Percent'))
+    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Percent minimum'))
+
+    
     #Handle /language
     dispatcher.add_handler(CommandHandler("language", language))    
 

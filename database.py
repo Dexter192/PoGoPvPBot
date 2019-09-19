@@ -23,6 +23,8 @@ def create_db():
     cursor.execute(sql)
     sql = "CREATE TABLE `Groups` (`GroupID` INT PRIMARY KEY NOT NULL, `Rank` BOOLEAN, `IV` BOOLEAN, `Attacks` BOOLEAN, `Language` TEXT)"
     cursor.execute(sql)
+    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0)"
+    cursor.execute(sql)
     connection.commit()
     connection.close()
 
@@ -117,6 +119,55 @@ def toggle_groups(update, context, type):
         context.bot.delete_message(chat_id=update.message.chat_id,message_id=update.message.message_id)
 
 """
+Update which IV attributes should be returned.
+"""
+def configure_iv_response(chat_id, field):
+    #Connect to database and prepare queries
+    conn = connect()
+    cursor = conn.cursor()
+    insert = "INSERT INTO `IV` (TelegramID," + field + ") VALUES (?,?);"
+    change = "UPDATE `IV` SET `" + field + "`=NOT `" + field + "` WHERE TelegramID=?;";
+    #Try to insert a new entry for this group
+    try:
+        cursor.execute(insert, (chat_id, False,))
+        logger.info("Insert new entry %s (%s, %s)", insert, chat_id, False)
+    #If the entry already exists we get an error and update it instead
+    except:
+        cursor.execute(change, (chat_id,))
+        logger.info("Update entry %s (%s, %s)", change, chat_id, field)
+
+    conn.commit()
+    conn.close()
+    #Settings updated successfully. Let the user know!
+    language = get_language(chat_id)
+    response = jsonresponse[language]['settings_updated']
+    return response
+
+"""
+Queries the database and returns if we have an entry for a specific group
+Otherwise return true
+"""
+def get_iv_config(chat_id):
+    conn = connect()
+    cursor = conn.cursor()
+    query = "SELECT * FROM IV WHERE TelegramID="+str(chat_id)
+    try:
+        cursor.execute(query)
+        conn.commit()
+    except:
+        logger.warn("Could not get group!" + query)
+    rows = cursor.fetchall()
+    conn.close()
+    try:
+        logger.info("IV config: ID: %s, IV: %s, CP: %s, Level: %s, StatProd: %s, Percent: %s, PercentMin: %s, Fast: %s, Charge: %s", rows[0][0], rows[0][1], rows[0][2], rows[0][3], rows[0][4], rows[0][5], rows[0][6], rows[0][7], rows[0][8])
+        return rows[0]
+    except:
+        #If the user has customised the output we want to return the default reponse
+        #ChatID, IV, CP, Level, Stat Product, Percent, Percent minimum, FastMoves, ChargeMoves
+        return (chat_id, 1, 1, 1, 1, 1, 1, 0, 0)
+    
+
+"""
 Return if iv or rank checks are enabled in a given group
 """
 def group_enabled(group_id, type):
@@ -162,5 +213,13 @@ def get_language(group_id):
 #    connection.commit()
 #    connection.close()
 
-#if __name__ == '__main__':
-#    add_column_to_table()
+def add_table_to_db():
+    connection = sqlite3.connect("www/names.db")
+    cursor = connection.cursor()
+    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0)"
+    cursor.execute(sql)
+    connection.commit()
+    connection.close()
+
+if __name__ == '__main__':
+    add_table_to_db()
