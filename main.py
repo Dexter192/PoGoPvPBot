@@ -74,17 +74,21 @@ def start(update, context):
 Change the language setting of a group/user
 """
 def language(update, context):
+    logger.info('Language query by %s with query %s', update._effective_user.username, context.args)
     #Make sure that we only handle messages that we can speak
+    language = database.get_language(update.message.chat_id)
+    if update.message.chat_id < 0:
+        admins = (admin.user.id for admin in context.bot.get_chat_administrators(update.message.chat.id))     
+        if update._effective_user.id not in admins:
+            response = responses[language]['only_for_admins']
+            bot_message = context.bot.send_message(parse_mode='Markdown', chat_id=update.message.chat_id, text=response)
+            return 
+        
     if len(context.args) == 1 and context.args[0].lower() in supported_languages:
         database.toggle_groups(update, context, 'Language')
     #If we reject the input we try to delete the users message and let him know which languages we speak
     else:
-        try:
-            context.bot.delete_message(chat_id=update.message.chat_id,message_id=update.message.message_id)
-        except:
-            logger.info("Cannot delete message Chat:%s MessageID:%s", update.message.chat_id, update.message.message_id)
         #Get the language that we are speaking in this group and tell the user which languages we can speak
-        language = database.get_language(update.message.chat_id)
         response = responses[language]['language_not_supported']
         response = response.format(supported_languages)
         bot_message = context.bot.send_message(parse_mode='Markdown', chat_id=update.message.chat_id, text=response)
@@ -165,6 +169,7 @@ def main():
     updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Stat Product'))
     updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Percent'))
     updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Percent minimum'))
+    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.confirm_config, pattern='Confirm'))
 
     
     #Handle /language

@@ -135,10 +135,20 @@ def iv_rank(update, context):
         
     #The user didn't specify a pokemon
     if(len(context.args) == 0):
-        logger.info("Invalid pokemon")
-        response = responses['iv_no_argument']
-        context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=iv_keyboard())
-
+        if update.message.chat_id < 0:
+            admins = (admin.user.id for admin in context.bot.get_chat_administrators(update.message.chat.id))     
+            if update._effective_user.id in admins:
+                response = responses['iv_menu']
+                context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=iv_keyboard())
+            else:
+                response = responses['only_for_admins']
+                bot_message = context.bot.send_message(parse_mode='Markdown', chat_id=update.message.chat_id, text=response)
+                return 
+        else:    
+            logger.info("Invalid pokemon")
+            response = responses['iv_menu']
+            context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=iv_keyboard())
+            
     else:
         try:
             #Load the IV_Config for the current chat id (i.e. which attributes should be returned)
@@ -236,9 +246,21 @@ def iv_keyboard():
                 [InlineKeyboardButton('Level', callback_data='Level')], 
                 [InlineKeyboardButton('Stat Product', callback_data='Stat Product')], 
                 [InlineKeyboardButton('Percent', callback_data='Percent')], 
-                [InlineKeyboardButton('Percent minimum', callback_data='Percent minimum')]]
+                [InlineKeyboardButton('Percent minimum', callback_data='Percent minimum')],
+                [InlineKeyboardButton('Confirm', callback_data='Confirm')]]
     return InlineKeyboardMarkup(keyboard)
 
+def confirm_config(update, context):
+    try:
+        query = update.callback_query
+        context.bot.delete_message(chat_id=query.message.chat_id, message_id=update.effective_message.message_id)    
+    except:
+        logger.info("Cannot delete message Chat:%s MessageID:%s", update.message.chat_id, update.message.message_id)
+    return
+
 def update_response(update, context):
-    database.configure_iv_response(update._effective_chat.id, context.matches[0].string)
+    if update.message.chat_id < 0:
+        admins = (admin.user.id for admin in context.bot.get_chat_administrators(update.message.chat.id))     
+        if update._effective_user.id in admins:
+            database.configure_iv_response(update._effective_chat.id, context.matches[0].string)
     return
