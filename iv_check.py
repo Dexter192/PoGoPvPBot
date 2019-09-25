@@ -252,7 +252,7 @@ Button markup for IV response customisation
 """
 def iv_keyboard():
     keyboard = [[InlineKeyboardButton('IV', callback_data='IV')],
-                [InlineKeyboardButton('IV-Percent', callback_data='IV-Percent')],
+                [InlineKeyboardButton('IV Percent', callback_data='IV Percent')],
                 [InlineKeyboardButton('CP', callback_data='CP')], 
                 [InlineKeyboardButton('Level', callback_data='Level')], 
                 [InlineKeyboardButton('Stat Product', callback_data='Stat Product')], 
