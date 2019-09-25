@@ -159,12 +159,12 @@ def get_iv_config(chat_id):
     rows = cursor.fetchall()
     conn.close()
     try:
-        logger.info("IV config: ID: %s, IV: %s, CP: %s, Level: %s, StatProd: %s, Percent: %s, PercentMin: %s, Fast: %s, Charge: %s", rows[0][0], rows[0][1], rows[0][2], rows[0][3], rows[0][4], rows[0][5], rows[0][6], rows[0][7], rows[0][8])
+        logger.info("IV config: ID: %s, IV: %s, CP: %s, Level: %s, StatProd: %s, Percent: %s, PercentMin: %s, IV-Percent: %s, Fast: %s, Charge: %s", rows[0][0], rows[0][1], rows[0][2], rows[0][3], rows[0][4], rows[0][5], rows[0][6], rows[0][7], rows[0][8], rows[0][9])
         return rows[0]
     except:
         #If the user has customised the output we want to return the default reponse
-        #ChatID, IV, CP, Level, Stat Product, Percent, Percent minimum, FastMoves, ChargeMoves
-        return (chat_id, 1, 1, 1, 1, 1, 1, 0, 0)
+        #ChatID, IV, CP, Level, Stat Product, Percent, Percent minimum, IV-percent, FastMoves, ChargeMoves
+        return (chat_id, 1, 1, 1, 1, 1, 1, 0, 0, 0)
     
 
 """
@@ -216,7 +216,7 @@ def get_language(group_id):
 def add_table_to_db():
     connection = sqlite3.connect("www/names.db")
     cursor = connection.cursor()
-    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0)"
+    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `IV Percent` BOOLEAN  NOT NULL DEFAULT 0, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0)"
     cursor.execute(sql)
     connection.commit()
     connection.close()

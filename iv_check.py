@@ -43,22 +43,32 @@ def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=
         
         local_name = get_local_name(pokemon_name, initial_language)
         response = response.format(local_name.capitalize(), row.iloc[0]['rank'])
-        
+        #Print IV Distribution
         if iv_config[1]:
             response += responses['iv_stats_IV'].format(row.iloc[0]['ivs'])
+            #Print IV percent
+            if iv_config[7]:
+                ivs = row.iloc[0]['ivs'].split(' ')
+                percent = round(((int(ivs[0]) + int(ivs[1]) + int(ivs[2]))/45)*100,2)
+                response += ' - ' + str(percent) + '%\n'
+            else:
+                response += '\n'
+        #Print CP
         if iv_config[2]:
             response += responses['iv_stats_CP'].format(row.iloc[0]['cp'])
+        #Print Level
         if iv_config[3]:
             response += responses['iv_stats_Level'].format(row.iloc[0]['maxlevel'])
+        #Print Stat product
         if iv_config[4]:
             response += responses['iv_stats_StatProduct'].format(row.iloc[0]['stat-product'])
+        #Print Stat percent
         if iv_config[5]:
             response += responses['iv_stats_Percent'].format(percent)
+        #Print stat percent minimum
         if iv_config[6]:
             response += responses['iv_stats_PercentMinimum'].format(percent_worst)
                
-#        response += responses['iv_stats']
-#        response = response.format(row.iloc[0]['ivs'], row.iloc[0]['cp'], row.iloc[0]['maxlevel'], row.iloc[0]['stat-product'], percent, percent_worst)
         return response
     #We cannot find this pokemon
     except:
@@ -242,6 +252,7 @@ Button markup for IV response customisation
 """
 def iv_keyboard():
     keyboard = [[InlineKeyboardButton('IV', callback_data='IV')],
+                [InlineKeyboardButton('IV-Percent', callback_data='IV-Percent')],
                 [InlineKeyboardButton('CP', callback_data='CP')], 
                 [InlineKeyboardButton('Level', callback_data='Level')], 
                 [InlineKeyboardButton('Stat Product', callback_data='Stat Product')], 
@@ -259,8 +270,10 @@ def confirm_config(update, context):
     return
 
 def update_response(update, context):
-    if update.message.chat_id < 0:
+    if update._effective_message.chat_id < 0:
         admins = (admin.user.id for admin in context.bot.get_chat_administrators(update.message.chat.id))     
         if update._effective_user.id in admins:
             database.configure_iv_response(update._effective_chat.id, context.matches[0].string)
+    else:
+        database.configure_iv_response(update._effective_chat.id, context.matches[0].string)        
     return
