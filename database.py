@@ -125,7 +125,7 @@ def configure_iv_response(chat_id, field):
     #Connect to database and prepare queries
     conn = connect()
     cursor = conn.cursor()
-    insert = "INSERT INTO `IV` (TelegramID," + field + ") VALUES (?,?);"
+    insert = "INSERT INTO `IV` (TelegramID,`" + field + "`) VALUES (?,?);"
     change = "UPDATE `IV` SET `" + field + "`=NOT `" + field + "` WHERE TelegramID=?;";
     #Try to insert a new entry for this group
     try:
@@ -216,6 +216,9 @@ def get_language(group_id):
 def add_table_to_db():
     connection = sqlite3.connect("www/names.db")
     cursor = connection.cursor()
+    sql = "DROP TABLE `IV`"
+    cursor.execute(sql)
+    connection.commit()
     sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `IV Percent` BOOLEAN  NOT NULL DEFAULT 0, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0)"
     cursor.execute(sql)
     connection.commit()

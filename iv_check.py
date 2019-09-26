@@ -271,7 +271,7 @@ def confirm_config(update, context):
 
 def update_response(update, context):
     if update._effective_message.chat_id < 0:
-        admins = (admin.user.id for admin in context.bot.get_chat_administrators(update.message.chat.id))     
+        admins = (admin.user.id for admin in context.bot.get_chat_administrators(update._effective_message.chat.id))     
         if update._effective_user.id in admins:
             database.configure_iv_response(update._effective_chat.id, context.matches[0].string)
     else:
