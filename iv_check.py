@@ -7,6 +7,7 @@ import database
 import language_support
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
+
 #The json file of currently supported language responses
 jsonresponse = language_support.responses
     
@@ -149,7 +150,7 @@ def iv_rank(update, context):
             admins = (admin.user.id for admin in context.bot.get_chat_administrators(update.message.chat.id))     
             if update._effective_user.id in admins:
                 response = responses['iv_menu']
-                context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=iv_keyboard())
+                context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=iv_keyboard(update.message.chat_id))
             else:
                 response = responses['only_for_admins']
                 bot_message = context.bot.send_message(parse_mode='Markdown', chat_id=update.message.chat_id, text=response)
@@ -157,7 +158,7 @@ def iv_rank(update, context):
         else:    
             logger.info("Invalid pokemon")
             response = responses['iv_menu']
-            context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=iv_keyboard())
+            context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=iv_keyboard(update.message.chat_id))
             
     else:
         try:
@@ -250,14 +251,19 @@ def normalize_iv(iv):
 """
 Button markup for IV response customisation
 """
-def iv_keyboard():
-    keyboard = [[InlineKeyboardButton('IV', callback_data='IV')],
-                [InlineKeyboardButton('IV Percent', callback_data='IV Percent')],
-                [InlineKeyboardButton('CP', callback_data='CP')], 
-                [InlineKeyboardButton('Level', callback_data='Level')], 
-                [InlineKeyboardButton('Stat Product', callback_data='Stat Product')], 
-                [InlineKeyboardButton('Percent', callback_data='Percent')], 
-                [InlineKeyboardButton('Percent minimum', callback_data='Percent minimum')],
+def iv_keyboard(chat_id):
+    # X \u274c
+    # check \u2705
+    #Load the IV_Config for the current chat id (i.e. which attributes should be returned)
+    #ChatID, IV, CP, Level, Stat Product, Percent, Percent minimum, IV-percent, FastMoves, ChargeMoves    
+    iv_config = database.get_iv_config(chat_id)
+    keyboard = [[InlineKeyboardButton('IV {}'.format("\u2705" if iv_config[1] == 1 else "\u274c"), callback_data='IV')],
+                [InlineKeyboardButton("IV Percent {}".format("\u2705" if iv_config[7] == 1 else "\u274c"), callback_data='IV Percent')],
+                [InlineKeyboardButton("CP {}".format("\u2705" if iv_config[2] == 1 else "\u274c"), callback_data='CP')], 
+                [InlineKeyboardButton('Level {}'.format("\u2705" if iv_config[3] == 1 else "\u274c"), callback_data='Level')], 
+                [InlineKeyboardButton('Stat Product {}'.format("\u2705" if iv_config[4] == 1 else "\u274c"), callback_data='Stat Product')], 
+                [InlineKeyboardButton('Percent {}'.format("\u2705" if iv_config[5] == 1 else "\u274c"), callback_data='Percent')], 
+                [InlineKeyboardButton('Percent minimum {}'.format("\u2705" if iv_config[6] == 1 else "\u274c"), callback_data='Percent minimum')],
                 [InlineKeyboardButton('Confirm', callback_data='Confirm')]]
     return InlineKeyboardMarkup(keyboard)
 
@@ -276,4 +282,9 @@ def update_response(update, context):
             database.configure_iv_response(update._effective_chat.id, context.matches[0].string)
     else:
         database.configure_iv_response(update._effective_chat.id, context.matches[0].string)        
+    #Update the check boxes on the markup menu
+    language = database.get_language(update._effective_chat.id)
+    responses = jsonresponse[language]
+    response = responses['iv_menu']
+    context.bot.edit_message_text(chat_id=update._effective_chat.id, message_id=update._effective_message.message_id, text=response, reply_markup=iv_keyboard(update._effective_message.chat.id))
     return
