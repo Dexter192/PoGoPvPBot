@@ -24,7 +24,7 @@ def create_db():
     cursor.execute(sql)
     sql = "CREATE TABLE `Groups` (`GroupID` INT PRIMARY KEY NOT NULL, `Rank` BOOLEAN, `IV` BOOLEAN, `Attacks` BOOLEAN, `Language` TEXT)"
     cursor.execute(sql)
-    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0, `BaseStats` BOOLEAN  NOT NULL DEFAULT 0)"
+    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `IV Percent` BOOLEAN  NOT NULL DEFAULT 0, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0, `Base Stats` BOOLEAN  NOT NULL DEFAULT 0)"
     cursor.execute(sql)
     connection.commit()
     connection.close()
@@ -221,10 +221,13 @@ def get_language(group_id):
 def add_table_to_db():
     connection = sqlite3.connect("www/names.db")
     cursor = connection.cursor()
-    sql = "DROP TABLE `IV`"
-    cursor.execute(sql)
-    connection.commit()
-    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `IV Percent` BOOLEAN  NOT NULL DEFAULT 0, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0, `Base Stats` BOOLEAN  NOT NULL DEFAULT 0)"
+#    sql = "DROP TABLE `IV`"
+#    cursor.execute(sql)
+#    connection.commit()
+#    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `IV Percent` BOOLEAN  NOT NULL DEFAULT 0, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0)"
+#    cursor.execute(sql)
+#    connection.commit()
+    sql = "ALTER TABLE `IV` ADD `Base Stats` BOOLEAN NOT NULL DEFAULT 0"
     cursor.execute(sql)
     connection.commit()
     connection.close()
