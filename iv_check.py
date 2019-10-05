@@ -45,29 +45,33 @@ def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=
         local_name = get_local_name(pokemon_name, initial_language)
         response = response.format(local_name.capitalize(), row.iloc[0]['rank'])
         #Print IV Distribution
-        if iv_config[1]:
+        if iv_config['IV']:
             response += responses['iv_stats_IV'].format(row.iloc[0]['ivs'])
             #Print IV percent
-            if iv_config[7]:
+            if iv_config['IV Percent']:
                 ivs = row.iloc[0]['ivs'].split(' ')
                 percent = round(((int(ivs[0]) + int(ivs[1]) + int(ivs[2]))/45)*100,2)
                 response += ' - ' + str(percent) + '%\n'
             else:
                 response += '\n'
         #Print CP
-        if iv_config[2]:
+        if iv_config['CP']:
             response += responses['iv_stats_CP'].format(row.iloc[0]['cp'])
         #Print Level
-        if iv_config[3]:
+        if iv_config['Level']:
             response += responses['iv_stats_Level'].format(row.iloc[0]['maxlevel'])
+        #Print Base Stats
+        if iv_config['Base Stats']:
+            response += "<b>Base stats </b>" + responses['iv_stats_IV'].format(row.iloc[0]['stats'])
+            response += '\n'
         #Print Stat product
-        if iv_config[4]:
+        if iv_config['Stat Product']:
             response += responses['iv_stats_StatProduct'].format(row.iloc[0]['stat-product'])
         #Print Stat percent
-        if iv_config[5]:
+        if iv_config['Percent']:
             response += responses['iv_stats_Percent'].format(percent)
         #Print stat percent minimum
-        if iv_config[6]:
+        if iv_config['Percent minimum']:
             response += responses['iv_stats_PercentMinimum'].format(percent_worst)
                
         return response
@@ -257,13 +261,14 @@ def iv_keyboard(chat_id):
     #Load the IV_Config for the current chat id (i.e. which attributes should be returned)
     #ChatID, IV, CP, Level, Stat Product, Percent, Percent minimum, IV-percent, FastMoves, ChargeMoves    
     iv_config = database.get_iv_config(chat_id)
-    keyboard = [[InlineKeyboardButton('IV {}'.format("\u2705" if iv_config[1] == 1 else "\u274c"), callback_data='IV')],
-                [InlineKeyboardButton("IV Percent {}".format("\u2705" if iv_config[7] == 1 else "\u274c"), callback_data='IV Percent')],
-                [InlineKeyboardButton("CP {}".format("\u2705" if iv_config[2] == 1 else "\u274c"), callback_data='CP')], 
-                [InlineKeyboardButton('Level {}'.format("\u2705" if iv_config[3] == 1 else "\u274c"), callback_data='Level')], 
-                [InlineKeyboardButton('Stat Product {}'.format("\u2705" if iv_config[4] == 1 else "\u274c"), callback_data='Stat Product')], 
-                [InlineKeyboardButton('Percent {}'.format("\u2705" if iv_config[5] == 1 else "\u274c"), callback_data='Percent')], 
-                [InlineKeyboardButton('Percent minimum {}'.format("\u2705" if iv_config[6] == 1 else "\u274c"), callback_data='Percent minimum')],
+    keyboard = [[InlineKeyboardButton('IV {}'.format("\u2705" if iv_config['IV'] == 1 else "\u274c"), callback_data='IV')],
+                [InlineKeyboardButton("IV Percent {}".format("\u2705" if iv_config['IV Percent'] == 1 else "\u274c"), callback_data='IV Percent')],
+                [InlineKeyboardButton("CP {}".format("\u2705" if iv_config['CP'] == 1 else "\u274c"), callback_data='CP')], 
+                [InlineKeyboardButton('Level {}'.format("\u2705" if iv_config['Stat Product'] == 1 else "\u274c"), callback_data='Level')],
+                [InlineKeyboardButton('Base Stats {}'.format("\u2705" if iv_config['Base Stats'] == 1 else "\u274c"), callback_data='Base Stats')],
+                [InlineKeyboardButton('Stat Product {}'.format("\u2705" if iv_config['Stat Product'] == 1 else "\u274c"), callback_data='Stat Product')], 
+                [InlineKeyboardButton('Percent {}'.format("\u2705" if iv_config['Percent'] == 1 else "\u274c"), callback_data='Percent')], 
+                [InlineKeyboardButton('Percent minimum {}'.format("\u2705" if iv_config['Percent minimum'] == 1 else "\u274c"), callback_data='Percent minimum')],
                 [InlineKeyboardButton('Confirm', callback_data='Confirm')]]
     return InlineKeyboardMarkup(keyboard)
 
@@ -286,5 +291,9 @@ def update_response(update, context):
     language = database.get_language(update._effective_chat.id)
     responses = jsonresponse[language]
     response = responses['iv_menu']
-    context.bot.edit_message_text(chat_id=update._effective_chat.id, message_id=update._effective_message.message_id, text=response, reply_markup=iv_keyboard(update._effective_message.chat.id))
+    try:
+        context.bot.edit_message_text(chat_id=update._effective_chat.id, message_id=update._effective_message.message_id, text=response, reply_markup=iv_keyboard(update._effective_message.chat.id))
+        logger.info("Updated IV output for group " + str(update._effective_chat.id))
+    except:
+        logger.info("Could not edit message in group " + str(update._effective_chat.id))
     return
