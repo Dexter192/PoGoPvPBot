@@ -264,7 +264,7 @@ def iv_keyboard(chat_id):
     keyboard = [[InlineKeyboardButton('IV {}'.format("\u2705" if iv_config['IV'] == 1 else "\u274c"), callback_data='IV')],
                 [InlineKeyboardButton("IV Percent {}".format("\u2705" if iv_config['IV Percent'] == 1 else "\u274c"), callback_data='IV Percent')],
                 [InlineKeyboardButton("CP {}".format("\u2705" if iv_config['CP'] == 1 else "\u274c"), callback_data='CP')], 
-                [InlineKeyboardButton('Level {}'.format("\u2705" if iv_config['Stat Product'] == 1 else "\u274c"), callback_data='Level')],
+                [InlineKeyboardButton('Level {}'.format("\u2705" if iv_config['Level'] == 1 else "\u274c"), callback_data='Level')],
                 [InlineKeyboardButton('Base Stats {}'.format("\u2705" if iv_config['Base Stats'] == 1 else "\u274c"), callback_data='Base Stats')],
                 [InlineKeyboardButton('Stat Product {}'.format("\u2705" if iv_config['Stat Product'] == 1 else "\u274c"), callback_data='Stat Product')], 
                 [InlineKeyboardButton('Percent {}'.format("\u2705" if iv_config['Percent'] == 1 else "\u274c"), callback_data='Percent')], 
