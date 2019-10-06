@@ -4,6 +4,7 @@ logging.basicConfig(filename='log.log', format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger('Info')
 import os, sqlite3
 import language_support
+import numpy as np
 
 jsonresponse = language_support.responses
 
@@ -23,7 +24,7 @@ def create_db():
     cursor.execute(sql)
     sql = "CREATE TABLE `Groups` (`GroupID` INT PRIMARY KEY NOT NULL, `Rank` BOOLEAN, `IV` BOOLEAN, `Attacks` BOOLEAN, `Language` TEXT)"
     cursor.execute(sql)
-    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0)"
+    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `IV Percent` BOOLEAN  NOT NULL DEFAULT 0, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0, `Base Stats` BOOLEAN  NOT NULL DEFAULT 0)"
     cursor.execute(sql)
     connection.commit()
     connection.close()
@@ -157,14 +158,18 @@ def get_iv_config(chat_id):
     except:
         logger.warn("Could not get group!" + query)
     rows = cursor.fetchall()
+    names = list(map(lambda x: x[0], cursor.description))
     conn.close()
     try:
-        logger.info("IV config: ID: %s, IV: %s, CP: %s, Level: %s, StatProd: %s, Percent: %s, PercentMin: %s, IV-Percent: %s, Fast: %s, Charge: %s", rows[0][0], rows[0][1], rows[0][2], rows[0][3], rows[0][4], rows[0][5], rows[0][6], rows[0][7], rows[0][8], rows[0][9])
-        return rows[0]
+        config = dict(zip(names, rows[0]))
+        logger.info("IV config: %s", config)
     except:
         #If the user has customised the output we want to return the default reponse
         #ChatID, IV, CP, Level, Stat Product, Percent, Percent minimum, IV-percent, FastMoves, ChargeMoves
-        return (chat_id, 1, 1, 1, 1, 1, 1, 0, 0, 0)
+        default_config = [chat_id, 1, 1, 1, 1, 1, 1]
+        filler = np.zeros(len(names)-len(default_config))
+        config = dict(zip(names, [*default_config, *filler]))
+    return config
     
 
 """
@@ -216,10 +221,13 @@ def get_language(group_id):
 def add_table_to_db():
     connection = sqlite3.connect("www/names.db")
     cursor = connection.cursor()
-    sql = "DROP TABLE `IV`"
-    cursor.execute(sql)
-    connection.commit()
-    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `IV Percent` BOOLEAN  NOT NULL DEFAULT 0, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0)"
+#    sql = "DROP TABLE `IV`"
+#    cursor.execute(sql)
+#    connection.commit()
+#    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `IV Percent` BOOLEAN  NOT NULL DEFAULT 0, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0)"
+#    cursor.execute(sql)
+#    connection.commit()
+    sql = "ALTER TABLE `IV` ADD `Base Stats` BOOLEAN NOT NULL DEFAULT 0"
     cursor.execute(sql)
     connection.commit()
     connection.close()
