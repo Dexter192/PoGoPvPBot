@@ -1,0 +1,662 @@
+{
+    "all": {
+        "banette": {
+            "name": "Banette",
+            "percent": 6
+        },
+        "bastiodon": {
+            "name": "Bastiodon",
+            "percent": 10
+        },
+        "blaziken": {
+            "name": "Blaziken",
+            "percent": 2
+        },
+        "breloom": {
+            "name": "Breloom",
+            "percent": 1
+        },
+        "bronzong": {
+            "name": "Bronzong",
+            "percent": 7
+        },
+        "claydol": {
+            "name": "Claydol",
+            "percent": 18
+        },
+        "cresselia": {
+            "name": "Cresselia",
+            "percent": 9
+        },
+        "drifblim": {
+            "name": "Drifblim",
+            "percent": 27
+        },
+        "dusclops": {
+            "name": "Dusclops",
+            "percent": 19
+        },
+        "dusknoir": {
+            "name": "Dusknoir",
+            "percent": 1
+        },
+        "empoleon": {
+            "name": "Empoleon",
+            "percent": 8
+        },
+        "forretress": {
+            "name": "Forretress",
+            "percent": 2
+        },
+        "froslass": {
+            "name": "Froslass",
+            "percent": 3
+        },
+        "gallade": {
+            "name": "Gallade",
+            "percent": 4
+        },
+        "gardevoir": {
+            "name": "Gardevoir",
+            "percent": 11
+        },
+        "gengar": {
+            "name": "Gengar",
+            "percent": 1
+        },
+        "girafarig": {
+            "name": "Girafarig",
+            "percent": 4
+        },
+        "grumpig": {
+            "name": "Grumpig",
+            "percent": 1
+        },
+        "hariyama": {
+            "name": "Hariyama",
+            "percent": 1
+        },
+        "haunter": {
+            "name": "Haunter",
+            "percent": 11
+        },
+        "heracross": {
+            "name": "Heracross",
+            "percent": 1
+        },
+        "hitmonchan": {
+            "name": "Hitmonchan",
+            "percent": 3
+        },
+        "jynx": {
+            "name": "Jynx",
+            "percent": 1
+        },
+        "latias": {
+            "name": "Latias",
+            "percent": 3
+        },
+        "lucario": {
+            "name": "Lucario",
+            "percent": 4
+        },
+        "lugia": {
+            "name": "Lugia",
+            "percent": 3
+        },
+        "machamp": {
+            "name": "Machamp",
+            "percent": 1
+        },
+        "machoke": {
+            "name": "Machoke",
+            "percent": 1
+        },
+        "magneton": {
+            "name": "Magneton",
+            "percent": 1
+        },
+        "marowak-alola": {
+            "name": "Alolan Marowak",
+            "percent": 62
+        },
+        "mawile": {
+            "name": "Mawile",
+            "percent": 21
+        },
+        "medicham": {
+            "name": "Medicham",
+            "percent": 18
+        },
+        "misdreavus": {
+            "name": "Misdreavus",
+            "percent": 1
+        },
+        "mismagius": {
+            "name": "Mismagius",
+            "percent": 1
+        },
+        "mr-mime": {
+            "name": "Mr. Mime",
+            "percent": 1
+        },
+        "poliwrath": {
+            "name": "Poliwrath",
+            "percent": 56
+        },
+        "primeape": {
+            "name": "Primeape",
+            "percent": 6
+        },
+        "probopass": {
+            "name": "Probopass",
+            "percent": 6
+        },
+        "raichu-alola": {
+            "name": "Alolan Raichu",
+            "percent": 7
+        },
+        "sandslash-alola": {
+            "name": "Alolan Sandslash",
+            "percent": 1
+        },
+        "scizor": {
+            "name": "Scizor",
+            "percent": 2
+        },
+        "slowbro": {
+            "name": "Slowbro",
+            "percent": 3
+        },
+        "slowking": {
+            "name": "Slowking",
+            "percent": 1
+        },
+        "starmie": {
+            "name": "Starmie",
+            "percent": 1
+        },
+        "steelix": {
+            "name": "Steelix",
+            "percent": 64
+        },
+        "toxicroak": {
+            "name": "Toxicroak",
+            "percent": 3
+        },
+        "xatu": {
+            "name": "Xatu",
+            "percent": 2
+        }
+    },
+    "all1Week": {
+        "banette": {
+            "name": "Banette",
+            "percent": 6
+        },
+        "bastiodon": {
+            "name": "Bastiodon",
+            "percent": 9
+        },
+        "blaziken": {
+            "name": "Blaziken",
+            "percent": 3
+        },
+        "breloom": {
+            "name": "Breloom",
+            "percent": 1
+        },
+        "bronzong": {
+            "name": "Bronzong",
+            "percent": 7
+        },
+        "claydol": {
+            "name": "Claydol",
+            "percent": 18
+        },
+        "cresselia": {
+            "name": "Cresselia",
+            "percent": 9
+        },
+        "drifblim": {
+            "name": "Drifblim",
+            "percent": 27
+        },
+        "dusclops": {
+            "name": "Dusclops",
+            "percent": 19
+        },
+        "dusknoir": {
+            "name": "Dusknoir",
+            "percent": 1
+        },
+        "empoleon": {
+            "name": "Empoleon",
+            "percent": 8
+        },
+        "forretress": {
+            "name": "Forretress",
+            "percent": 2
+        },
+        "froslass": {
+            "name": "Froslass",
+            "percent": 3
+        },
+        "gallade": {
+            "name": "Gallade",
+            "percent": 4
+        },
+        "gardevoir": {
+            "name": "Gardevoir",
+            "percent": 11
+        },
+        "gengar": {
+            "name": "Gengar",
+            "percent": 1
+        },
+        "girafarig": {
+            "name": "Girafarig",
+            "percent": 4
+        },
+        "grumpig": {
+            "name": "Grumpig",
+            "percent": 1
+        },
+        "hariyama": {
+            "name": "Hariyama",
+            "percent": 1
+        },
+        "haunter": {
+            "name": "Haunter",
+            "percent": 11
+        },
+        "heracross": {
+            "name": "Heracross",
+            "percent": 1
+        },
+        "hitmonchan": {
+            "name": "Hitmonchan",
+            "percent": 2
+        },
+        "jynx": {
+            "name": "Jynx",
+            "percent": 1
+        },
+        "latias": {
+            "name": "Latias",
+            "percent": 3
+        },
+        "lucario": {
+            "name": "Lucario",
+            "percent": 4
+        },
+        "lugia": {
+            "name": "Lugia",
+            "percent": 3
+        },
+        "machamp": {
+            "name": "Machamp",
+            "percent": 1
+        },
+        "machoke": {
+            "name": "Machoke",
+            "percent": 1
+        },
+        "magneton": {
+            "name": "Magneton",
+            "percent": 1
+        },
+        "marowak-alola": {
+            "name": "Alolan Marowak",
+            "percent": 63
+        },
+        "mawile": {
+            "name": "Mawile",
+            "percent": 22
+        },
+        "medicham": {
+            "name": "Medicham",
+            "percent": 18
+        },
+        "misdreavus": {
+            "name": "Misdreavus",
+            "percent": 1
+        },
+        "mismagius": {
+            "name": "Mismagius",
+            "percent": 1
+        },
+        "mr-mime": {
+            "name": "Mr. Mime",
+            "percent": 1
+        },
+        "poliwrath": {
+            "name": "Poliwrath",
+            "percent": 56
+        },
+        "primeape": {
+            "name": "Primeape",
+            "percent": 6
+        },
+        "probopass": {
+            "name": "Probopass",
+            "percent": 6
+        },
+        "raichu-alola": {
+            "name": "Alolan Raichu",
+            "percent": 7
+        },
+        "sandslash-alola": {
+            "name": "Alolan Sandslash",
+            "percent": 1
+        },
+        "scizor": {
+            "name": "Scizor",
+            "percent": 2
+        },
+        "slowbro": {
+            "name": "Slowbro",
+            "percent": 3
+        },
+        "slowking": {
+            "name": "Slowking",
+            "percent": 1
+        },
+        "starmie": {
+            "name": "Starmie",
+            "percent": 1
+        },
+        "steelix": {
+            "name": "Steelix",
+            "percent": 64
+        },
+        "toxicroak": {
+            "name": "Toxicroak",
+            "percent": 3
+        },
+        "xatu": {
+            "name": "Xatu",
+            "percent": 2
+        }
+    },
+    "victors": {
+        "banette": {
+            "name": "Banette",
+            "percent": 4
+        },
+        "bastiodon": {
+            "name": "Bastiodon",
+            "percent": 6
+        },
+        "blaziken": {
+            "name": "Blaziken",
+            "percent": 1
+        },
+        "bronzong": {
+            "name": "Bronzong",
+            "percent": 5
+        },
+        "claydol": {
+            "name": "Claydol",
+            "percent": 13
+        },
+        "cresselia": {
+            "name": "Cresselia",
+            "percent": 7
+        },
+        "drifblim": {
+            "name": "Drifblim",
+            "percent": 19
+        },
+        "dusclops": {
+            "name": "Dusclops",
+            "percent": 15
+        },
+        "dusknoir": {
+            "name": "Dusknoir",
+            "percent": 1
+        },
+        "empoleon": {
+            "name": "Empoleon",
+            "percent": 6
+        },
+        "forretress": {
+            "name": "Forretress",
+            "percent": 1
+        },
+        "froslass": {
+            "name": "Froslass",
+            "percent": 2
+        },
+        "gallade": {
+            "name": "Gallade",
+            "percent": 3
+        },
+        "gardevoir": {
+            "name": "Gardevoir",
+            "percent": 7
+        },
+        "girafarig": {
+            "name": "Girafarig",
+            "percent": 3
+        },
+        "haunter": {
+            "name": "Haunter",
+            "percent": 7
+        },
+        "hitmonchan": {
+            "name": "Hitmonchan",
+            "percent": 1
+        },
+        "latias": {
+            "name": "Latias",
+            "percent": 1
+        },
+        "lucario": {
+            "name": "Lucario",
+            "percent": 2
+        },
+        "lugia": {
+            "name": "Lugia",
+            "percent": 2
+        },
+        "machamp": {
+            "name": "Machamp",
+            "percent": 1
+        },
+        "marowak-alola": {
+            "name": "Alolan Marowak",
+            "percent": 45
+        },
+        "mawile": {
+            "name": "Mawile",
+            "percent": 15
+        },
+        "medicham": {
+            "name": "Medicham",
+            "percent": 12
+        },
+        "misdreavus": {
+            "name": "Misdreavus",
+            "percent": 1
+        },
+        "mismagius": {
+            "name": "Mismagius",
+            "percent": 1
+        },
+        "poliwrath": {
+            "name": "Poliwrath",
+            "percent": 43
+        },
+        "primeape": {
+            "name": "Primeape",
+            "percent": 4
+        },
+        "probopass": {
+            "name": "Probopass",
+            "percent": 3
+        },
+        "raichu-alola": {
+            "name": "Alolan Raichu",
+            "percent": 3
+        },
+        "scizor": {
+            "name": "Scizor",
+            "percent": 1
+        },
+        "slowbro": {
+            "name": "Slowbro",
+            "percent": 2
+        },
+        "steelix": {
+            "name": "Steelix",
+            "percent": 46
+        },
+        "toxicroak": {
+            "name": "Toxicroak",
+            "percent": 2
+        },
+        "xatu": {
+            "name": "Xatu",
+            "percent": 1
+        }
+    },
+    "victors1Week": {
+        "banette": {
+            "name": "Banette",
+            "percent": 4
+        },
+        "bastiodon": {
+            "name": "Bastiodon",
+            "percent": 6
+        },
+        "blaziken": {
+            "name": "Blaziken",
+            "percent": 1
+        },
+        "bronzong": {
+            "name": "Bronzong",
+            "percent": 5
+        },
+        "claydol": {
+            "name": "Claydol",
+            "percent": 13
+        },
+        "cresselia": {
+            "name": "Cresselia",
+            "percent": 7
+        },
+        "drifblim": {
+            "name": "Drifblim",
+            "percent": 19
+        },
+        "dusclops": {
+            "name": "Dusclops",
+            "percent": 15
+        },
+        "dusknoir": {
+            "name": "Dusknoir",
+            "percent": 1
+        },
+        "empoleon": {
+            "name": "Empoleon",
+            "percent": 6
+        },
+        "forretress": {
+            "name": "Forretress",
+            "percent": 1
+        },
+        "froslass": {
+            "name": "Froslass",
+            "percent": 2
+        },
+        "gallade": {
+            "name": "Gallade",
+            "percent": 3
+        },
+        "gardevoir": {
+            "name": "Gardevoir",
+            "percent": 7
+        },
+        "girafarig": {
+            "name": "Girafarig",
+            "percent": 3
+        },
+        "haunter": {
+            "name": "Haunter",
+            "percent": 7
+        },
+        "hitmonchan": {
+            "name": "Hitmonchan",
+            "percent": 1
+        },
+        "latias": {
+            "name": "Latias",
+            "percent": 1
+        },
+        "lucario": {
+            "name": "Lucario",
+            "percent": 2
+        },
+        "lugia": {
+            "name": "Lugia",
+            "percent": 2
+        },
+        "machamp": {
+            "name": "Machamp",
+            "percent": 1
+        },
+        "marowak-alola": {
+            "name": "Alolan Marowak",
+            "percent": 45
+        },
+        "mawile": {
+            "name": "Mawile",
+            "percent": 16
+        },
+        "medicham": {
+            "name": "Medicham",
+            "percent": 12
+        },
+        "misdreavus": {
+            "name": "Misdreavus",
+            "percent": 1
+        },
+        "poliwrath": {
+            "name": "Poliwrath",
+            "percent": 43
+        },
+        "primeape": {
+            "name": "Primeape",
+            "percent": 5
+        },
+        "probopass": {
+            "name": "Probopass",
+            "percent": 4
+        },
+        "raichu-alola": {
+            "name": "Alolan Raichu",
+            "percent": 3
+        },
+        "scizor": {
+            "name": "Scizor",
+            "percent": 1
+        },
+        "slowbro": {
+            "name": "Slowbro",
+            "percent": 2
+        },
+        "steelix": {
+            "name": "Steelix",
+            "percent": 46
+        },
+        "toxicroak": {
+            "name": "Toxicroak",
+            "percent": 2
+        },
+        "xatu": {
+            "name": "Xatu",
+            "percent": 1
+        }
+    }
+}

@@ -12,6 +12,7 @@ import database
 import requests
 import trainernames
 import language_support as lan
+import silphAPI
 pvprequests = {}
 competitors = {}
 
@@ -138,7 +139,7 @@ The response will be deleted after 30 seconds
 
 def main():
     logger.info('Started bot')
-    
+
     #Easter egg commands
     dispatcher.add_handler(CommandHandler('pbp',bop))
     dispatcher.add_handler(CommandHandler('pcp',meow))
@@ -155,6 +156,11 @@ def main():
     updater.dispatcher.add_handler(CallbackQueryHandler(pvp_poll.delete_poll, pattern='delete'))
     #Check if tehre are any outdated pvp requests which we want to delete
     auto_del = job.run_repeating(pvp_poll.auto_delete, interval=900, first=0)
+    
+    #Initialise update calls for the silph api data
+    job.run_once(silphAPI.update_data, 0, context=(job, "sinister"))
+#    job.run_once(delete_message, 30, context=(bot_message.chat_id, bot_message.message_id))
+
     
     #Start the game sim
     #updater.dispatcher.add_handler(CommandHandler('test', test))
