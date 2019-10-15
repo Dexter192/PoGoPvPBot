@@ -79,6 +79,14 @@ def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=
     except:
         response = responses['iv_no_pokemon']
         return response.format(pokemon_name)
+    
+    """TODO: This should be refactored! """
+def iv_given_rank(pokemon_name, initial_language, responses, iv_config, rank, league='1500'):
+        df = pd.read_csv('ranking/'+league+'/'+pokemon_name+'.csv')
+        ivs = df.loc[int(rank)-1]['ivs']
+        ivs = ivs.split(' ')
+        response = iv_given(pokemon_name, initial_language, responses, iv_config, ivs[0], ivs[1], ivs[2], league)
+        return response
 
 def get_local_name(eng_name, col_index):
     name = eng_name.lower().capitalize()
@@ -178,6 +186,11 @@ def iv_rank(update, context):
                 #If the user just specified a Pokemon - Return the optimal distribution
                 if(len(context.args) == 1):
                     response = iv_given(evo.lower(), initial_language, responses, iv_config, None, None, None, league)
+                #When a user requests a specific rank
+                if(len(context.args) == 2):
+                    rank = context.args[1]
+                    rank = context.args[1]
+                    response = iv_given_rank(evo.lower(), initial_language, responses, iv_config, rank, league)
                 #If the user gave IVs with the pokemon - Return where this one ranks
                 elif(len(context.args) == 4):
                     att = normalize_iv(context.args[1])

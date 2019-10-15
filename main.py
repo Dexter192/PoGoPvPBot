@@ -158,7 +158,7 @@ def main():
     auto_del = job.run_repeating(pvp_poll.auto_delete, interval=900, first=0)
     
     #Initialise update calls for the silph api data
-    job.run_once(silphAPI.update_data, 0, context=(job, "sinister"))
+    #job.run_once(silphAPI.update_data, 60000000, context=(job, "sinister"))
 #    job.run_once(delete_message, 30, context=(bot_message.chat_id, bot_message.message_id))
 
     
