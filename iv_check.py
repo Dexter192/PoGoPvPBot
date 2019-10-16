@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import logging
+from pandas.core.frame import DataFrame
 logging.basicConfig(filename='log.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger('Info')
 import pandas as pd
@@ -35,6 +36,10 @@ def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=
             iv = str(att) + ' ' + str(de) + ' ' + str(sta)
             row = df.loc[df['ivs'] == iv]
             response = responses['iv_given']
+
+        if df is not None and row.empty:
+            response = responses['iv_no_valid_combo']
+            return response.format(pokemon_name)
 
         #Compute the Stat product on the fly 
         optimal_stat_product = df.iloc[0]['stat-product']
