@@ -5,6 +5,7 @@ logging.basicConfig(filename='log.log', format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger('Info')
 import pandas as pd
 import database
+import numpy as np
 import language_support
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
@@ -27,6 +28,10 @@ When the user does not give IVs, return the optimal IVs for that pokemon
 def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=None, sta=None, league='1500'):
     try:            
         df = pd.read_csv('ranking/'+league+'/'+pokemon_name+'.csv')
+        
+        if iv_config['MinLevel']:
+            df = filter_min_level(df, pokemon_name)
+        
         #Check, if we want to get optimal IVs or given
         if att is None:
             row = df.loc[df['rank'] == 1]
@@ -84,6 +89,21 @@ def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=
     except:
         response = responses['iv_no_pokemon']
         return response.format(pokemon_name)
+
+def filter_min_level(df, name):
+    level_df = pd.read_csv('pokemon_info/minLevel.csv')
+    level_row = level_df.loc[level_df['Pokemon'] == name]
+    try:
+        level = level_row.iloc[0]['Level']
+    except:
+        level = 40
+    #Filter infeasible levels
+    min_df = df[df['maxlevel'] > level]
+    #Prevent re-indexing if we changed nothing
+    if min_df.shape != df.shape:
+        min_df = min_df.reset_index(drop=True)
+        min_df['rank'] = np.arange(len(min_df))+1
+    return min_df
     
     """TODO: This should be refactored! """
 def iv_given_rank(pokemon_name, initial_language, responses, iv_config, rank, league='1500'):
@@ -287,6 +307,7 @@ def iv_keyboard(chat_id):
                 [InlineKeyboardButton('Stat Product {}'.format("\u2705" if iv_config['Stat Product'] == 1 else "\u274c"), callback_data='Stat Product')], 
                 [InlineKeyboardButton('Percent {}'.format("\u2705" if iv_config['Percent'] == 1 else "\u274c"), callback_data='Percent')], 
                 [InlineKeyboardButton('Percent minimum {}'.format("\u2705" if iv_config['Percent minimum'] == 1 else "\u274c"), callback_data='Percent minimum')],
+                [InlineKeyboardButton('Feasible Level {}'.format("\u2705" if iv_config['MinLevel'] == 1 else "\u274c"), callback_data='MinLevel')],
                 [InlineKeyboardButton('Confirm', callback_data='Confirm')]]
     return InlineKeyboardMarkup(keyboard)
 

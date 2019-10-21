@@ -177,6 +177,7 @@ def main():
     updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Stat Product'))
     updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Percent'))
     updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Percent minimum'))
+    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='MinLevel'))
     updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.confirm_config, pattern='Confirm'))
 
     
