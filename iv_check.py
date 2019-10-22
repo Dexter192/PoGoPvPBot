@@ -8,7 +8,7 @@ import pandas as pd
 import database
 import numpy as np
 import language_support
-import stringdist
+import StringDist
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 
