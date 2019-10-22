@@ -98,7 +98,7 @@ def filter_min_level(df, name):
     try:
         level = level_row.iloc[0]['Level']
     except:
-        level = 40
+        level = 1
     #Filter infeasible levels
     min_df = df[df['maxlevel'] >= level]
     #Prevent re-indexing if we changed nothing
