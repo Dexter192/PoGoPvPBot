@@ -100,7 +100,7 @@ def filter_min_level(df, name):
     except:
         level = 40
     #Filter infeasible levels
-    min_df = df[df['maxlevel'] > level]
+    min_df = df[df['maxlevel'] >= level]
     #Prevent re-indexing if we changed nothing
     if min_df.shape != df.shape:
         min_df = min_df.reset_index(drop=True)
