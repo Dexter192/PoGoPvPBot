@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 import logging
 from pandas.core.frame import DataFrame
+from asn1crypto._ffi import null
 logging.basicConfig(filename='log.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger('Info')
 import pandas as pd
 import database
 import numpy as np
 import language_support
+import stringdist
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 
@@ -128,6 +130,9 @@ def get_english_name(local_name, group_language):
     df = pd.read_csv('pokemon_info/translations.csv')
     #Drop all entries which don't match the local name
     localized = df.where(df == name).dropna(how='all')
+    if localized.empty:
+        closest_name = closest_name_match(local_name, group_language, df)
+        localized = df.where(df == closest_name).dropna(how='all')
     #Return a tuple of the first appearance of the name
     index_tuple = list(df[localized.notnull()].stack().index)
     different_language = True
@@ -139,6 +144,16 @@ def get_english_name(local_name, group_language):
         return df.iloc[localized.index[0], 0], index_tuple[0][1], different_language
     except:
         logger.info("Cannot find english name for (%s)", local_name)
+        
+def closest_name_match(local_name, group_language, translations):
+    closest = float('inf')
+    closest_index = -1
+    for index, name in translations[group_language].iteritems():
+        dst = stringdist.levenshtein(local_name, name)
+        if dst < closest:
+            closest = dst
+            closest_index = index
+    return translations[group_language][closest_index]
     
 """
 This message takes a single pokemon and returns the whole family as a list
