@@ -78,6 +78,6 @@ def moves(update, context):
 
     #We got some weird input which we cannot perform
     except:
-        logger.info("Could not perform /iv request")
+        logger.info("Could not perform /move request")
         response = responses['iv_error']
         context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response)
