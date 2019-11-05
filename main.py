@@ -11,6 +11,7 @@ import re
 import database
 import requests
 import trainernames
+import moves
 import language_support as lan
 import silphAPI
 pvprequests = {}
@@ -158,7 +159,7 @@ def main():
     auto_del = job.run_repeating(pvp_poll.auto_delete, interval=900, first=0)
     
     #Initialise update calls for the silph api data
-    #job.run_once(silphAPI.update_data, 60000000, context=(job, "sinister"))
+    #job.run_once(silphAPI.update_data, 60000000, context=(job, "ferocious"))
 #    job.run_once(delete_message, 30, context=(bot_message.chat_id, bot_message.message_id))
 
     
@@ -166,6 +167,9 @@ def main():
     #updater.dispatcher.add_handler(CommandHandler('test', test))
     #updater.dispatcher.add_handler(CallbackQueryHandler(callback))
     
+    #Handle /moves
+    dispatcher.add_handler(CommandHandler("moves", moves.moves))
+
     #Handle /iv
     dispatcher.add_handler(CommandHandler("iv", iv_check.iv_rank))    
     
