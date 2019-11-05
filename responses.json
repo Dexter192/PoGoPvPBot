@@ -184,7 +184,15 @@
 		"rank_disabled":"Questa funzionalità è disattivata finché TSA non fornirà un accesso pubblico ai dati",
 		"language_hint":"Vedo che parli un'altra lingua, se vuoi puoi impostare il bot nella tua lingua usando il comando /language",
 		"only_for_admins":"Only admins can change this setting",
-		"iv_menu":"Customise your IV output"
+		"iv_menu":"Customise your IV output",
+		"moves_fast_header": "<b>Fastmoves</b>\n",
+		"moves_name": "<b>{}</b>\n",
+		"moves_type": "<b>Type:</b> {}\n",
+		"moves_damage": "<b>Damage:</b> {}\n",
+		"moves_fast_energygain": "<b>Energy gain:</b> {}\n",
+		"moves_fast_duration": "<b>Duration:</b> {}s\n",
+		"moves_charge_header": "<b>Chargemoves</b>\n",
+		"moves_charge_energycost": "<b>Energy cost:</b> {}\n"
 	},
 	"nl":{
 		"start":["Hallo!\n\n", 
@@ -241,7 +249,15 @@
 		"rank_disabled":"This feature is disabled until there is an open API by TSA",
 		"language_hint":"I have noticed that you speak a different language. You can set your bot to your language using the /language command",
 		"only_for_admins":"Only admins can change this setting",
-		"iv_menu":"Customise your IV output"
+		"iv_menu":"Customise your IV output",
+		"moves_fast_header": "<b>Fastmoves</b>\n",
+		"moves_name": "<b>{}</b>\n",
+		"moves_type": "<b>Type:</b> {}\n",
+		"moves_damage": "<b>Damage:</b> {}\n",
+		"moves_fast_energygain": "<b>Energy gain:</b> {}\n",
+		"moves_fast_duration": "<b>Duration:</b> {}s\n",
+		"moves_charge_header": "<b>Chargemoves</b>\n",
+		"moves_charge_energycost": "<b>Energy cost:</b> {}\n"
 	},
 	"prt":{
 		"start":["Olá!\n\n", 
@@ -297,7 +313,15 @@
 		"language_not_supported":"Eu acredito que ainda não suporto esse idioma!\nAtualmente suportamos os seguintes idiomas: *{}* \nEntre nesse [Grupo do Telegram](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ) se você quer adicionar seu idioma!",
 		"language_hint":"I have noticed that you speak a different language. You can set your bot to your language using the /language command",
 		"only_for_admins":"Only admins can change this setting",
-		"iv_menu":"Customise your IV output"
+		"iv_menu":"Customise your IV output",
+		"moves_fast_header": "<b>Fastmoves</b>\n",
+		"moves_name": "<b>{}</b>\n",
+		"moves_type": "<b>Type:</b> {}\n",
+		"moves_damage": "<b>Damage:</b> {}\n",
+		"moves_fast_energygain": "<b>Energy gain:</b> {}\n",
+		"moves_fast_duration": "<b>Duration:</b> {}s\n",
+		"moves_charge_header": "<b>Chargemoves</b>\n",
+		"moves_charge_energycost": "<b>Energy cost:</b> {}\n"
 	},
 	"ukr":{
 		"start":["Привіт!\n\n", 
@@ -355,7 +379,15 @@
 		"rank_disabled":"ця команда деактивована доти, доки Сілф-Арена не стане надавати відкриті API",
 		"language_hint":"I have noticed that you speak a different language. You can set your bot to your language using the /language command"	,
 		"only_for_admins":"Only admins can change this setting",
-		"iv_menu":"Customise your IV output"
+		"iv_menu":"Customise your IV output",
+		"moves_fast_header": "<b>Fastmoves</b>\n",
+		"moves_name": "<b>{}</b>\n",
+		"moves_type": "<b>Type:</b> {}\n",
+		"moves_damage": "<b>Damage:</b> {}\n",
+		"moves_fast_energygain": "<b>Energy gain:</b> {}\n",
+		"moves_fast_duration": "<b>Duration:</b> {}s\n",
+		"moves_charge_header": "<b>Chargemoves</b>\n",
+		"moves_charge_energycost": "<b>Energy cost:</b> {}\n"
 	},
 	"es": {
 		"start": [
@@ -413,7 +445,15 @@
 		"language_not_supported": "¡Me temo que aún no soporto ese idioma! \nLos idiomas disponibles son: *{}* \n¡Unete a este [Telegram Group](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ) si quieres agregar tu lenguaje!",
 		"rank_disabled": "Esta característica está deshabilitada hasta que TSA abra una API",
 		"language_hint": "He notado que hablas un idioma diferente. Puedes configurar tu bot en tu idioma usando el comando /language",
-		"only_for_admins":"Only admins can change this setting",
-		"iv_menu":"Customise your IV output"
+		"only_for_admins":"Solo administradores pueden cambiar esté ajustes",
+		"iv_menu":"Customise your IV output",
+		"moves_fast_header": "<b>Fastmoves</b>\n",
+		"moves_name": "<b>{}</b>\n",
+		"moves_type": "<b>Type:</b> {}\n",
+		"moves_damage": "<b>Damage:</b> {}\n",
+		"moves_fast_energygain": "<b>Energy gain:</b> {}\n",
+		"moves_fast_duration": "<b>Duration:</b> {}s\n",
+		"moves_charge_header": "<b>Chargemoves</b>\n",
+		"moves_charge_energycost": "<b>Energy cost:</b> {}\n"
 	}
 }
