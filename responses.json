@@ -463,15 +463,16 @@
 		"only_for_admins":"Solo administradores pueden cambiar esté ajustes",
 		"iv_menu":"Customise your IV output",
 		"moves_start": "Attacks for {}\n",
-		"moves_fast_header": "<b>Fastmoves</b> of {}\n",
+		"moves_fast_header": "<b>Movimientos rápidos</b> de {}\n",
 		"moves_name": "<b>{}</b>\n",
-		"moves_type": "<b>Type:</b> {}\n",
-		"moves_damage": "<b>Damage:</b> {}\n",
-		"moves_fast_energygain": "<b>Energy gain:</b> {}\n",
-		"moves_fast_duration": "<b>Duration:</b> {}s\n",
-		"moves_charge_header": "<b>Chargemoves of {}</b>\n",
-		"moves_charge_energycost": "<b>Energy cost:</b> {}\n",
-		"no_legacy_moves": "{} has no <b>legacy moves</b>\n",
-		"moves_legacy_header": "<b>Legacy moves</b> of {}\n"
+		"moves_type": "<b>Tipo:</b> {}\n",
+		"moves_damage": "<b>Daño:</b> {}\n",
+		"moves_fast_energygain": "<b>Ganancia de energía:</b> {}\n",
+		"moves_fast_duration": "<b>Duración:</b> {}s\n",
+		"moves_charge_header": "<b>Movimientos cargados</b> de {}\n",
+		"moves_charge_energycost": "<b>Costo de energía:</b> {}\n",
+		"no_legacy_moves": "{} No tiene <b>movimientos legado</b>\n",
+		"moves_legacy_header": "<b>Movimientos legado</b> de {}\n"
+
 	}
 }
