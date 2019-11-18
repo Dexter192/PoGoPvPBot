@@ -169,6 +169,9 @@ def main():
     
     #Handle /moves
     dispatcher.add_handler(CommandHandler("moves", moves.moves))
+    dispatcher.add_handler(CommandHandler("fast", moves.fast))
+    dispatcher.add_handler(CommandHandler("charge", moves.charge))
+    dispatcher.add_handler(CommandHandler("legacy", moves.legacy))
 
     #Handle /iv
     dispatcher.add_handler(CommandHandler("iv", iv_check.iv_rank))    

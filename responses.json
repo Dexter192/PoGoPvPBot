@@ -55,15 +55,16 @@
 		"rank_disabled":"This feature is disabled until there is an open API by TSA",
 		"language_hint":"I have noticed that you speak a different language. You can set your bot to your language using the /language command",
 		"only_for_admins":"Only admins can change this setting",
-		"moves_start": "Attacks for {}\n",
-		"moves_fast_header": "<b>Fastmoves</b>\n",
+		"moves_fast_header": "<b>Fastmoves</b> of {}\n",
 		"moves_name": "<b>{}</b>\n",
 		"moves_type": "<b>Type:</b> {}\n",
 		"moves_damage": "<b>Damage:</b> {}\n",
 		"moves_fast_energygain": "<b>Energy gain:</b> {}\n",
 		"moves_fast_duration": "<b>Duration:</b> {}s\n",
-		"moves_charge_header": "<b>Chargemoves</b>\n",
-		"moves_charge_energycost": "<b>Energy cost:</b> {}\n"
+		"moves_charge_header": "<b>Chargemoves of {}</b>\n",
+		"moves_charge_energycost": "<b>Energy cost:</b> {}\n",
+		"no_legacy_moves": "{} has no <b>legacy moves</b>\n",
+		"moves_legacy_header": "<b>Legacy moves</b> of {}\n"
 	},
 	"de": {
 		"start":["Hallo!\n\n", 
@@ -120,14 +121,16 @@
 		"only_for_admins":"Nur Admins können diese Einstellung ändern",
 		"iv_menu":"Passe die Infos von IV Anfragen an",
 		"moves_start": "Attacken für {}\n",
-		"moves_fast_header": "<b>Schnellattacken</b>\n",
+		"moves_fast_header": "<b>Schnellattacken</b> von {}\n",
 		"moves_name": "<b>{}</b>\n",
 		"moves_type": "<b>Typ:</b> {}\n",
 		"moves_damage": "<b>Schaden:</b> {}\n",
 		"moves_fast_energygain": "<b>Energie:</b> {}\n",
 		"moves_fast_duration": "<b>Dauer:</b> {}s\n",
-		"moves_charge_header": "<b>Ladeattacke</b>\n",
-		"moves_charge_energycost": "<b>Benötigte Energie:</b> {}\n"
+		"moves_charge_header": "<b>Ladeattacken von {}</b>\n",
+		"moves_charge_energycost": "<b>Benötigte Energie:</b> {}\n",
+		"no_legacy_moves": "{} hat keine <b>legacy Attacken</b>\n",
+		"moves_legacy_header": "<b>Legacy Attacken</b> von {}\n"
 	},
 	"it":{
 		"start":["Ciao!\n\n", 
@@ -186,14 +189,16 @@
 		"only_for_admins":"Only admins can change this setting",
 		"iv_menu":"Customise your IV output",
 		"moves_start": "Attacks for {}\n",
-		"moves_fast_header": "<b>Fastmoves</b>\n",
+		"moves_fast_header": "<b>Fastmoves</b> of {}\n",
 		"moves_name": "<b>{}</b>\n",
 		"moves_type": "<b>Type:</b> {}\n",
 		"moves_damage": "<b>Damage:</b> {}\n",
 		"moves_fast_energygain": "<b>Energy gain:</b> {}\n",
 		"moves_fast_duration": "<b>Duration:</b> {}s\n",
-		"moves_charge_header": "<b>Chargemoves</b>\n",
-		"moves_charge_energycost": "<b>Energy cost:</b> {}\n"
+		"moves_charge_header": "<b>Chargemoves of {}</b>\n",
+		"moves_charge_energycost": "<b>Energy cost:</b> {}\n",
+		"no_legacy_moves": "{} has no <b>legacy moves</b>\n",
+		"moves_legacy_header": "<b>Legacy moves</b> of {}\n"
 	},
 	"nl":{
 		"start":["Hallo!\n\n", 
@@ -252,14 +257,16 @@
 		"only_for_admins":"Only admins can change this setting",
 		"iv_menu":"Customise your IV output",
 		"moves_start": "Attacks for {}\n",
-		"moves_fast_header": "<b>Fastmoves</b>\n",
+		"moves_fast_header": "<b>Fastmoves</b> of {}\n",
 		"moves_name": "<b>{}</b>\n",
 		"moves_type": "<b>Type:</b> {}\n",
 		"moves_damage": "<b>Damage:</b> {}\n",
 		"moves_fast_energygain": "<b>Energy gain:</b> {}\n",
 		"moves_fast_duration": "<b>Duration:</b> {}s\n",
-		"moves_charge_header": "<b>Chargemoves</b>\n",
-		"moves_charge_energycost": "<b>Energy cost:</b> {}\n"
+		"moves_charge_header": "<b>Chargemoves of {}</b>\n",
+		"moves_charge_energycost": "<b>Energy cost:</b> {}\n",
+		"no_legacy_moves": "{} has no <b>legacy moves</b>\n",
+		"moves_legacy_header": "<b>Legacy moves</b> of {}\n"
 	},
 	"prt":{
 		"start":["Olá!\n\n", 
@@ -317,14 +324,16 @@
 		"only_for_admins":"Only admins can change this setting",
 		"iv_menu":"Customise your IV output",
 		"moves_start": "Attacks for {}\n",
-		"moves_fast_header": "<b>Fastmoves</b>\n",
+		"moves_fast_header": "<b>Fastmoves</b> of {}\n",
 		"moves_name": "<b>{}</b>\n",
 		"moves_type": "<b>Type:</b> {}\n",
 		"moves_damage": "<b>Damage:</b> {}\n",
 		"moves_fast_energygain": "<b>Energy gain:</b> {}\n",
 		"moves_fast_duration": "<b>Duration:</b> {}s\n",
-		"moves_charge_header": "<b>Chargemoves</b>\n",
-		"moves_charge_energycost": "<b>Energy cost:</b> {}\n"
+		"moves_charge_header": "<b>Chargemoves of {}</b>\n",
+		"moves_charge_energycost": "<b>Energy cost:</b> {}\n",
+		"no_legacy_moves": "{} has no <b>legacy moves</b>\n",
+		"moves_legacy_header": "<b>Legacy moves</b> of {}\n"
 	},
 	"ukr":{
 		"start":["Привіт!\n\n", 
@@ -384,14 +393,16 @@
 		"only_for_admins":"Only admins can change this setting",
 		"iv_menu":"Customise your IV output",
 		"moves_start": "Attacks for {}\n",
-		"moves_fast_header": "<b>Fastmoves</b>\n",
+		"moves_fast_header": "<b>Fastmoves</b> of {}\n",
 		"moves_name": "<b>{}</b>\n",
 		"moves_type": "<b>Type:</b> {}\n",
 		"moves_damage": "<b>Damage:</b> {}\n",
 		"moves_fast_energygain": "<b>Energy gain:</b> {}\n",
 		"moves_fast_duration": "<b>Duration:</b> {}s\n",
-		"moves_charge_header": "<b>Chargemoves</b>\n",
-		"moves_charge_energycost": "<b>Energy cost:</b> {}\n"
+		"moves_charge_header": "<b>Chargemoves of {}</b>\n",
+		"moves_charge_energycost": "<b>Energy cost:</b> {}\n",
+		"no_legacy_moves": "{} has no <b>legacy moves</b>\n",
+		"moves_legacy_header": "<b>Legacy moves</b> of {}\n"
 	},
 	"es": {
 		"start": [
@@ -417,9 +428,9 @@
 			"¡Espero que el bot mejore la experiencia PvP en tu comunidad!"
 		],
 		"poll": " quiere pelear! ¿Estás listo para la batalla?",
-		"league": "\n*League: *",
-		"pollinfo": "\n*Info:*",
-		"greatleague": "great",
+		"league": "\n*Liga: *",
+		"pollinfo": "\n*Informacíon:*",
+		"greatleague": "Súper",
 		"ultraleague": "ultra",
 		"masterleague": "master",
 		"accepted": " ha aceptado tu solicitud PvP!",
@@ -452,13 +463,15 @@
 		"only_for_admins":"Solo administradores pueden cambiar esté ajustes",
 		"iv_menu":"Customise your IV output",
 		"moves_start": "Attacks for {}\n",
-		"moves_fast_header": "<b>Fastmoves</b>\n",
+		"moves_fast_header": "<b>Fastmoves</b> of {}\n",
 		"moves_name": "<b>{}</b>\n",
 		"moves_type": "<b>Type:</b> {}\n",
 		"moves_damage": "<b>Damage:</b> {}\n",
 		"moves_fast_energygain": "<b>Energy gain:</b> {}\n",
 		"moves_fast_duration": "<b>Duration:</b> {}s\n",
-		"moves_charge_header": "<b>Chargemoves</b>\n",
-		"moves_charge_energycost": "<b>Energy cost:</b> {}\n"
+		"moves_charge_header": "<b>Chargemoves of {}</b>\n",
+		"moves_charge_energycost": "<b>Energy cost:</b> {}\n",
+		"no_legacy_moves": "{} has no <b>legacy moves</b>\n",
+		"moves_legacy_header": "<b>Legacy moves</b> of {}\n"
 	}
 }
