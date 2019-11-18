@@ -56,10 +56,10 @@ def create_move_string(move_stats, responses,  initial_language):
     response += responses['moves_damage'].format(move_stats['power'])
     """ Charge moves if the energy gain is 0 """
     if move_stats['energyGain'] == 0:
+        response += responses['moves_charge_energycost'].format(move_stats['energy'])    
+    else: 
         response += responses['moves_fast_duration'].format(move_stats['cooldown']/1000)
         response += responses['moves_fast_energygain'].format(move_stats['energyGain'])
-    else: 
-        response += responses['moves_charge_energycost'].format(move_stats['energy'])    
     return response
 
 def build_fast_move(move_stats, responses, initial_language):        
