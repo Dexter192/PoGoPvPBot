@@ -119,7 +119,7 @@ def build_move_response(update, context, type):
             context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response)
         else: 
             en_name, initial_language, different_language = iv_check.get_english_name(context.args[0], language)
-            response = get_moves(en_name.lower(), initial_language, responses, type)
+            response = get_moves(en_name.lower(), language, responses, type)
             
             #Send the response to the user
             context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response)
