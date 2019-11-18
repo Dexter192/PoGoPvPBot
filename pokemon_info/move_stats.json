@@ -8,14 +8,9 @@
             "chargeMoves": [
                 "POWER_WHIP",
                 "SEED_BOMB",
-                "SLUDGE_BOMB",
-                "RETURN",
-                "FRUSTRATION"
+                "SLUDGE_BOMB"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "ivysaur": {
             "fastMoves": [
@@ -25,14 +20,9 @@
             "chargeMoves": [
                 "POWER_WHIP",
                 "SLUDGE_BOMB",
-                "SOLAR_BEAM",
-                "RETURN",
-                "FRUSTRATION"
+                "SOLAR_BEAM"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "venusaur": {
             "fastMoves": [
@@ -43,9 +33,7 @@
                 "FRENZY_PLANT",
                 "PETAL_BLIZZARD",
                 "SLUDGE_BOMB",
-                "SOLAR_BEAM",
-                "RETURN",
-                "FRUSTRATION"
+                "SOLAR_BEAM"
             ],
             "legacyMoves": [
                 "FRENZY_PLANT"
@@ -59,14 +47,9 @@
             "chargeMoves": [
                 "FLAME_BURST",
                 "FLAME_CHARGE",
-                "FLAMETHROWER",
-                "RETURN",
-                "FRUSTRATION"
+                "FLAMETHROWER"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "charmeleon": {
             "fastMoves": [
@@ -77,14 +60,10 @@
             "chargeMoves": [
                 "FIRE_PUNCH",
                 "FLAME_BURST",
-                "FLAMETHROWER",
-                "RETURN",
-                "FRUSTRATION"
+                "FLAMETHROWER"
             ],
             "legacyMoves": [
-                "SCRATCH",
-                "RETURN",
-                "FRUSTRATION"
+                "SCRATCH"
             ]
         },
         "charizard": {
@@ -99,17 +78,13 @@
                 "DRAGON_CLAW",
                 "FIRE_BLAST",
                 "FLAMETHROWER",
-                "OVERHEAT",
-                "RETURN",
-                "FRUSTRATION"
+                "OVERHEAT"
             ],
             "legacyMoves": [
                 "BLAST_BURN",
                 "EMBER",
                 "FLAMETHROWER",
-                "WING_ATTACK",
-                "RETURN",
-                "FRUSTRATION"
+                "WING_ATTACK"
             ]
         },
         "squirtle": {
@@ -120,14 +95,9 @@
             "chargeMoves": [
                 "AQUA_JET",
                 "AQUA_TAIL",
-                "WATER_PULSE",
-                "RETURN",
-                "FRUSTRATION"
+                "WATER_PULSE"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "wartortle": {
             "fastMoves": [
@@ -137,14 +107,9 @@
             "chargeMoves": [
                 "AQUA_JET",
                 "HYDRO_PUMP",
-                "ICE_BEAM",
-                "RETURN",
-                "FRUSTRATION"
+                "ICE_BEAM"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "blastoise": {
             "fastMoves": [
@@ -156,14 +121,10 @@
                 "HYDRO_CANNON",
                 "HYDRO_PUMP",
                 "ICE_BEAM",
-                "SKULL_BASH",
-                "RETURN",
-                "FRUSTRATION"
+                "SKULL_BASH"
             ],
             "legacyMoves": [
-                "HYDRO_CANNON",
-                "RETURN",
-                "FRUSTRATION"
+                "HYDRO_CANNON"
             ]
         },
         "caterpie": {
@@ -207,14 +168,9 @@
                 "POISON_STING"
             ],
             "chargeMoves": [
-                "STRUGGLE",
-                "FRUSTRATION",
-                "RETURN"
+                "STRUGGLE"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "kakuna": {
             "fastMoves": [
@@ -222,14 +178,9 @@
                 "POISON_STING"
             ],
             "chargeMoves": [
-                "STRUGGLE",
-                "FRUSTRATION",
-                "RETURN"
+                "STRUGGLE"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "beedrill": {
             "fastMoves": [
@@ -240,14 +191,10 @@
             "chargeMoves": [
                 "AERIAL_ACE",
                 "SLUDGE_BOMB",
-                "X_SCISSOR",
-                "FRUSTRATION",
-                "RETURN"
+                "X_SCISSOR"
             ],
             "legacyMoves": [
-                "BUG_BITE",
-                "FRUSTRATION",
-                "RETURN"
+                "BUG_BITE"
             ]
         },
         "pidgey": {
@@ -299,16 +246,11 @@
             "chargeMoves": [
                 "BODY_SLAM",
                 "DIG",
-                "HYPER_FANG",
-                "RETURN",
-                "FRUSTRATION"
+                "HYPER_FANG"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
-        "rattata_alolan": {
+        "rattata+alolan": {
             "fastMoves": [
                 "QUICK_ATTACK",
                 "TACKLE"
@@ -328,16 +270,11 @@
             "chargeMoves": [
                 "DIG",
                 "HYPER_BEAM",
-                "HYPER_FANG",
-                "RETURN",
-                "FRUSTRATION"
+                "HYPER_FANG"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
-        "raticate_alolan": {
+        "raticate+alolan": {
             "fastMoves": [
                 "BITE",
                 "QUICK_ATTACK"
@@ -446,7 +383,7 @@
                 "THUNDER_SHOCK"
             ]
         },
-        "raichu_alolan": {
+        "raichu+alolan": {
             "fastMoves": [
                 "SPARK",
                 "VOLT_SWITCH",
@@ -475,7 +412,7 @@
                 "ROCK_TOMB"
             ]
         },
-        "sandshrew_alolan": {
+        "sandshrew+alolan": {
             "fastMoves": [
                 "METAL_CLAW",
                 "POWDER_SNOW"
@@ -499,7 +436,7 @@
             ],
             "legacyMoves": []
         },
-        "sandslash_alolan": {
+        "sandslash+alolan": {
             "fastMoves": [
                 "METAL_CLAW",
                 "POWDER_SNOW"
@@ -512,7 +449,7 @@
             ],
             "legacyMoves": []
         },
-        "nidoran_female": {
+        "nidoran+female": {
             "fastMoves": [
                 "BITE",
                 "POISON_STING"
@@ -549,7 +486,7 @@
             ],
             "legacyMoves": []
         },
-        "nidoran_male": {
+        "nidoran+male": {
             "fastMoves": [
                 "PECK",
                 "POISON_STING"
@@ -630,7 +567,7 @@
             ],
             "legacyMoves": []
         },
-        "vulpix_alolan": {
+        "vulpix+alolan": {
             "fastMoves": [
                 "POWDER_SNOW",
                 "ZEN_HEADBUTT"
@@ -662,7 +599,7 @@
                 "FLAMETHROWER"
             ]
         },
-        "ninetales_alolan": {
+        "ninetales+alolan": {
             "fastMoves": [
                 "FEINT_ATTACK",
                 "POWDER_SNOW",
@@ -716,14 +653,10 @@
                 "AIR_CUTTER",
                 "POISON_FANG",
                 "SLUDGE_BOMB",
-                "SWIFT",
-                "RETURN",
-                "FRUSTRATION"
+                "SWIFT"
             ],
             "legacyMoves": [
-                "SLUDGE_BOMB",
-                "RETURN",
-                "FRUSTRATION"
+                "SLUDGE_BOMB"
             ]
         },
         "golbat": {
@@ -735,14 +668,10 @@
                 "AIR_CUTTER",
                 "OMINOUS_WIND",
                 "POISON_FANG",
-                "SHADOW_BALL",
-                "RETURN",
-                "FRUSTRATION"
+                "SHADOW_BALL"
             ],
             "legacyMoves": [
-                "OMINOUS_WIND",
-                "RETURN",
-                "FRUSTRATION"
+                "OMINOUS_WIND"
             ]
         },
         "oddish": {
@@ -753,14 +682,9 @@
             "chargeMoves": [
                 "MOONBLAST",
                 "SEED_BOMB",
-                "SLUDGE_BOMB",
-                "RETURN",
-                "FRUSTRATION"
+                "SLUDGE_BOMB"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "gloom": {
             "fastMoves": [
@@ -770,14 +694,9 @@
             "chargeMoves": [
                 "MOONBLAST",
                 "PETAL_BLIZZARD",
-                "SLUDGE_BOMB",
-                "RETURN",
-                "FRUSTRATION"
+                "SLUDGE_BOMB"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "vileplume": {
             "fastMoves": [
@@ -788,14 +707,9 @@
                 "MOONBLAST",
                 "PETAL_BLIZZARD",
                 "SOLAR_BEAM",
-                "SLUDGE_BOMB",
-                "RETURN",
-                "FRUSTRATION"
+                "SLUDGE_BOMB"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "paras": {
             "fastMoves": [
@@ -832,14 +746,9 @@
             "chargeMoves": [
                 "POISON_FANG",
                 "PSYBEAM",
-                "SIGNAL_BEAM",
-                "RETURN",
-                "FRUSTRATION"
+                "SIGNAL_BEAM"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "venomoth": {
             "fastMoves": [
@@ -851,15 +760,11 @@
                 "BUG_BUZZ",
                 "POISON_FANG",
                 "PSYCHIC",
-                "SILVER_WIND",
-                "RETURN",
-                "FRUSTRATION"
+                "SILVER_WIND"
             ],
             "legacyMoves": [
                 "BUG_BITE",
-                "POISON_FANG",
-                "RETURN",
-                "FRUSTRATION"
+                "POISON_FANG"
             ]
         },
         "diglett": {
@@ -877,7 +782,7 @@
                 "MUD_SHOT"
             ]
         },
-        "diglett_alolan": {
+        "diglett+alolan": {
             "fastMoves": [
                 "METAL_CLAW",
                 "MUD_SLAP"
@@ -904,7 +809,7 @@
                 "MUD_SHOT"
             ]
         },
-        "dugtrio_alolan": {
+        "dugtrio+alolan": {
             "fastMoves": [
                 "METAL_CLAW",
                 "MUD_SLAP"
@@ -931,7 +836,7 @@
                 "BODY_SLAM"
             ]
         },
-        "meowth_alolan": {
+        "meowth+alolan": {
             "fastMoves": [
                 "BITE",
                 "SCRATCH"
@@ -958,7 +863,7 @@
                 "NIGHT_SLASH"
             ]
         },
-        "persian_alolan": {
+        "persian+alolan": {
             "fastMoves": [
                 "FEINT_ATTACK",
                 "SCRATCH"
@@ -978,14 +883,9 @@
             "chargeMoves": [
                 "AQUA_TAIL",
                 "CROSS_CHOP",
-                "PSYBEAM",
-                "RETURN",
-                "FRUSTRATION"
+                "PSYBEAM"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "golduck": {
             "fastMoves": [
@@ -998,14 +898,9 @@
                 "PSYCHIC",
                 "BUBBLE_BEAM",
                 "SYNCHRONOISE",
-                "CROSS_CHOP",
-                "RETURN",
-                "FRUSTRATION"
+                "CROSS_CHOP"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "mankey": {
             "fastMoves": [
@@ -1044,14 +939,9 @@
             "chargeMoves": [
                 "BODY_SLAM",
                 "FLAME_WHEEL",
-                "FLAMETHROWER",
-                "RETURN",
-                "FRUSTRATION"
+                "FLAMETHROWER"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "arcanine": {
             "fastMoves": [
@@ -1065,16 +955,12 @@
                 "CRUNCH",
                 "FIRE_BLAST",
                 "FLAMETHROWER",
-                "WILD_CHARGE",
-                "RETURN",
-                "FRUSTRATION"
+                "WILD_CHARGE"
             ],
             "legacyMoves": [
                 "BITE",
                 "BULLDOZE",
-                "FLAMETHROWER",
-                "RETURN",
-                "FRUSTRATION"
+                "FLAMETHROWER"
             ]
         },
         "poliwag": {
@@ -1085,14 +971,9 @@
             "chargeMoves": [
                 "BODY_SLAM",
                 "BUBBLE_BEAM",
-                "MUD_BOMB",
-                "RETURN",
-                "FRUSTRATION"
+                "MUD_BOMB"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "poliwhirl": {
             "fastMoves": [
@@ -1103,14 +984,10 @@
                 "BUBBLE_BEAM",
                 "MUD_BOMB",
                 "SCALD",
-                "WATER_PULSE",
-                "RETURN",
-                "FRUSTRATION"
+                "WATER_PULSE"
             ],
             "legacyMoves": [
-                "SCALD",
-                "RETURN",
-                "FRUSTRATION"
+                "SCALD"
             ]
         },
         "poliwrath": {
@@ -1124,15 +1001,11 @@
                 "HYDRO_PUMP",
                 "ICE_PUNCH",
                 "SUBMISSION",
-                "POWER_UP_PUNCH",
-                "RETURN",
-                "FRUSTRATION"
+                "POWER_UP_PUNCH"
             ],
             "legacyMoves": [
                 "MUD_SHOT",
-                "SUBMISSION",
-                "RETURN",
-                "FRUSTRATION"
+                "SUBMISSION"
             ]
         },
         "abra": {
@@ -1143,14 +1016,9 @@
             "chargeMoves": [
                 "PSYSHOCK",
                 "SHADOW_BALL",
-                "SIGNAL_BEAM",
-                "RETURN",
-                "FRUSTRATION"
+                "SIGNAL_BEAM"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "kadabra": {
             "fastMoves": [
@@ -1160,14 +1028,9 @@
             "chargeMoves": [
                 "DAZZLING_GLEAM",
                 "PSYBEAM",
-                "SHADOW_BALL",
-                "RETURN",
-                "FRUSTRATION"
+                "SHADOW_BALL"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "alakazam": {
             "fastMoves": [
@@ -1180,15 +1043,11 @@
                 "FOCUS_BLAST",
                 "FUTURE_SIGHT",
                 "PSYCHIC",
-                "SHADOW_BALL",
-                "RETURN",
-                "FRUSTRATION"
+                "SHADOW_BALL"
             ],
             "legacyMoves": [
                 "DAZZLING_GLEAM",
-                "PSYCHIC",
-                "RETURN",
-                "FRUSTRATION"
+                "PSYCHIC"
             ]
         },
         "machop": {
@@ -1321,7 +1180,7 @@
             ],
             "legacyMoves": []
         },
-        "geodude_alolan": {
+        "geodude+alolan": {
             "fastMoves": [
                 "ROCK_THROW",
                 "VOLT_SWITCH"
@@ -1350,7 +1209,7 @@
                 "ROCK_SLIDE"
             ]
         },
-        "graveler_alolan": {
+        "graveler+alolan": {
             "fastMoves": [
                 "ROCK_THROW",
                 "VOLT_SWITCH"
@@ -1379,7 +1238,7 @@
                 "MUD_SHOT"
             ]
         },
-        "golem_alolan": {
+        "golem+alolan": {
             "fastMoves": [
                 "ROCK_THROW",
                 "VOLT_SWITCH"
@@ -1564,17 +1423,13 @@
             "chargeMoves": [
                 "MUD_BOMB",
                 "SLUDGE",
-                "SLUDGE_BOMB",
-                "RETURN",
-                "FRUSTRATION"
+                "SLUDGE_BOMB"
             ],
             "legacyMoves": [
-                "ACID",
-                "RETURN",
-                "FRUSTRATION"
+                "ACID"
             ]
         },
-        "grimer_alolan": {
+        "grimer+alolan": {
             "fastMoves": [
                 "ACID",
                 "BITE",
@@ -1601,18 +1456,14 @@
                 "GUNK_SHOT",
                 "SLUDGE_WAVE",
                 "THUNDER_PUNCH",
-                "ACID_SPRAY",
-                "RETURN",
-                "FRUSTRATION"
+                "ACID_SPRAY"
             ],
             "legacyMoves": [
                 "ACID",
-                "LICK",
-                "RETURN",
-                "FRUSTRATION"
+                "LICK"
             ]
         },
-        "muk_alolan": {
+        "muk+alolan": {
             "fastMoves": [
                 "BITE",
                 "POISON_JAB",
@@ -1737,14 +1588,9 @@
             "chargeMoves": [
                 "PSYBEAM",
                 "PSYCHIC",
-                "PSYSHOCK",
-                "RETURN",
-                "FRUSTRATION"
+                "PSYSHOCK"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "hypno": {
             "fastMoves": [
@@ -1759,15 +1605,11 @@
                 "SHADOW_BALL",
                 "FIRE_PUNCH",
                 "ICE_PUNCH",
-                "THUNDER_PUNCH",
-                "RETURN",
-                "FRUSTRATION"
+                "THUNDER_PUNCH"
             ],
             "legacyMoves": [
                 "PSYSHOCK",
-                "SHADOW_BALL",
-                "RETURN",
-                "FRUSTRATION"
+                "SHADOW_BALL"
             ]
         },
         "krabby": {
@@ -1858,7 +1700,7 @@
                 "ZEN_HEADBUTT"
             ]
         },
-        "exeggutor_alolan": {
+        "exeggutor+alolan": {
             "fastMoves": [
                 "BULLET_SEED",
                 "DRAGON_TAIL"
@@ -1878,14 +1720,9 @@
             "chargeMoves": [
                 "BONE_CLUB",
                 "BULLDOZE",
-                "DIG",
-                "RETURN",
-                "FRUSTRATION"
+                "DIG"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "marowak": {
             "fastMoves": [
@@ -1895,16 +1732,11 @@
             "chargeMoves": [
                 "BONE_CLUB",
                 "DIG",
-                "EARTHQUAKE",
-                "RETURN",
-                "FRUSTRATION"
+                "EARTHQUAKE"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
-        "marowak_alolan": {
+        "marowak+alolan": {
             "fastMoves": [
                 "HEX",
                 "ROCK_SMASH",
@@ -1947,15 +1779,11 @@
                 "FIRE_PUNCH",
                 "ICE_PUNCH",
                 "THUNDER_PUNCH",
-                "POWER_UP_PUNCH",
-                "RETURN",
-                "FRUSTRATION"
+                "POWER_UP_PUNCH"
             ],
             "legacyMoves": [
                 "BRICK_BREAK",
-                "ROCK_SMASH",
-                "RETURN",
-                "FRUSTRATION"
+                "ROCK_SMASH"
             ]
         },
         "lickitung": {
@@ -2000,6 +1828,18 @@
             "legacyMoves": [
                 "ACID"
             ]
+        },
+        "weezing+galarian": {
+            "fastMoves": [
+                "TACKLE"
+            ],
+            "chargeMoves": [
+                "SLUDGE",
+                "HYPER_BEAM",
+                "PLAY_ROUGH",
+                "OVERHEAT"
+            ],
+            "legacyMoves": []
         },
         "rhyhorn": {
             "fastMoves": [
@@ -2185,7 +2025,7 @@
                 "TACKLE"
             ]
         },
-        "mr_mime": {
+        "mr+mime": {
             "fastMoves": [
                 "CONFUSION",
                 "ZEN_HEADBUTT"
@@ -2207,15 +2047,11 @@
                 "AERIAL_ACE",
                 "BUG_BUZZ",
                 "NIGHT_SLASH",
-                "X_SCISSOR",
-                "RETURN",
-                "FRUSTRATION"
+                "X_SCISSOR"
             ],
             "legacyMoves": [
                 "BUG_BUZZ",
-                "STEEL_WING",
-                "RETURN",
-                "FRUSTRATION"
+                "STEEL_WING"
             ]
         },
         "jynx": {
@@ -2244,14 +2080,9 @@
             "chargeMoves": [
                 "THUNDER",
                 "THUNDER_PUNCH",
-                "THUNDERBOLT",
-                "FRUSTRATION",
-                "RETURN"
+                "THUNDERBOLT"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "magmar": {
             "fastMoves": [
@@ -2261,14 +2092,9 @@
             "chargeMoves": [
                 "FIRE_BLAST",
                 "FIRE_PUNCH",
-                "FLAMETHROWER",
-                "FRUSTRATION",
-                "RETURN"
+                "FLAMETHROWER"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "pinsir": {
             "fastMoves": [
@@ -2304,14 +2130,9 @@
                 "SPLASH"
             ],
             "chargeMoves": [
-                "STRUGGLE",
-                "RETURN",
-                "FRUSTRATION"
+                "STRUGGLE"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "gyarados": {
             "fastMoves": [
@@ -2325,17 +2146,13 @@
                 "DRAGON_PULSE",
                 "HYDRO_PUMP",
                 "OUTRAGE",
-                "TWISTER",
-                "RETURN",
-                "FRUSTRATION"
+                "TWISTER"
             ],
             "legacyMoves": [
                 "DRAGON_BREATH",
                 "DRAGON_PULSE",
                 "DRAGON_TAIL",
-                "TWISTER",
-                "RETURN",
-                "FRUSTRATION"
+                "TWISTER"
             ]
         },
         "lapras": {
@@ -2350,16 +2167,12 @@
                 "HYDRO_PUMP",
                 "ICE_BEAM",
                 "SURF",
-                "SKULL_BASH",
-                "FRUSTRATION",
-                "RETURN"
+                "SKULL_BASH"
             ],
             "legacyMoves": [
                 "DRAGON_PULSE",
                 "ICE_BEAM",
-                "ICE_SHARD",
-                "FRUSTRATION",
-                "RETURN"
+                "ICE_SHARD"
             ]
         },
         "ditto": {
@@ -2562,15 +2375,11 @@
                 "HEAVY_SLAM",
                 "HYPER_BEAM",
                 "OUTRAGE",
-                "SKULL_BASH",
-                "RETURN",
-                "FRUSTRATION"
+                "SKULL_BASH"
             ],
             "legacyMoves": [
                 "BODY_SLAM",
-                "SKULL_BASH",
-                "RETURN",
-                "FRUSTRATION"
+                "SKULL_BASH"
             ]
         },
         "articuno": {
@@ -2631,14 +2440,9 @@
             "chargeMoves": [
                 "AQUA_TAIL",
                 "TWISTER",
-                "WRAP",
-                "RETURN",
-                "FRUSTRATION"
+                "WRAP"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "dragonair": {
             "fastMoves": [
@@ -2648,14 +2452,9 @@
             "chargeMoves": [
                 "AQUA_TAIL",
                 "DRAGON_PULSE",
-                "WRAP",
-                "RETURN",
-                "FRUSTRATION"
+                "WRAP"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "dragonite": {
             "fastMoves": [
@@ -2669,17 +2468,13 @@
                 "DRAGON_PULSE",
                 "HURRICANE",
                 "HYPER_BEAM",
-                "OUTRAGE",
-                "RETURN",
-                "FRUSTRATION"
+                "OUTRAGE"
             ],
             "legacyMoves": [
                 "DRACO_METEOR",
                 "DRAGON_BREATH",
                 "DRAGON_CLAW",
-                "DRAGON_PULSE",
-                "RETURN",
-                "FRUSTRATION"
+                "DRAGON_PULSE"
             ]
         },
         "mewtwo": {
@@ -2703,7 +2498,7 @@
                 "PSYSTRIKE"
             ]
         },
-        "mewtwo_armored": {
+        "mewtwo+armored": {
             "fastMoves": [
                 "CONFUSION",
                 "IRON_TAIL"
@@ -2985,14 +2780,9 @@
             "chargeMoves": [
                 "AIR_CUTTER",
                 "SHADOW_BALL",
-                "SLUDGE_BOMB",
-                "RETURN",
-                "FRUSTRATION"
+                "SLUDGE_BOMB"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "chinchou": {
             "fastMoves": [
@@ -3158,14 +2948,9 @@
             "chargeMoves": [
                 "BODY_SLAM",
                 "DISCHARGE",
-                "THUNDERBOLT",
-                "FRUSTRATION",
-                "RETURN"
+                "THUNDERBOLT"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "flaaffy": {
             "fastMoves": [
@@ -3175,14 +2960,9 @@
             "chargeMoves": [
                 "DISCHARGE",
                 "POWER_GEM",
-                "THUNDERBOLT",
-                "FRUSTRATION",
-                "RETURN"
+                "THUNDERBOLT"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "ampharos": {
             "fastMoves": [
@@ -3194,14 +2974,10 @@
                 "FOCUS_BLAST",
                 "POWER_GEM",
                 "THUNDER",
-                "ZAP_CANNON",
-                "FRUSTRATION",
-                "RETURN"
+                "ZAP_CANNON"
             ],
             "legacyMoves": [
-                "DRAGON_PULSE",
-                "FRUSTRATION",
-                "RETURN"
+                "DRAGON_PULSE"
             ]
         },
         "bellossom": {
@@ -3212,14 +2988,9 @@
             "chargeMoves": [
                 "DAZZLING_GLEAM",
                 "LEAF_BLADE",
-                "PETAL_BLIZZARD",
-                "RETURN",
-                "FRUSTRATION"
+                "PETAL_BLIZZARD"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "marill": {
             "fastMoves": [
@@ -3266,14 +3037,10 @@
                 "BLIZZARD",
                 "EARTHQUAKE",
                 "HYDRO_PUMP",
-                "SURF",
-                "RETURN",
-                "FRUSTRATION"
+                "SURF"
             ],
             "legacyMoves": [
-                "EARTHQUAKE",
-                "RETURN",
-                "FRUSTRATION"
+                "EARTHQUAKE"
             ]
         },
         "hoppip": {
@@ -3604,14 +3371,9 @@
             "chargeMoves": [
                 "IRON_HEAD",
                 "NIGHT_SLASH",
-                "X_SCISSOR",
-                "RETURN",
-                "FRUSTRATION"
+                "X_SCISSOR"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "shuckle": {
             "fastMoves": [
@@ -3809,14 +3571,9 @@
             "chargeMoves": [
                 "CRUNCH",
                 "DARK_PULSE",
-                "FLAMETHROWER",
-                "RETURN",
-                "FRUSTRATION"
+                "FLAMETHROWER"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "houndoom": {
             "fastMoves": [
@@ -3827,14 +3584,9 @@
                 "CRUNCH",
                 "FIRE_BLAST",
                 "FLAMETHROWER",
-                "FOUL_PLAY",
-                "RETURN",
-                "FRUSTRATION"
+                "FOUL_PLAY"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "kingdra": {
             "fastMoves": [
@@ -4289,14 +4041,9 @@
             "chargeMoves": [
                 "ANCIENT_POWER",
                 "CRUNCH",
-                "STOMP",
-                "RETURN",
-                "FRUSTRATION"
+                "STOMP"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "pupitar": {
             "fastMoves": [
@@ -4306,14 +4053,9 @@
             "chargeMoves": [
                 "ANCIENT_POWER",
                 "CRUNCH",
-                "DIG",
-                "RETURN",
-                "FRUSTRATION"
+                "DIG"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "tyranitar": {
             "fastMoves": [
@@ -4324,14 +4066,10 @@
             "chargeMoves": [
                 "CRUNCH",
                 "FIRE_BLAST",
-                "STONE_EDGE",
-                "RETURN",
-                "FRUSTRATION"
+                "STONE_EDGE"
             ],
             "legacyMoves": [
-                "SMACK_DOWN",
-                "RETURN",
-                "FRUSTRATION"
+                "SMACK_DOWN"
             ]
         },
         "lugia": {
@@ -4346,7 +4084,7 @@
             ],
             "legacyMoves": []
         },
-        "ho_oh": {
+        "ho+oh": {
             "fastMoves": [
                 "EXTRASENSORY",
                 "HIDDEN_POWER_BUG",
@@ -4546,7 +4284,31 @@
             ],
             "legacyMoves": []
         },
+        "zigzagoon+galarian": {
+            "fastMoves": [
+                "ROCK_SMASH",
+                "TACKLE"
+            ],
+            "chargeMoves": [
+                "DIG",
+                "GRASS_KNOT",
+                "THUNDERBOLT"
+            ],
+            "legacyMoves": []
+        },
         "linoone": {
+            "fastMoves": [
+                "SHADOW_CLAW",
+                "TACKLE"
+            ],
+            "chargeMoves": [
+                "DIG",
+                "GRASS_KNOT",
+                "THUNDER"
+            ],
+            "legacyMoves": []
+        },
+        "linoone+galarian": {
             "fastMoves": [
                 "SHADOW_CLAW",
                 "TACKLE"
@@ -4656,14 +4418,9 @@
             "chargeMoves": [
                 "ENERGY_BALL",
                 "FOUL_PLAY",
-                "GRASS_KNOT",
-                "FRUSTRATION",
-                "RETURN"
+                "GRASS_KNOT"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "nuzleaf": {
             "fastMoves": [
@@ -4673,14 +4430,9 @@
             "chargeMoves": [
                 "FOUL_PLAY",
                 "GRASS_KNOT",
-                "LEAF_BLADE",
-                "FRUSTRATION",
-                "RETURN"
+                "LEAF_BLADE"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "shiftry": {
             "fastMoves": [
@@ -4691,14 +4443,9 @@
                 "FOUL_PLAY",
                 "HURRICANE",
                 "LEAF_BLADE",
-                "LEAF_TORNADO",
-                "FRUSTRATION",
-                "RETURN"
+                "LEAF_TORNADO"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "taillow": {
             "fastMoves": [
@@ -4754,14 +4501,9 @@
             "chargeMoves": [
                 "DISARMING_VOICE",
                 "PSYSHOCK",
-                "SHADOW_SNEAK",
-                "RETURN",
-                "FRUSTRATION"
+                "SHADOW_SNEAK"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "kirlia": {
             "fastMoves": [
@@ -4771,14 +4513,9 @@
             "chargeMoves": [
                 "DISARMING_VOICE",
                 "PSYCHIC",
-                "SHADOW_SNEAK",
-                "RETURN",
-                "FRUSTRATION"
+                "SHADOW_SNEAK"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "gardevoir": {
             "fastMoves": [
@@ -4790,14 +4527,10 @@
                 "DAZZLING_GLEAM",
                 "PSYCHIC",
                 "SHADOW_BALL",
-                "SYNCHRONOISE",
-                "RETURN",
-                "FRUSTRATION"
+                "SYNCHRONOISE"
             ],
             "legacyMoves": [
-                "SYNCHRONOISE",
-                "RETURN",
-                "FRUSTRATION"
+                "SYNCHRONOISE"
             ]
         },
         "surskit": {
@@ -5042,14 +4775,9 @@
             "chargeMoves": [
                 "FOUL_PLAY",
                 "POWER_GEM",
-                "SHADOW_SNEAK",
-                "FRUSTRATION",
-                "RETURN"
+                "SHADOW_SNEAK"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "mawile": {
             "fastMoves": [
@@ -5366,14 +5094,9 @@
             "chargeMoves": [
                 "CRUNCH",
                 "DIG",
-                "SAND_TOMB",
-                "FRUSTRATION",
-                "RETURN"
+                "SAND_TOMB"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "vibrava": {
             "fastMoves": [
@@ -5383,14 +5106,9 @@
             "chargeMoves": [
                 "BUG_BUZZ",
                 "BULLDOZE",
-                "SAND_TOMB",
-                "FRUSTRATION",
-                "RETURN"
+                "SAND_TOMB"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "flygon": {
             "fastMoves": [
@@ -5401,14 +5119,10 @@
                 "DRAGON_CLAW",
                 "EARTHQUAKE",
                 "STONE_EDGE",
-                "EARTH_POWER",
-                "FRUSTRATION",
-                "RETURN"
+                "EARTH_POWER"
             ],
             "legacyMoves": [
-                "EARTH_POWER",
-                "FRUSTRATION",
-                "RETURN"
+                "EARTH_POWER"
             ]
         },
         "cacnea": {
@@ -5419,14 +5133,9 @@
             "chargeMoves": [
                 "BRICK_BREAK",
                 "GRASS_KNOT",
-                "SEED_BOMB",
-                "FRUSTRATION",
-                "RETURN"
+                "SEED_BOMB"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "cacturne": {
             "fastMoves": [
@@ -5436,14 +5145,9 @@
             "chargeMoves": [
                 "DARK_PULSE",
                 "DYNAMIC_PUNCH",
-                "GRASS_KNOT",
-                "FRUSTRATION",
-                "RETURN"
+                "GRASS_KNOT"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "swablu": {
             "fastMoves": [
@@ -5674,7 +5378,7 @@
             ],
             "legacyMoves": []
         },
-        "castform_rainy": {
+        "castform+rainy": {
             "fastMoves": [
                 "TACKLE",
                 "WATER_GUN"
@@ -5686,7 +5390,7 @@
             ],
             "legacyMoves": []
         },
-        "castform_snowy": {
+        "castform+snowy": {
             "fastMoves": [
                 "POWDER_SNOW",
                 "TACKLE"
@@ -5698,7 +5402,7 @@
             ],
             "legacyMoves": []
         },
-        "castform_sunny": {
+        "castform+sunny": {
             "fastMoves": [
                 "EMBER",
                 "TACKLE"
@@ -5733,14 +5437,9 @@
             "chargeMoves": [
                 "NIGHT_SHADE",
                 "OMINOUS_WIND",
-                "SHADOW_SNEAK",
-                "FRUSTRATION",
-                "RETURN"
+                "SHADOW_SNEAK"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "banette": {
             "fastMoves": [
@@ -5750,14 +5449,9 @@
             "chargeMoves": [
                 "DAZZLING_GLEAM",
                 "SHADOW_BALL",
-                "THUNDER",
-                "FRUSTRATION",
-                "RETURN"
+                "THUNDER"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "duskull": {
             "fastMoves": [
@@ -5767,14 +5461,9 @@
             "chargeMoves": [
                 "NIGHT_SHADE",
                 "OMINOUS_WIND",
-                "SHADOW_SNEAK",
-                "FRUSTRATION",
-                "RETURN"
+                "SHADOW_SNEAK"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "dusclops": {
             "fastMoves": [
@@ -5784,14 +5473,9 @@
             "chargeMoves": [
                 "FIRE_PUNCH",
                 "ICE_PUNCH",
-                "SHADOW_PUNCH",
-                "FRUSTRATION",
-                "RETURN"
+                "SHADOW_PUNCH"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "tropius": {
             "fastMoves": [
@@ -6155,7 +5839,7 @@
             ],
             "legacyMoves": []
         },
-        "deoxys_attack": {
+        "deoxys+attack": {
             "fastMoves": [
                 "POISON_JAB",
                 "ZEN_HEADBUTT"
@@ -6167,7 +5851,7 @@
             ],
             "legacyMoves": []
         },
-        "deoxys_defense": {
+        "deoxys+defense": {
             "fastMoves": [
                 "COUNTER",
                 "ZEN_HEADBUTT"
@@ -6179,7 +5863,7 @@
             ],
             "legacyMoves": []
         },
-        "deoxys_speed": {
+        "deoxys+speed": {
             "fastMoves": [
                 "CHARGE_BEAM",
                 "ZEN_HEADBUTT"
@@ -6199,14 +5883,9 @@
             "chargeMoves": [
                 "BODY_SLAM",
                 "ENERGY_BALL",
-                "SEED_BOMB",
-                "RETURN",
-                "FRUSTRATION"
+                "SEED_BOMB"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "grotle": {
             "fastMoves": [
@@ -6216,14 +5895,9 @@
             "chargeMoves": [
                 "BODY_SLAM",
                 "ENERGY_BALL",
-                "SOLAR_BEAM",
-                "RETURN",
-                "FRUSTRATION"
+                "SOLAR_BEAM"
             ],
-            "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION"
-            ]
+            "legacyMoves": []
         },
         "torterra": {
             "fastMoves": [
@@ -6234,13 +5908,9 @@
                 "EARTHQUAKE",
                 "SOLAR_BEAM",
                 "STONE_EDGE",
-                "RETURN",
-                "FRUSTRATION",
                 "FRENZY_PLANT"
             ],
             "legacyMoves": [
-                "RETURN",
-                "FRUSTRATION",
                 "FRENZY_PLANT"
             ]
         },
@@ -6276,9 +5946,12 @@
             "chargeMoves": [
                 "CLOSE_COMBAT",
                 "FLAMETHROWER",
-                "SOLAR_BEAM"
+                "SOLAR_BEAM",
+                "BLAST_BURN"
             ],
-            "legacyMoves": []
+            "legacyMoves": [
+                "BLAST_BURN"
+            ]
         },
         "piplup": {
             "fastMoves": [
@@ -6536,7 +6209,7 @@
             ],
             "legacyMoves": []
         },
-        "burmy_plant": {
+        "burmy+plant": {
             "fastMoves": [
                 "BUG_BITE",
                 "TACKLE"
@@ -6546,7 +6219,7 @@
             ],
             "legacyMoves": []
         },
-        "burmy_sandy": {
+        "burmy+sandy": {
             "fastMoves": [
                 "BUG_BITE",
                 "TACKLE"
@@ -6556,7 +6229,7 @@
             ],
             "legacyMoves": []
         },
-        "burmy_trash": {
+        "burmy+trash": {
             "fastMoves": [
                 "BUG_BITE",
                 "TACKLE"
@@ -6566,7 +6239,7 @@
             ],
             "legacyMoves": []
         },
-        "wormadam_plant": {
+        "wormadam+plant": {
             "fastMoves": [
                 "BUG_BITE",
                 "CONFUSION"
@@ -6578,7 +6251,7 @@
             ],
             "legacyMoves": []
         },
-        "wormadam_sandy": {
+        "wormadam+sandy": {
             "fastMoves": [
                 "BUG_BITE",
                 "CONFUSION"
@@ -6590,7 +6263,7 @@
             ],
             "legacyMoves": []
         },
-        "wormadam_trash": {
+        "wormadam+trash": {
             "fastMoves": [
                 "BUG_BITE",
                 "CONFUSION"
@@ -6686,7 +6359,7 @@
                 "POWER_WHIP"
             ]
         },
-        "cherrim_overcast": {
+        "cherrim+overcast": {
             "fastMoves": [
                 "BULLET_SEED",
                 "RAZOR_LEAF"
@@ -6694,14 +6367,11 @@
             "chargeMoves": [
                 "DAZZLING_GLEAM",
                 "HYPER_BEAM",
-                "SOLAR_BEAM",
-                "POWER_WHIP"
+                "SOLAR_BEAM"
             ],
-            "legacyMoves": [
-                "POWER_WHIP"
-            ]
+            "legacyMoves": []
         },
-        "cherrim_sunny": {
+        "cherrim+sunny": {
             "fastMoves": [
                 "BULLET_SEED",
                 "RAZOR_LEAF"
@@ -6709,14 +6379,11 @@
             "chargeMoves": [
                 "DAZZLING_GLEAM",
                 "HYPER_BEAM",
-                "SOLAR_BEAM",
-                "POWER_WHIP"
+                "SOLAR_BEAM"
             ],
-            "legacyMoves": [
-                "POWER_WHIP"
-            ]
+            "legacyMoves": []
         },
-        "shellos_east_sea": {
+        "shellos+east+sea": {
             "fastMoves": [
                 "HIDDEN_POWER_BUG",
                 "HIDDEN_POWER_DARK",
@@ -6743,7 +6410,7 @@
             ],
             "legacyMoves": []
         },
-        "shellos_west_sea": {
+        "shellos+west+sea": {
             "fastMoves": [
                 "HIDDEN_POWER_BUG",
                 "HIDDEN_POWER_DARK",
@@ -6770,7 +6437,7 @@
             ],
             "legacyMoves": []
         },
-        "gastrodon_east_sea": {
+        "gastrodon+east+sea": {
             "fastMoves": [
                 "HIDDEN_POWER_BUG",
                 "HIDDEN_POWER_DARK",
@@ -6800,7 +6467,7 @@
                 "EARTHQUAKE"
             ]
         },
-        "gastrodon_west_sea": {
+        "gastrodon+west+sea": {
             "fastMoves": [
                 "HIDDEN_POWER_BUG",
                 "HIDDEN_POWER_DARK",
@@ -7012,7 +6679,7 @@
             ],
             "legacyMoves": []
         },
-        "mime_jr": {
+        "mime+jr": {
             "fastMoves": [
                 "CONFUSION",
                 "POUND"
@@ -7351,14 +7018,9 @@
                 "THUNDER",
                 "THUNDER_PUNCH",
                 "WILD_CHARGE",
-                "ICE_PUNCH",
-                "FRUSTRATION",
-                "RETURN"
+                "ICE_PUNCH"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "magmortar": {
             "fastMoves": [
@@ -7369,14 +7031,9 @@
                 "BRICK_BREAK",
                 "FIRE_BLAST",
                 "FIRE_PUNCH",
-                "PSYCHIC",
-                "FRUSTRATION",
-                "RETURN"
+                "PSYCHIC"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "togekiss": {
             "fastMoves": [
@@ -7470,7 +7127,7 @@
                 "ANCIENT_POWER"
             ]
         },
-        "porygon_z": {
+        "porygon+z": {
             "fastMoves": [
                 "CHARGE_BEAM",
                 "HIDDEN_POWER_BUG",
@@ -7508,14 +7165,10 @@
                 "CLOSE_COMBAT",
                 "LEAF_BLADE",
                 "PSYCHIC",
-                "SYNCHRONOISE",
-                "RETURN",
-                "FRUSTRATION"
+                "SYNCHRONOISE"
             ],
             "legacyMoves": [
-                "SYNCHRONOISE",
-                "RETURN",
-                "FRUSTRATION"
+                "SYNCHRONOISE"
             ]
         },
         "probopass": {
@@ -7538,14 +7191,9 @@
             "chargeMoves": [
                 "DARK_PULSE",
                 "OMINOUS_WIND",
-                "PSYCHIC",
-                "FRUSTRATION",
-                "RETURN"
+                "PSYCHIC"
             ],
-            "legacyMoves": [
-                "FRUSTRATION",
-                "RETURN"
-            ]
+            "legacyMoves": []
         },
         "froslass": {
             "fastMoves": [
@@ -7571,7 +7219,7 @@
             ],
             "legacyMoves": []
         },
-        "rotom_fan": {
+        "rotom+fan": {
             "fastMoves": [
                 "AIR_SLASH",
                 "ASTONISH"
@@ -7583,7 +7231,7 @@
             ],
             "legacyMoves": []
         },
-        "rotom_frost": {
+        "rotom+frost": {
             "fastMoves": [
                 "ASTONISH",
                 "THUNDER_SHOCK"
@@ -7595,7 +7243,7 @@
             ],
             "legacyMoves": []
         },
-        "rotom_heat": {
+        "rotom+heat": {
             "fastMoves": [
                 "ASTONISH",
                 "THUNDER_SHOCK"
@@ -7607,7 +7255,7 @@
             ],
             "legacyMoves": []
         },
-        "rotom_mow": {
+        "rotom+mow": {
             "fastMoves": [
                 "ASTONISH",
                 "THUNDER_SHOCK"
@@ -7619,7 +7267,7 @@
             ],
             "legacyMoves": []
         },
-        "rotom_wash": {
+        "rotom+wash": {
             "fastMoves": [
                 "ASTONISH",
                 "THUNDER_SHOCK"
@@ -7730,7 +7378,7 @@
             ],
             "legacyMoves": []
         },
-        "giratina_altered": {
+        "giratina+altered": {
             "fastMoves": [
                 "DRAGON_BREATH",
                 "SHADOW_CLAW"
@@ -7742,7 +7390,7 @@
             ],
             "legacyMoves": []
         },
-        "giratina_origin": {
+        "giratina+origin": {
             "fastMoves": [
                 "DRAGON_TAIL",
                 "SHADOW_CLAW"
@@ -7802,7 +7450,7 @@
             ],
             "legacyMoves": []
         },
-        "shaymin_land": {
+        "shaymin+land": {
             "fastMoves": [
                 "HIDDEN_POWER_BUG",
                 "HIDDEN_POWER_DARK",
@@ -7829,7 +7477,7 @@
             ],
             "legacyMoves": []
         },
-        "shaymin_sky": {
+        "shaymin+sky": {
             "fastMoves": [
                 "HIDDEN_POWER_BUG",
                 "HIDDEN_POWER_DARK",
@@ -7868,7 +7516,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_bug": {
+        "arceus+bug": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -7880,7 +7528,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_dark": {
+        "arceus+dark": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -7892,7 +7540,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_dragon": {
+        "arceus+dragon": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -7904,7 +7552,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_electric": {
+        "arceus+electric": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -7916,7 +7564,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_fairy": {
+        "arceus+fairy": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -7928,7 +7576,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_fighting": {
+        "arceus+fighting": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -7940,7 +7588,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_fire": {
+        "arceus+fire": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -7952,7 +7600,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_flying": {
+        "arceus+flying": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -7964,7 +7612,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_ghost": {
+        "arceus+ghost": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -7976,7 +7624,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_grass": {
+        "arceus+grass": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -7988,7 +7636,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_ground": {
+        "arceus+ground": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -8000,7 +7648,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_ice": {
+        "arceus+ice": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -8012,7 +7660,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_poison": {
+        "arceus+poison": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -8024,7 +7672,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_psychic": {
+        "arceus+psychic": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -8036,7 +7684,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_rock": {
+        "arceus+rock": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -8048,7 +7696,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_steel": {
+        "arceus+steel": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -8060,7 +7708,7 @@
             ],
             "legacyMoves": []
         },
-        "arceus_water": {
+        "arceus+water": {
             "fastMoves": [
                 "IRON_TAIL",
                 "SHADOW_CLAW"
@@ -8787,7 +8435,7 @@
             ],
             "legacyMoves": []
         },
-        "basculin_blue_striped": {
+        "basculin+blue+striped": {
             "fastMoves": [
                 "TACKLE",
                 "WATER_GUN"
@@ -8799,7 +8447,7 @@
             ],
             "legacyMoves": []
         },
-        "basculin_red_striped": {
+        "basculin+red+striped": {
             "fastMoves": [
                 "TACKLE",
                 "WATER_GUN"
@@ -8859,7 +8507,7 @@
             ],
             "legacyMoves": []
         },
-        "darmanitan_standard": {
+        "darmanitan+standard": {
             "fastMoves": [
                 "TACKLE",
                 "FIRE_FANG"
@@ -8872,7 +8520,7 @@
             ],
             "legacyMoves": []
         },
-        "darmanitan_zen": {
+        "darmanitan+zen": {
             "fastMoves": [
                 "TACKLE",
                 "FIRE_FANG"
@@ -9292,7 +8940,7 @@
             ],
             "legacyMoves": []
         },
-        "deerling_autumn": {
+        "deerling+autumn": {
             "fastMoves": [
                 "TACKLE",
                 "TAKE_DOWN"
@@ -9304,7 +8952,7 @@
             ],
             "legacyMoves": []
         },
-        "deerling_spring": {
+        "deerling+spring": {
             "fastMoves": [
                 "TACKLE",
                 "TAKE_DOWN"
@@ -9316,7 +8964,7 @@
             ],
             "legacyMoves": []
         },
-        "deerling_summer": {
+        "deerling+summer": {
             "fastMoves": [
                 "TACKLE",
                 "TAKE_DOWN"
@@ -9328,7 +8976,7 @@
             ],
             "legacyMoves": []
         },
-        "deerling_winter": {
+        "deerling+winter": {
             "fastMoves": [
                 "TACKLE",
                 "TAKE_DOWN"
@@ -9353,7 +9001,7 @@
             ],
             "legacyMoves": []
         },
-        "sawsbuck_autumn": {
+        "sawsbuck+autumn": {
             "fastMoves": [
                 "FEINT_ATTACK",
                 "TAKE_DOWN"
@@ -9366,7 +9014,7 @@
             ],
             "legacyMoves": []
         },
-        "sawsbuck_spring": {
+        "sawsbuck+spring": {
             "fastMoves": [
                 "FEINT_ATTACK",
                 "TAKE_DOWN"
@@ -9379,7 +9027,7 @@
             ],
             "legacyMoves": []
         },
-        "sawsbuck_summer": {
+        "sawsbuck+summer": {
             "fastMoves": [
                 "FEINT_ATTACK",
                 "TAKE_DOWN"
@@ -9392,7 +9040,7 @@
             ],
             "legacyMoves": []
         },
-        "sawsbuck_winter": {
+        "sawsbuck+winter": {
             "fastMoves": [
                 "FEINT_ATTACK",
                 "TAKE_DOWN"
@@ -10078,7 +9726,7 @@
             ],
             "legacyMoves": []
         },
-        "tornadus_incarnate": {
+        "tornadus+incarnate": {
             "fastMoves": [
                 "BITE",
                 "AIR_SLASH"
@@ -10091,7 +9739,7 @@
             ],
             "legacyMoves": []
         },
-        "tornadus_therian": {
+        "tornadus+therian": {
             "fastMoves": [
                 "BITE",
                 "AIR_SLASH"
@@ -10104,7 +9752,7 @@
             ],
             "legacyMoves": []
         },
-        "thundurus_incarnate": {
+        "thundurus+incarnate": {
             "fastMoves": [
                 "ASTONISH",
                 "THUNDER_SHOCK"
@@ -10117,7 +9765,7 @@
             ],
             "legacyMoves": []
         },
-        "thundurus_therian": {
+        "thundurus+therian": {
             "fastMoves": [
                 "ASTONISH",
                 "THUNDER_SHOCK"
@@ -10156,7 +9804,7 @@
             ],
             "legacyMoves": []
         },
-        "landorus_incarnate": {
+        "landorus+incarnate": {
             "fastMoves": [
                 "MUD_SHOT",
                 "ROCK_THROW"
@@ -10169,7 +9817,7 @@
             ],
             "legacyMoves": []
         },
-        "landorus_therian": {
+        "landorus+therian": {
             "fastMoves": [
                 "MUD_SHOT",
                 "ROCK_THROW"
@@ -10182,20 +9830,7 @@
             ],
             "legacyMoves": []
         },
-        "kyurem_black": {
-            "fastMoves": [
-                "DRAGON_TAIL",
-                "SHADOW_CLAW"
-            ],
-            "chargeMoves": [
-                "IRON_HEAD",
-                "BLIZZARD",
-                "STONE_EDGE",
-                "OUTRAGE"
-            ],
-            "legacyMoves": []
-        },
-        "kyurem_normal": {
+        "kyurem+normal": {
             "fastMoves": [
                 "DRAGON_BREATH",
                 "STEEL_WING"
@@ -10208,7 +9843,20 @@
             ],
             "legacyMoves": []
         },
-        "kyurem_white": {
+        "kyurem+black": {
+            "fastMoves": [
+                "DRAGON_TAIL",
+                "SHADOW_CLAW"
+            ],
+            "chargeMoves": [
+                "IRON_HEAD",
+                "BLIZZARD",
+                "STONE_EDGE",
+                "OUTRAGE"
+            ],
+            "legacyMoves": []
+        },
+        "kyurem+white": {
             "fastMoves": [
                 "DRAGON_BREATH",
                 "STEEL_WING"
@@ -10221,7 +9869,7 @@
             ],
             "legacyMoves": []
         },
-        "keldeo_ordinary": {
+        "keldeo+ordinary": {
             "fastMoves": [
                 "POISON_JAB",
                 "LOW_KICK"
@@ -10234,7 +9882,7 @@
             ],
             "legacyMoves": []
         },
-        "keldeo_resolute": {
+        "keldeo+resolute": {
             "fastMoves": [
                 "POISON_JAB",
                 "LOW_KICK"
@@ -10247,7 +9895,7 @@
             ],
             "legacyMoves": []
         },
-        "meloetta_aria": {
+        "meloetta+aria": {
             "fastMoves": [
                 "QUICK_ATTACK",
                 "CONFUSION"
@@ -10260,7 +9908,7 @@
             ],
             "legacyMoves": []
         },
-        "meloetta_pirouette": {
+        "meloetta+pirouette": {
             "fastMoves": [
                 "QUICK_ATTACK",
                 "LOW_KICK"
@@ -10285,7 +9933,7 @@
             ],
             "legacyMoves": []
         },
-        "genesect_burn": {
+        "genesect+burn": {
             "fastMoves": [
                 "METAL_CLAW",
                 "FURY_CUTTER"
@@ -10297,7 +9945,7 @@
             ],
             "legacyMoves": []
         },
-        "genesect_chill": {
+        "genesect+chill": {
             "fastMoves": [
                 "METAL_CLAW",
                 "FURY_CUTTER"
@@ -10309,7 +9957,7 @@
             ],
             "legacyMoves": []
         },
-        "genesect_douse": {
+        "genesect+douse": {
             "fastMoves": [
                 "METAL_CLAW",
                 "FURY_CUTTER"
@@ -10321,7 +9969,7 @@
             ],
             "legacyMoves": []
         },
-        "genesect_shock": {
+        "genesect+shock": {
             "fastMoves": [
                 "METAL_CLAW",
                 "FURY_CUTTER"
