@@ -9,6 +9,7 @@ import database
 import numpy as np
 import language_support
 import stringdist
+import json
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 
@@ -92,6 +93,16 @@ def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=
         response = responses['iv_no_pokemon']
         return response.format(pokemon_name)
 
+"""
+    Some Pokemon are only obtainable through raids or quests
+    If that is the case some IV combinations may be infeasible. 
+    
+    If the user only wants to see feasible options (changable with /iv) 
+    we can filter the Pokemon's level
+    TODO: The minimum threshold for purified Pokemoon is 2/2/2 create default level
+    @param df: The dataframe of a Pokemon
+    @param name: The pokemons name  
+"""
 def filter_min_level(df, name):
     level_df = pd.read_csv('pokemon_info/minLevel.csv')
     level_row = level_df.loc[level_df['Pokemon'] == name]
@@ -107,7 +118,10 @@ def filter_min_level(df, name):
         min_df['rank'] = np.arange(len(min_df))+1
     return min_df
     
-    """TODO: This should be refactored! """
+"""
+Get the iv combination of a specified rank
+TODO: This should be refactored!
+"""
 def iv_given_rank(pokemon_name, initial_language, responses, iv_config, rank, league='1500'):
         df = pd.read_csv('ranking/'+league+'/'+pokemon_name+'.csv')
         ivs = df.loc[int(rank)-1]['ivs']
@@ -115,6 +129,9 @@ def iv_given_rank(pokemon_name, initial_language, responses, iv_config, rank, le
         response = iv_given(pokemon_name, initial_language, responses, iv_config, ivs[0], ivs[1], ivs[2], league)
         return response
 
+"""
+    Get the local name for a given pokemon to format the response appropriately
+"""
 def get_local_name(eng_name, col_index):
     name = eng_name.lower().capitalize()
     df = pd.read_csv('pokemon_info/translations.csv')
@@ -125,6 +142,13 @@ def get_local_name(eng_name, col_index):
         logger.info("Cannot find local name for (%s)", eng_name)
 
 
+"""
+    Find the english name of a pokemon if the user used a local name
+    This uses the translations.csv to find the english name of the 
+    Pokemon from which sheme the ranking files are sorted
+    @param local_name: The (local) name that the user entered
+    @param group_language: The language settings of the group   
+"""
 def get_english_name(local_name, group_language):
     name = local_name.lower().capitalize()
     df = pd.read_csv('pokemon_info/translations.csv')
@@ -144,7 +168,15 @@ def get_english_name(local_name, group_language):
         return df.iloc[localized.index[0], 0], index_tuple[0][1], different_language
     except:
         logger.info("Cannot find english name for (%s)", local_name)
-        
+
+"""
+If we cannot find the Pokemon searched for we look for 
+the closest match using the Levenshtein distance between
+the input and the pokemon names.
+@param local_name: The name that the user entered
+@param group_language: The language settings of the group (for speed we assume that the user entered the name in his language)
+@param translations: The dataframe with all translations  
+"""        
 def closest_name_match(local_name, group_language, translations):
     closest = float('inf')
     closest_index = -1
@@ -193,8 +225,6 @@ def iv_rank(update, context):
     if len(context.args) > 0 and context.args[0] == '2500':
         context.args.pop(0)
         league = '2500'
-#    else:
-#        league = '1500'
         
     #The user didn't specify a pokemon
     if(len(context.args) == 0):
@@ -243,6 +273,8 @@ def iv_rank(update, context):
                     context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=responses['language_hint'])
 
                 #Send the response to the user
+                data = {"Name": evo.lower(), "IVs": ["15", "15", "15"]}
+#                context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=form_keyboard(data))
                 context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response)
 
 
@@ -305,6 +337,20 @@ def normalize_iv(iv):
         else:
             return iv
 
+
+def form_keyboard(data):
+    data_string = json.dumps(data)
+    keyboard = [[InlineKeyboardButton('{}'.format(data['Name']), callback_data=data_string)],
+                [InlineKeyboardButton('{}'.format(data['Name']+"+purified"), callback_data=data_string)]]
+    return InlineKeyboardMarkup(keyboard)
+
+def update_response(update, context):
+    try:
+        data = json.loads(update.callback_query.bot.data)
+        
+    except:
+        logger.warn("Could not update iv form query: " + str(update.callback_query.bot.data))
+    
 """
 Button markup for IV response customisation
 """
@@ -326,6 +372,9 @@ def iv_keyboard(chat_id):
                 [InlineKeyboardButton('Confirm', callback_data='Confirm')]]
     return InlineKeyboardMarkup(keyboard)
 
+""" 
+Delete the config message if the user presses confirm
+"""
 def confirm_config(update, context):
     try:
         query = update.callback_query
@@ -334,6 +383,10 @@ def confirm_config(update, context):
         logger.info("Cannot delete message Chat:%s MessageID:%s", update.message.chat_id, update.message.message_id)
     return
 
+"""
+If the user presses a button we want to update the message such that he can see that the settings have been changed
+This is for visual feedback
+"""
 def update_response(update, context):
     if update._effective_message.chat_id < 0:
         admins = (admin.user.id for admin in context.bot.get_chat_administrators(update._effective_message.chat.id))     

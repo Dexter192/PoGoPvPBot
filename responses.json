@@ -471,7 +471,7 @@
 		"moves_fast_duration": "<b>Duración:</b> {}s\n",
 		"moves_charge_header": "<b>Movimientos cargados</b> de {}\n",
 		"moves_charge_energycost": "<b>Costo de energía:</b> {}\n",
-		"no_legacy_moves": "{} No tiene <b>movimientos legado</b>\n",
+		"no_legacy_moves": "{} no tiene <b>movimientos legado</b>\n",
 		"moves_legacy_header": "<b>Movimientos legado</b> de {}\n"
 
 	}
