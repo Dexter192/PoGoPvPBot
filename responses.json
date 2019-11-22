@@ -55,6 +55,7 @@
 		"rank_disabled":"This feature is disabled until there is an open API by TSA",
 		"language_hint":"I have noticed that you speak a different language. You can set your bot to your language using the /language command",
 		"only_for_admins":"Only admins can change this setting",
+		"iv_menu":"Customise your IV output",
 		"moves_fast_header": "<b>Fastmoves</b> of {}\n",
 		"moves_name": "<b>{}</b>\n",
 		"moves_type": "<b>Type:</b> {}\n",
