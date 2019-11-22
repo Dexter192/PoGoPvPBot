@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import logging
 from pandas.core.frame import DataFrame
-from asn1crypto._ffi import null
 logging.basicConfig(filename='log.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger('Info')
 import pandas as pd
@@ -29,8 +28,20 @@ When the user does not give IVs, return the optimal IVs for that pokemon
 @return: A formatted response for the IV distribution of this pokemon
 """
 def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=None, sta=None, league='1500'):
-    try:            
+    try:
+        purified = False
+        if "purified" in pokemon_name:
+            pokemon_name = pokemon_name.split("+")[0]
+            purified = True
+            
         df = pd.read_csv('ranking/'+league+'/'+pokemon_name+'.csv')
+        
+        if purified:
+            df = df[(df.ivs.apply(lambda x: int(x.split(' ')[0]) > 1))]
+            df = df[(df.ivs.apply(lambda x: int(x.split(' ')[1]) > 1))]
+            df = df[(df.ivs.apply(lambda x: int(x.split(' ')[2]) > 1))]
+            pokemon_name += "+purified"
+            
         
         if iv_config['MinLevel']:
             df = filter_min_level(df, pokemon_name)
@@ -38,16 +49,18 @@ def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=
         #Check, if we want to get optimal IVs or given
         if att is None:
             row = df.loc[df['rank'] == 1]
+            iv = row.iloc[0]['ivs'].split(' ')
             response = responses['iv_optimal']
         #Find the Pokemon with the give IV-Distribution
         else:
             iv = str(att) + ' ' + str(de) + ' ' + str(sta)
             row = df.loc[df['ivs'] == iv]
+            iv = iv.split(' ')
             response = responses['iv_given']
 
         if df is not None and row.empty:
             response = responses['iv_no_valid_combo']
-            return response.format(pokemon_name)
+            return response.format(pokemon_name), iv
 
         #Compute the Stat product on the fly 
         optimal_stat_product = df.iloc[0]['stat-product']
@@ -87,7 +100,7 @@ def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=
         if iv_config['Percent minimum']:
             response += responses['iv_stats_PercentMinimum'].format(percent_worst)
                
-        return response
+        return response, iv
     #We cannot find this pokemon
     except:
         response = responses['iv_no_pokemon']
@@ -127,17 +140,25 @@ def iv_given_rank(pokemon_name, initial_language, responses, iv_config, rank, le
         ivs = df.loc[int(rank)-1]['ivs']
         ivs = ivs.split(' ')
         response = iv_given(pokemon_name, initial_language, responses, iv_config, ivs[0], ivs[1], ivs[2], league)
-        return response
+        return response, ivs
 
 """
     Get the local name for a given pokemon to format the response appropriately
 """
 def get_local_name(eng_name, col_index):
+    purified = False
+    if "purified" in eng_name:
+        eng_name = eng_name.split("+")[0]
+        purified = True
+
     name = eng_name.lower().capitalize()
     df = pd.read_csv('pokemon_info/translations.csv')
     idx = df.where(df == name).dropna(how='all').index
     try:
-        return df.loc[idx[0], col_index]
+        name = df.loc[idx[0], col_index]
+        if purified:
+            name += "+purified"
+        return name
     except:
         logger.info("Cannot find local name for (%s)", eng_name)
 
@@ -150,6 +171,11 @@ def get_local_name(eng_name, col_index):
     @param group_language: The language settings of the group   
 """
 def get_english_name(local_name, group_language):
+    purified = False
+    if "purified" in local_name:
+        local_name = local_name.split("+")[0]
+        purified = True
+    
     name = local_name.lower().capitalize()
     df = pd.read_csv('pokemon_info/translations.csv')
     #Drop all entries which don't match the local name
@@ -165,7 +191,10 @@ def get_english_name(local_name, group_language):
             different_language = False
             break
     try:
-        return df.iloc[localized.index[0], 0], index_tuple[0][1], different_language
+        name = df.iloc[localized.index[0], 0]
+        if purified:
+            name += "+purified"
+        return name, index_tuple[0][1], different_language
     except:
         logger.info("Cannot find english name for (%s)", local_name)
 
@@ -255,99 +284,89 @@ def iv_rank(update, context):
             for evo in evolutions:
                 #If the user just specified a Pokemon - Return the optimal distribution
                 if(len(context.args) == 1):
-                    response = iv_given(evo.lower(), initial_language, responses, iv_config, None, None, None, league)
+                    response, ivs = iv_given(evo.lower(), initial_language, responses, iv_config, None, None, None, league)
                 #When a user requests a specific rank
                 if(len(context.args) == 2):
                     rank = context.args[1]
                     rank = context.args[1]
-                    response = iv_given_rank(evo.lower(), initial_language, responses, iv_config, rank, league)
+                    response, ivs = iv_given_rank(evo.lower(), initial_language, responses, iv_config, rank, league)
                 #If the user gave IVs with the pokemon - Return where this one ranks
                 elif(len(context.args) == 4):
                     att = normalize_iv(context.args[1])
                     de = normalize_iv(context.args[2])
                     sta = normalize_iv(context.args[3])
-                    response = iv_given(evo.lower(), initial_language, responses, iv_config, att, de, sta, league)
+                    response, ivs = iv_given(evo.lower(), initial_language, responses, iv_config, att, de, sta, league)
                 logger.info('Return %s', response.encode("utf-8"))
                 
                 if different_language:
                     context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=responses['language_hint'])
 
                 #Send the response to the user
-                data = {"Name": evo.lower(), "IVs": ["15", "15", "15"]}
-#                context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=form_keyboard(data))
-                context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response)
-
-
+                data = {"IVs": ivs}
+                forms = find_forms(evo)
+                #forms = ["", "+alolan", "+purified"]
+                context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=form_keyboard(evo.lower(), forms, data))
         #We got some weird input which we cannot perform
         except:
             logger.info("Could not perform /iv request")
             response = responses['iv_error']
             context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response)
 
-"""
-This method converts a given IV in a number in the range 0..15.
-It accepts standard numbers (no operation is done), hexadecimal representation, or the circled
-numbers (white background/black background) that is used in apps such as CalcyIV.
-"""    
-def normalize_iv(iv):
-    if(isinstance(iv, str) and iv.isdecimal()):
-        # Note: we're not checking if the value is in the range 0..15.
-        iv = max(0, int(iv))
-        iv = min(15, int(iv))
-        return iv
-    else:
-        # Try to convert from common app representations.
-        # Hexadecimal:
-        val = "0123456789ABCDEF".find(iv)
-        if (val != -1):
-            return val
-        # Rounded white numbers
-        if (iv == "⓪" or iv == "⓿"):
-            return 0
-        elif (iv == "①" or iv == "❶"):
-            return 1
-        elif (iv == "②" or  iv == "❷"):
-            return 2
-        elif (iv == "③" or iv == "❸"):
-            return 3
-        elif (iv == "④" or iv == "❹"):
-            return 4
-        elif (iv == "⑤" or iv == "❺"):
-            return 5
-        elif (iv == "⑥" or iv == "❻"):
-            return 6
-        elif (iv == "⑦" or iv == "❼"):
-            return 7
-        elif (iv == "⑧" or iv == "❽"):
-            return 8
-        elif (iv == "⑨" or iv == "❾"):
-            return 9
-        elif (iv == "⑩" or iv == "❿"):
-            return 10
-        elif (iv == "⑪" or iv == "⓫"):
-            return 11
-        elif (iv == "⑫" or iv == "⓬"):
-            return 12
-        elif (iv == "⑬" or iv == "⓭"):
-            return 13
-        elif (iv == "⑭" or iv == "⓮"):
-            return 14
-        elif (iv == "⑮" or iv == "⓯"):
-            return 15
+
+def find_forms(poke_name):
+    try:
+        with open('pokemon_info/forms.json', encoding='utf-8') as json_config_file:
+            form_json = json.load(json_config_file)
+        forms = []
+        base_form = poke_name.split("+")[0]
+        #If the pokemon has forms
+        if base_form in form_json.keys():
+            for form in form_json[base_form]:
+                if base_form == form:
+                    forms.append("")
+                else:
+                    forms.append(form)
+            forms.append("+purified")
         else:
-            return iv
+            if "+purified" in poke_name:
+                forms.append("")
+            else:
+                forms.append("+purified")
 
-
-def form_keyboard(data):
-    data_string = json.dumps(data)
-    keyboard = [[InlineKeyboardButton('{}'.format(data['Name']), callback_data=data_string)],
-                [InlineKeyboardButton('{}'.format(data['Name']+"+purified"), callback_data=data_string)]]
+        return forms
+    except:
+        return None
+    
+    
+def form_keyboard(poke_name, forms, callback_data):
+    raw_poke_name = poke_name.split("+")
+    keyboard = []
+    for form in forms:
+        #We don't want to select the current pokemon as an option
+        if (raw_poke_name[0]+form) == poke_name:
+            continue
+        callback_data['Name'] = raw_poke_name[0] + form
+        data_string = json.dumps(callback_data)
+        button_string = callback_data['Name'].capitalize() + " - " + callback_data['IVs'][0] + " " + callback_data['IVs'][1] + " " + callback_data['IVs'][2]
+        keyboard.append([InlineKeyboardButton(button_string, callback_data=data_string)])
     return InlineKeyboardMarkup(keyboard)
 
-def update_response(update, context):
+def update_form(update, context):
     try:
-        data = json.loads(update.callback_query.bot.data)
+        language = database.get_language(update._effective_chat.id)
+        responses = jsonresponse[language]
         
+        iv_config = database.get_iv_config(update._effective_chat.id)
+        
+        data = json.loads(update.callback_query.data)
+        en_name, initial_language, different_language = get_english_name(data['Name'], language)
+        
+        response, ivs = iv_given(en_name.lower(), initial_language, responses, iv_config, data['IVs'][0], data['IVs'][1], data['IVs'][2])
+        #context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=form_keyboard(data))
+        data = {"IVs": data['IVs']}
+        forms = find_forms(en_name)
+        context.bot.edit_message_text(parse_mode='HTML', chat_id=update._effective_chat.id, message_id=update._effective_message.message_id, text=response, reply_markup=form_keyboard(en_name, forms, data))
+
     except:
         logger.warn("Could not update iv form query: " + str(update.callback_query.bot.data))
     
@@ -404,3 +423,56 @@ def update_response(update, context):
     except:
         logger.info("Could not edit message in group " + str(update._effective_chat.id))
     return
+
+"""
+This method converts a given IV in a number in the range 0..15.
+It accepts standard numbers (no operation is done), hexadecimal representation, or the circled
+numbers (white background/black background) that is used in apps such as CalcyIV.
+"""    
+def normalize_iv(iv):
+    if(isinstance(iv, str) and iv.isdecimal()):
+        # Note: we're not checking if the value is in the range 0..15.
+        iv = max(0, int(iv))
+        iv = min(15, int(iv))
+        return iv
+    else:
+        # Try to convert from common app representations.
+        # Hexadecimal:
+        val = "0123456789ABCDEF".find(iv)
+        if (val != -1):
+            return val
+        # Rounded white numbers
+        if (iv == "⓪" or iv == "⓿"):
+            return 0
+        elif (iv == "①" or iv == "❶"):
+            return 1
+        elif (iv == "②" or  iv == "❷"):
+            return 2
+        elif (iv == "③" or iv == "❸"):
+            return 3
+        elif (iv == "④" or iv == "❹"):
+            return 4
+        elif (iv == "⑤" or iv == "❺"):
+            return 5
+        elif (iv == "⑥" or iv == "❻"):
+            return 6
+        elif (iv == "⑦" or iv == "❼"):
+            return 7
+        elif (iv == "⑧" or iv == "❽"):
+            return 8
+        elif (iv == "⑨" or iv == "❾"):
+            return 9
+        elif (iv == "⑩" or iv == "❿"):
+            return 10
+        elif (iv == "⑪" or iv == "⓫"):
+            return 11
+        elif (iv == "⑫" or iv == "⓬"):
+            return 12
+        elif (iv == "⑬" or iv == "⓭"):
+            return 13
+        elif (iv == "⑭" or iv == "⓮"):
+            return 14
+        elif (iv == "⑮" or iv == "⓯"):
+            return 15
+        else:
+            return iv

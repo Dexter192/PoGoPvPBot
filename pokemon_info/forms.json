@@ -1,0 +1,154 @@
+{
+    "rattata": [
+        "+alolan",
+        "rattata"
+    ],
+    "raticate": [
+        "+alolan",
+        "raticate"
+    ],
+    "raichu": [
+        "+alolan",
+        "raichu"
+    ],
+    "sandshrew": [
+        "+alolan",
+        "sandshrew"
+    ],
+    "sandslash": [
+        "+alolan",
+        "sandslash"
+    ],
+    "nidoran": [
+        "+female",
+        "+male"
+    ],
+    "vulpix": [
+        "+alolan",
+        "vulpix"
+    ],
+    "ninetales": [
+        "+alolan",
+        "ninetales"
+    ],
+    "diglett": [
+        "+alolan",
+        "diglett"
+    ],
+    "dugtrio": [
+        "+alolan",
+        "dugtrio"
+    ],
+    "meowth": [
+        "+alolan",
+        "meowth"
+    ],
+    "persian": [
+        "+alolan",
+        "persian"
+    ],
+    "geodude": [
+        "+alolan",
+        "geodude"
+    ],
+    "graveler": [
+        "+alolan",
+        "graveler"
+    ],
+    "golem": [
+        "+alolan",
+        "golem"
+    ],
+    "grimer": [
+        "+alolan",
+        "grimer"
+    ],
+    "muk": [
+        "+alolan",
+        "muk"
+    ],
+    "exeggutor": [
+        "+alolan",
+        "exeggutor"
+    ],
+    "marowak": [
+        "+alolan",
+        "marowak"
+    ],
+    "weezing": [
+        "+galarian",
+        "weezing"
+    ],
+    "mewtwo": [
+        "+armored",
+        "mewtwo"
+    ],
+    "zigzagoon": [
+        "+galarian",
+        "zigzagoon"
+    ],
+    "linoone": [
+        "+galarian",
+        "linoone"
+    ],
+    "deoxys": [
+        "+attack",
+        "+defense",
+        "+speed",
+        "+normal"
+    ],
+    "burmy": [
+        "+plant",
+        "+sandy",
+        "+trash"
+    ],
+    "wormadam": [
+        "+plant",
+        "+sandy",
+        "+trash"
+    ],
+    "rotom": [
+        "+forms",
+        "+normal"
+    ],
+    "giratina": [
+        "+altered",
+        "+origin"
+    ],
+    "shaymin": [
+        "+land",
+        "+sky"
+    ],
+    "darmanitan": [
+        "+standard",
+        "+zen"
+    ],
+    "deerling": [
+        "+autumn",
+        "+spring",
+        "+summer",
+        "+winter"
+    ],
+    "sawsbuck": [
+        "+autumn",
+        "+spring",
+        "+summer",
+        "+winter"
+    ],
+    "tornadus": [
+        "+incarnate",
+        "+therian"
+    ],
+    "thundurus": [
+        "+incarnate",
+        "+therian"
+    ],
+    "landorus": [
+        "+incarnate",
+        "+therian"
+    ],
+    "meloetta": [
+        "+aria",
+        "+pirouette"
+    ]
+}

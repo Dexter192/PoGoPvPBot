@@ -188,6 +188,9 @@ def main():
     updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.confirm_config, pattern='Confirm'))
 
     
+    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_form))
+    
+    
     #Handle /language
     dispatcher.add_handler(CommandHandler("language", language))    
 
