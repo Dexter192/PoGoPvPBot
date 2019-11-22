@@ -40,6 +40,10 @@ def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=
             df = df[(df.ivs.apply(lambda x: int(x.split(' ')[0]) > 1))]
             df = df[(df.ivs.apply(lambda x: int(x.split(' ')[1]) > 1))]
             df = df[(df.ivs.apply(lambda x: int(x.split(' ')[2]) > 1))]
+            df = df[df['maxlevel'] >= 25]
+    
+            df = df.reset_index(drop=True)
+            df['rank'] = np.arange(len(df))+1
             pokemon_name += "+purified"
             
         
