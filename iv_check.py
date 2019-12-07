@@ -9,6 +9,7 @@ import numpy as np
 import language_support
 import stringdist
 import json
+import response_menu
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 
@@ -37,17 +38,18 @@ def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=
         df = pd.read_csv('ranking/'+league+'/'+pokemon_name+'.csv')
         
         if purified:
-            df = df[(df.ivs.apply(lambda x: int(x.split(' ')[0]) > 1))]
-            df = df[(df.ivs.apply(lambda x: int(x.split(' ')[1]) > 1))]
-            df = df[(df.ivs.apply(lambda x: int(x.split(' ')[2]) > 1))]
-            df = df[df['maxlevel'] >= 25]
-    
-            df = df.reset_index(drop=True)
-            df['rank'] = np.arange(len(df))+1
+            if iv_config['Feasible Combinations']:
+                df = df[(df.ivs.apply(lambda x: int(x.split(' ')[0]) > 1))]
+                df = df[(df.ivs.apply(lambda x: int(x.split(' ')[1]) > 1))]
+                df = df[(df.ivs.apply(lambda x: int(x.split(' ')[2]) > 1))]
+                df = df[df['maxlevel'] >= 25]
+        
+                df = df.reset_index(drop=True)
+                df['rank'] = np.arange(len(df))+1
             pokemon_name += "+purified"
             
         
-        if iv_config['MinLevel']:
+        if iv_config['Feasible Combinations']:
             df = filter_min_level(df, pokemon_name)
         
         #Check, if we want to get optimal IVs or given
@@ -265,7 +267,8 @@ def iv_rank(update, context):
             admins = (admin.user.id for admin in context.bot.get_chat_administrators(update.message.chat.id))     
             if update._effective_user.id in admins:
                 response = responses['iv_menu']
-                context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=iv_keyboard(update.message.chat_id))
+                context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=response_menu.custom_keyboard(update.message.chat_id, response_menu.types["iv"]))
+                #context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=iv_keyboard(update.message.chat_id))
             else:
                 response = responses['only_for_admins']
                 bot_message = context.bot.send_message(parse_mode='Markdown', chat_id=update.message.chat_id, text=response)
@@ -273,12 +276,13 @@ def iv_rank(update, context):
         else:    
             logger.info("Invalid pokemon")
             response = responses['iv_menu']
-            context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=iv_keyboard(update.message.chat_id))
-            
+            context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=response_menu.custom_keyboard(update.message.chat_id, response_menu.types["iv"]))
+            #context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=iv_keyboard(update.message.chat_id))
+            return
     else:
         try:
             #Load the IV_Config for the current chat id (i.e. which attributes should be returned)
-            iv_config = database.get_iv_config(update.message.chat_id)
+            iv_config = database.get_iv_config(update.message.chat_id, "IV")
             
             if context.args[0][0] is '+':
                 evolutions, initial_language, different_language = get_pokemon_family(context.args[0][1:], language)
@@ -350,6 +354,7 @@ def form_keyboard(poke_name, forms, callback_data):
         if (raw_poke_name[0]+form) == poke_name:
             continue
         callback_data['Name'] = raw_poke_name[0] + form
+        #Indicate the pattern -due to limited space in the pattern this is short
         data_string = json.dumps(callback_data)
         button_string = callback_data['Name'].capitalize() + " - " + callback_data['IVs'][0] + " " + callback_data['IVs'][1] + " " + callback_data['IVs'][2]
         keyboard.append([InlineKeyboardButton(button_string, callback_data=data_string)])
@@ -360,7 +365,7 @@ def update_form(update, context):
         language = database.get_language(update._effective_chat.id)
         responses = jsonresponse[language]
         
-        iv_config = database.get_iv_config(update._effective_chat.id)
+        iv_config = database.get_iv_config(update._effective_chat.id, "IV")
         
         data = json.loads(update.callback_query.data)
         en_name, initial_language, different_language = get_english_name(data['Name'], language)
@@ -374,59 +379,6 @@ def update_form(update, context):
     except:
         logger.warn("Could not update iv form query: " + str(update.callback_query.bot.data))
     
-"""
-Button markup for IV response customisation
-"""
-def iv_keyboard(chat_id):
-    # X \u274c
-    # check \u2705
-    #Load the IV_Config for the current chat id (i.e. which attributes should be returned)
-    #ChatID, IV, CP, Level, Stat Product, Percent, Percent minimum, IV-percent, FastMoves, ChargeMoves    
-    iv_config = database.get_iv_config(chat_id)
-    keyboard = [[InlineKeyboardButton('IV {}'.format("\u2705" if iv_config['IV'] == 1 else "\u274c"), callback_data='IV')],
-                [InlineKeyboardButton("IV Percent {}".format("\u2705" if iv_config['IV Percent'] == 1 else "\u274c"), callback_data='IV Percent')],
-                [InlineKeyboardButton("CP {}".format("\u2705" if iv_config['CP'] == 1 else "\u274c"), callback_data='CP')], 
-                [InlineKeyboardButton('Level {}'.format("\u2705" if iv_config['Level'] == 1 else "\u274c"), callback_data='Level')],
-                [InlineKeyboardButton('Base Stats {}'.format("\u2705" if iv_config['Base Stats'] == 1 else "\u274c"), callback_data='Base Stats')],
-                [InlineKeyboardButton('Stat Product {}'.format("\u2705" if iv_config['Stat Product'] == 1 else "\u274c"), callback_data='Stat Product')], 
-                [InlineKeyboardButton('Percent {}'.format("\u2705" if iv_config['Percent'] == 1 else "\u274c"), callback_data='Percent')], 
-                [InlineKeyboardButton('Percent minimum {}'.format("\u2705" if iv_config['Percent minimum'] == 1 else "\u274c"), callback_data='Percent minimum')],
-                [InlineKeyboardButton('Feasible Level {}'.format("\u2705" if iv_config['MinLevel'] == 1 else "\u274c"), callback_data='MinLevel')],
-                [InlineKeyboardButton('Confirm', callback_data='Confirm')]]
-    return InlineKeyboardMarkup(keyboard)
-
-""" 
-Delete the config message if the user presses confirm
-"""
-def confirm_config(update, context):
-    try:
-        query = update.callback_query
-        context.bot.delete_message(chat_id=query.message.chat_id, message_id=update.effective_message.message_id)    
-    except:
-        logger.info("Cannot delete message Chat:%s MessageID:%s", update.message.chat_id, update.message.message_id)
-    return
-
-"""
-If the user presses a button we want to update the message such that he can see that the settings have been changed
-This is for visual feedback
-"""
-def update_response(update, context):
-    if update._effective_message.chat_id < 0:
-        admins = (admin.user.id for admin in context.bot.get_chat_administrators(update._effective_message.chat.id))     
-        if update._effective_user.id in admins:
-            database.configure_iv_response(update._effective_chat.id, context.matches[0].string)
-    else:
-        database.configure_iv_response(update._effective_chat.id, context.matches[0].string)        
-    #Update the check boxes on the markup menu
-    language = database.get_language(update._effective_chat.id)
-    responses = jsonresponse[language]
-    response = responses['iv_menu']
-    try:
-        context.bot.edit_message_text(chat_id=update._effective_chat.id, message_id=update._effective_message.message_id, text=response, reply_markup=iv_keyboard(update._effective_message.chat.id))
-        logger.info("Updated IV output for group " + str(update._effective_chat.id))
-    except:
-        logger.info("Could not edit message in group " + str(update._effective_chat.id))
-    return
 
 """
 This method converts a given IV in a number in the range 0..15.

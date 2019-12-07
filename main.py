@@ -14,6 +14,7 @@ import trainernames
 import moves
 import language_support as lan
 import silphAPI
+import response_menu
 pvprequests = {}
 competitors = {}
 
@@ -176,20 +177,14 @@ def main():
     #Handle /iv
     dispatcher.add_handler(CommandHandler("iv", iv_check.iv_rank))    
     
-    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='IV'))
-    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='IV Percent'))
-    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='CP'))
-    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Level'))
-    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Base Stats'))
-    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Stat Product'))
-    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Percent'))
-    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='Percent minimum'))
-    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_response, pattern='MinLevel'))
-    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.confirm_config, pattern='Confirm'))
+    #Confirm config request
+    updater.dispatcher.add_handler(CallbackQueryHandler(response_menu.confirm_config, pattern='Confirm'))
+    
+    #This handles form requests
+    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_form, pattern="{\"IVs\":.*"))
 
-    
-    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_form))
-    
+    #This handles config changes
+    updater.dispatcher.add_handler(CallbackQueryHandler(response_menu.update_response))
     
     #Handle /language
     dispatcher.add_handler(CommandHandler("language", language))    

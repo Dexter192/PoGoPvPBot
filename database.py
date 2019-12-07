@@ -24,7 +24,9 @@ def create_db():
     cursor.execute(sql)
     sql = "CREATE TABLE `Groups` (`GroupID` INT PRIMARY KEY NOT NULL, `Rank` BOOLEAN, `IV` BOOLEAN, `Attacks` BOOLEAN, `Moves` BOOLEAN, `Language` TEXT)"
     cursor.execute(sql)
-    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `IV Percent` BOOLEAN  NOT NULL DEFAULT 0, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0, `Base Stats` BOOLEAN  NOT NULL DEFAULT 0)"
+    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `IV Percent` BOOLEAN  NOT NULL DEFAULT 0, `Base Stats` BOOLEAN  NOT NULL DEFAULT 0, `Feasible Combinations` BOOLEAN  NOT NULL DEFAULT 0)"
+    cursor.execute(sql)
+    sql = "CREATE TABLE `Moves` (`TelegramID` INT PRIMARY KEY NOT NULL, `Fast moves` BOOLEAN NOT NULL DEFAULT 1, `Charge moves` BOOLEAN  NOT NULL DEFAULT 1, `Legacy moves` BOOLEAN  NOT NULL DEFAULT 1, `Type` BOOLEAN  NOT NULL DEFAULT 1, `Damage` BOOLEAN  NOT NULL DEFAULT 1, `Duration` BOOLEAN  NOT NULL DEFAULT 1, `Energy` BOOLEAN  NOT NULL DEFAULT 1, `EPS` BOOLEAN  NOT NULL DEFAULT 0, `DPS` BOOLEAN  NOT NULL DEFAULT 0)"
     cursor.execute(sql)
     connection.commit()
     connection.close()
@@ -122,12 +124,12 @@ def toggle_groups(update, context, type):
 """
 Update which IV attributes should be returned.
 """
-def configure_iv_response(chat_id, field):
+def configure_iv_response(chat_id, table, field):
     #Connect to database and prepare queries
     conn = connect()
     cursor = conn.cursor()
-    insert = "INSERT INTO `IV` (TelegramID,`" + field + "`) VALUES (?,?);"
-    change = "UPDATE `IV` SET `" + field + "`=NOT `" + field + "` WHERE TelegramID=?;";
+    insert = "INSERT INTO `"+ table +"` (TelegramID,`" + field + "`) VALUES (?,?);"
+    change = "UPDATE `"+ table +"` SET `" + field + "`=NOT `" + field + "` WHERE TelegramID=?;";
     #Try to insert a new entry for this group
     try:
         cursor.execute(insert, (chat_id, False,))
@@ -148,10 +150,10 @@ def configure_iv_response(chat_id, field):
 Queries the database and returns if we have an entry for a specific group
 Otherwise return true
 """
-def get_iv_config(chat_id):
+def get_iv_config(chat_id, table):
     conn = connect()
     cursor = conn.cursor()
-    query = "SELECT * FROM IV WHERE TelegramID="+str(chat_id)
+    query = "SELECT * FROM `" + table + "` WHERE TelegramID="+str(chat_id)
     try:
         cursor.execute(query)
         conn.commit()
@@ -221,13 +223,16 @@ def get_language(group_id):
 def add_table_to_db():
     connection = sqlite3.connect("www/names.db")
     cursor = connection.cursor()
-#    sql = "DROP TABLE `IV`"
-#    cursor.execute(sql)
-#    connection.commit()
-#    sql = "CREATE TABLE `IV` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `IV Percent` BOOLEAN  NOT NULL DEFAULT 0, `FastMoves` BOOLEAN NOT NULL DEFAULT 0, `ChargeMoves` BOOLEAN  NOT NULL DEFAULT 0, `Base Stats` BOOLEAN  NOT NULL DEFAULT 0)"
-#    cursor.execute(sql)
-#    connection.commit()
-    sql = "ALTER TABLE `Groups` ADD `Moves` BOOLEAN"
+    connection.commit()
+    sql = "CREATE TABLE `Moves` (`TelegramID` INT PRIMARY KEY NOT NULL, `Fast moves` BOOLEAN NOT NULL DEFAULT 1, `Charge moves` BOOLEAN  NOT NULL DEFAULT 1, `Legacy moves` BOOLEAN  NOT NULL DEFAULT 1, `Type` BOOLEAN  NOT NULL DEFAULT 1, `Damage` BOOLEAN  NOT NULL DEFAULT 1, `Duration` BOOLEAN  NOT NULL DEFAULT 1, `Energy` BOOLEAN  NOT NULL DEFAULT 1, `EPS` BOOLEAN  NOT NULL DEFAULT 0, `DPS` BOOLEAN  NOT NULL DEFAULT 0)"
+    cursor.execute(sql)
+    sql = "CREATE TABLE `IV_temp` (`TelegramID` INT PRIMARY KEY NOT NULL, `IV` BOOLEAN NOT NULL DEFAULT 1, `CP` BOOLEAN NOT NULL DEFAULT 1, `Level` BOOLEAN NOT NULL DEFAULT 1, `Stat Product` BOOLEAN NOT NULL DEFAULT 1, `Percent` BOOLEAN NOT NULL DEFAULT 1, `Percent minimum` BOOLEAN NOT NULL DEFAULT 1, `IV Percent` BOOLEAN  NOT NULL DEFAULT 0, `Base Stats` BOOLEAN  NOT NULL DEFAULT 0, `Feasible Combinations` BOOLEAN  NOT NULL DEFAULT 0);"
+    cursor.execute(sql)
+    sql = "INSERT INTO `IV_temp` (`TelegramID`, `IV`, `CP`, `Level`, `Stat Product`, `Percent`, `Percent minimum`, `Base Stats`, `Feasible Combinations`) SELECT `TelegramID`, `IV`, `CP`, `Level`, `Stat Product`, `Percent`, `Percent minimum`, `Base Stats`, `MinLevel` FROM `IV`;"
+    cursor.execute(sql)
+    sql = "DROP TABLE `IV`;"
+    cursor.execute(sql)
+    sql = "ALTER TABLE `IV_temp` RENAME TO `IV`;"
     cursor.execute(sql)
     connection.commit()
     connection.close()
