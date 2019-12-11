@@ -191,7 +191,8 @@
             "chargeMoves": [
                 "AERIAL_ACE",
                 "SLUDGE_BOMB",
-                "X_SCISSOR"
+                "X_SCISSOR",
+                "FELL_STINGER"
             ],
             "legacyMoves": [
                 "BUG_BITE"
@@ -959,8 +960,7 @@
             ],
             "legacyMoves": [
                 "BITE",
-                "BULLDOZE",
-                "FLAMETHROWER"
+                "BULLDOZE"
             ]
         },
         "poliwag": {
@@ -1004,7 +1004,6 @@
                 "POWER_UP_PUNCH"
             ],
             "legacyMoves": [
-                "MUD_SHOT",
                 "SUBMISSION"
             ]
         },
@@ -1096,7 +1095,6 @@
                 "SUBMISSION"
             ],
             "legacyMoves": [
-                "CROSS_CHOP",
                 "KARATE_CHOP",
                 "STONE_EDGE",
                 "SUBMISSION"
@@ -1234,7 +1232,6 @@
                 "STONE_EDGE"
             ],
             "legacyMoves": [
-                "ANCIENT_POWER",
                 "MUD_SHOT"
             ]
         },
@@ -1502,8 +1499,7 @@
                 "ICY_WIND"
             ],
             "legacyMoves": [
-                "BLIZZARD",
-                "ICY_WIND"
+                "BLIZZARD"
             ]
         },
         "gastly": {
@@ -1559,7 +1555,6 @@
                 "DARK_PULSE",
                 "LICK",
                 "PSYCHIC",
-                "SHADOW_CLAW",
                 "SLUDGE_WAVE"
             ]
         },
@@ -1696,7 +1691,6 @@
                 "SOLAR_BEAM"
             ],
             "legacyMoves": [
-                "CONFUSION",
                 "ZEN_HEADBUTT"
             ]
         },
@@ -2106,10 +2100,10 @@
                 "CLOSE_COMBAT",
                 "SUBMISSION",
                 "VICE_GRIP",
-                "X_SCISSOR"
+                "X_SCISSOR",
+                "SUPERPOWER"
             ],
             "legacyMoves": [
-                "FURY_CUTTER",
                 "SUBMISSION"
             ]
         },
@@ -2149,10 +2143,8 @@
                 "TWISTER"
             ],
             "legacyMoves": [
-                "DRAGON_BREATH",
                 "DRAGON_PULSE",
-                "DRAGON_TAIL",
-                "TWISTER"
+                "DRAGON_TAIL"
             ]
         },
         "lapras": {
@@ -2375,12 +2367,10 @@
                 "HEAVY_SLAM",
                 "HYPER_BEAM",
                 "OUTRAGE",
-                "SKULL_BASH"
+                "SKULL_BASH",
+                "SUPERPOWER"
             ],
-            "legacyMoves": [
-                "BODY_SLAM",
-                "SKULL_BASH"
-            ]
+            "legacyMoves": []
         },
         "articuno": {
             "fastMoves": [
@@ -2472,8 +2462,6 @@
             ],
             "legacyMoves": [
                 "DRACO_METEOR",
-                "DRAGON_BREATH",
-                "DRAGON_CLAW",
                 "DRAGON_PULSE"
             ]
         },
@@ -2663,7 +2651,8 @@
             "fastMoves": [
                 "BITE",
                 "WATER_GUN",
-                "WATERFALL"
+                "WATERFALL",
+                "ICE_FANG"
             ],
             "chargeMoves": [
                 "CRUNCH",
@@ -3284,7 +3273,8 @@
             "chargeMoves": [
                 "EARTHQUAKE",
                 "HEAVY_SLAM",
-                "ROCK_TOMB"
+                "ROCK_TOMB",
+                "MIRROR_SHOT"
             ],
             "legacyMoves": []
         },
@@ -3359,7 +3349,8 @@
                 "AQUA_TAIL",
                 "ICE_BEAM",
                 "SLUDGE_WAVE",
-                "ACID_SPRAY"
+                "ACID_SPRAY",
+                "FELL_STINGER"
             ],
             "legacyMoves": []
         },
@@ -3517,7 +3508,8 @@
                 "AURORA_BEAM",
                 "GUNK_SHOT",
                 "WATER_PULSE",
-                "ACID_SPRAY"
+                "ACID_SPRAY",
+                "OCTAZOOKA"
             ],
             "legacyMoves": []
         },
@@ -3597,7 +3589,8 @@
             "chargeMoves": [
                 "BLIZZARD",
                 "HYDRO_PUMP",
-                "OUTRAGE"
+                "OUTRAGE",
+                "OCTAZOOKA"
             ],
             "legacyMoves": [
                 "WATER_GUN"
@@ -3631,6 +3624,7 @@
         },
         "porygon2": {
             "fastMoves": [
+                "LOCK_ON",
                 "CHARGE_BEAM",
                 "HIDDEN_POWER_BUG",
                 "HIDDEN_POWER_DARK",
@@ -4120,7 +4114,8 @@
             "chargeMoves": [
                 "DAZZLING_GLEAM",
                 "HYPER_BEAM",
-                "PSYCHIC"
+                "PSYCHIC",
+                "SEED_BOMB"
             ],
             "legacyMoves": []
         },
@@ -4437,7 +4432,8 @@
         "shiftry": {
             "fastMoves": [
                 "FEINT_ATTACK",
-                "RAZOR_LEAF"
+                "RAZOR_LEAF",
+                "SNARL"
             ],
             "chargeMoves": [
                 "FOUL_PLAY",
@@ -4714,7 +4710,8 @@
             "chargeMoves": [
                 "CLOSE_COMBAT",
                 "DYNAMIC_PUNCH",
-                "HEAVY_SLAM"
+                "HEAVY_SLAM",
+                "SUPERPOWER"
             ],
             "legacyMoves": []
         },
@@ -5782,7 +5779,8 @@
         },
         "kyogre": {
             "fastMoves": [
-                "WATERFALL"
+                "WATERFALL",
+                "SURF"
             ],
             "chargeMoves": [
                 "BLIZZARD",
@@ -6304,7 +6302,8 @@
             "chargeMoves": [
                 "BUG_BUZZ",
                 "POWER_GEM",
-                "X_SCISSOR"
+                "X_SCISSOR",
+                "FELL_STINGER"
             ],
             "legacyMoves": []
         },
@@ -6794,7 +6793,8 @@
                 "CLOSE_COMBAT",
                 "FLASH_CANNON",
                 "SHADOW_BALL",
-                "POWER_UP_PUNCH"
+                "POWER_UP_PUNCH",
+                "AURA_SPHERE"
             ],
             "legacyMoves": []
         },
@@ -6847,7 +6847,8 @@
             "chargeMoves": [
                 "AQUA_TAIL",
                 "CRUNCH",
-                "SLUDGE_BOMB"
+                "SLUDGE_BOMB",
+                "FELL_STINGER"
             ],
             "legacyMoves": []
         },
@@ -6968,7 +6969,8 @@
             "chargeMoves": [
                 "FLASH_CANNON",
                 "WILD_CHARGE",
-                "ZAP_CANNON"
+                "ZAP_CANNON",
+                "MIRROR_SHOT"
             ],
             "legacyMoves": []
         },
@@ -6980,7 +6982,8 @@
             "chargeMoves": [
                 "EARTHQUAKE",
                 "HYPER_BEAM",
-                "SOLAR_BEAM"
+                "SOLAR_BEAM",
+                "SHADOW_BALL"
             ],
             "legacyMoves": []
         },
@@ -6993,7 +6996,8 @@
                 "EARTHQUAKE",
                 "STONE_EDGE",
                 "SURF",
-                "SKULL_BASH"
+                "SKULL_BASH",
+                "SUPERPOWER"
             ],
             "legacyMoves": []
         },
@@ -7005,7 +7009,8 @@
             "chargeMoves": [
                 "ANCIENT_POWER",
                 "SLUDGE_BOMB",
-                "SOLAR_BEAM"
+                "SOLAR_BEAM",
+                "POWER_WHIP"
             ],
             "legacyMoves": []
         },
@@ -7084,9 +7089,12 @@
             "chargeMoves": [
                 "ENERGY_BALL",
                 "LEAF_BLADE",
-                "SOLAR_BEAM"
+                "SOLAR_BEAM",
+                "LAST_RESORT"
             ],
-            "legacyMoves": []
+            "legacyMoves": [
+                "LAST_RESORT"
+            ]
         },
         "glaceon": {
             "fastMoves": [
@@ -7096,9 +7104,12 @@
             "chargeMoves": [
                 "AVALANCHE",
                 "ICE_BEAM",
-                "ICY_WIND"
+                "ICY_WIND",
+                "LAST_RESORT"
             ],
-            "legacyMoves": []
+            "legacyMoves": [
+                "LAST_RESORT"
+            ]
         },
         "gliscor": {
             "fastMoves": [
@@ -7129,6 +7140,7 @@
         },
         "porygon+z": {
             "fastMoves": [
+                "LOCK_ON",
                 "CHARGE_BEAM",
                 "HIDDEN_POWER_BUG",
                 "HIDDEN_POWER_DARK",
@@ -7347,7 +7359,8 @@
             "chargeMoves": [
                 "FIRE_BLAST",
                 "IRON_HEAD",
-                "STONE_EDGE"
+                "STONE_EDGE",
+                "FLAMETHROWER"
             ],
             "legacyMoves": []
         },
@@ -7891,7 +7904,8 @@
         "stoutland": {
             "fastMoves": [
                 "LICK",
-                "TAKE_DOWN"
+                "TAKE_DOWN",
+                "ICE_FANG"
             ],
             "chargeMoves": [
                 "WILD_CHARGE",
@@ -9212,7 +9226,8 @@
                 "POWER_WHIP",
                 "FLASH_CANNON",
                 "ACID_SPRAY",
-                "THUNDER"
+                "THUNDER",
+                "MIRROR_SHOT"
             ],
             "legacyMoves": []
         },
@@ -9248,7 +9263,8 @@
             "chargeMoves": [
                 "HYPER_BEAM",
                 "FLASH_CANNON",
-                "ZAP_CANNON"
+                "ZAP_CANNON",
+                "MIRROR_SHOT"
             ],
             "legacyMoves": []
         },
@@ -9999,7 +10015,8 @@
                 "FLASH_CANNON",
                 "HYPER_BEAM",
                 "ROCK_SLIDE",
-                "THUNDERBOLT"
+                "THUNDERBOLT",
+                "SUPERPOWER"
             ],
             "legacyMoves": []
         }
@@ -10141,6 +10158,20 @@
                 "de": "Erstauner",
                 "it": "Sgomento",
                 "es": "Impresionar"
+            }
+        },
+        "AURA_SPHERE": {
+            "type": "fighting",
+            "power": 100,
+            "energy": 55,
+            "energyGain": 0,
+            "cooldown": 500,
+            "names": {
+                "en": "Aura Sphere",
+                "fr": "Aurasphère",
+                "de": "Aurasphäre",
+                "it": "Forzasfera",
+                "es": "Esfera Aural"
             }
         },
         "AURORA_BEAM": {
@@ -10418,9 +10449,15 @@
         "CLOSE_COMBAT": {
             "type": "fighting",
             "power": 100,
-            "energy": 60,
+            "energy": 45,
             "energyGain": 0,
             "cooldown": 500,
+            "buffs": [
+                0,
+                -2
+            ],
+            "buffTarget": "self",
+            "buffApplyChance": "1",
             "names": {
                 "en": "Close Combat",
                 "fr": "Close Combat",
@@ -10620,9 +10657,15 @@
         "DRACO_METEOR": {
             "type": "dragon",
             "power": 150,
-            "energy": 75,
+            "energy": 65,
             "energyGain": 0,
             "cooldown": 500,
+            "buffs": [
+                -2,
+                0
+            ],
+            "buffTarget": "self",
+            "buffApplyChance": "1",
             "names": {
                 "en": "Draco Meteor",
                 "fr": "Draco Météor",
@@ -10833,6 +10876,26 @@
                 "es": "Finta"
             }
         },
+        "FELL_STINGER": {
+            "type": "bug",
+            "power": 20,
+            "energy": 35,
+            "energyGain": 0,
+            "cooldown": 500,
+            "buffs": [
+                1,
+                0
+            ],
+            "buffTarget": "self",
+            "buffApplyChance": "1",
+            "names": {
+                "en": "Fell Stinger",
+                "fr": "Dard Mortel",
+                "de": "Stachelfinale",
+                "it": "Pungiglione",
+                "es": "Aguijón Letal"
+            }
+        },
         "FIRE_BLAST": {
             "type": "fire",
             "power": 140,
@@ -11032,7 +11095,7 @@
         "FRUSTRATION": {
             "type": "normal",
             "power": 10,
-            "energy": 40,
+            "energy": 70,
             "energyGain": 0,
             "cooldown": 500,
             "names": {
@@ -11387,7 +11450,7 @@
         },
         "HYDRO_CANNON": {
             "type": "water",
-            "power": 90,
+            "power": 80,
             "energy": 40,
             "energyGain": 0,
             "cooldown": 500,
@@ -11513,6 +11576,12 @@
             "energy": 45,
             "energyGain": 0,
             "cooldown": 500,
+            "buffs": [
+                -1,
+                0
+            ],
+            "buffTarget": "opponent",
+            "buffApplyChance": "1",
             "names": {
                 "en": "Icy Wind",
                 "fr": "Vent Glace",
@@ -11761,6 +11830,26 @@
                 "es": "Manto Espejo"
             }
         },
+        "MIRROR_SHOT": {
+            "type": "steel",
+            "power": 35,
+            "energy": 35,
+            "energyGain": 0,
+            "cooldown": 500,
+            "buffs": [
+                -1,
+                0
+            ],
+            "buffTarget": "opponent",
+            "buffApplyChance": ".3",
+            "names": {
+                "en": "Mirror Shot",
+                "fr": "Miroi-Tir",
+                "de": "Spiegelsalve",
+                "it": "Cristalcolpo",
+                "es": "Disparo Espejo"
+            }
+        },
         "MOONBLAST": {
             "type": "fairy",
             "power": 130,
@@ -11825,7 +11914,7 @@
         },
         "MUD_SLAP": {
             "type": "ground",
-            "power": 9,
+            "power": 11,
             "energy": 0,
             "energyGain": 8,
             "cooldown": 1500,
@@ -11850,15 +11939,41 @@
         "NIGHT_SLASH": {
             "type": "dark",
             "power": 50,
-            "energy": 40,
+            "energy": 35,
             "energyGain": 0,
             "cooldown": 500,
+            "buffs": [
+                2,
+                0
+            ],
+            "buffTarget": "self",
+            "buffApplyChance": ".125",
             "names": {
                 "en": "Night Slash",
                 "fr": "Tranche-Nuit",
                 "de": "Nachthieb",
                 "it": "Nottesferza",
                 "es": "Tajo Umbrío"
+            }
+        },
+        "OCTAZOOKA": {
+            "type": "water",
+            "power": 50,
+            "energy": 50,
+            "energyGain": 0,
+            "cooldown": 500,
+            "buffs": [
+                -2,
+                0
+            ],
+            "buffTarget": "opponent",
+            "buffApplyChance": "0.5",
+            "names": {
+                "en": "Octazooka",
+                "fr": "Octazooka",
+                "de": "Octazooka",
+                "it": "Octazooka",
+                "es": "Pulpocañón"
             }
         },
         "OMINOUS_WIND": {
@@ -11911,10 +12026,16 @@
         },
         "OVERHEAT": {
             "type": "fire",
-            "power": 150,
-            "energy": 80,
+            "power": 130,
+            "energy": 55,
             "energyGain": 0,
             "cooldown": 500,
+            "buffs": [
+                -2,
+                0
+            ],
+            "buffTarget": "self",
+            "buffApplyChance": "1",
             "names": {
                 "en": "Overheat",
                 "fr": "Surchauffe",
@@ -12158,9 +12279,15 @@
         "PSYCHO_BOOST": {
             "type": "psychic",
             "power": 70,
-            "energy": 40,
+            "energy": 35,
             "energyGain": 0,
             "cooldown": 500,
+            "buffs": [
+                -2,
+                0
+            ],
+            "buffTarget": "self",
+            "buffApplyChance": "1",
             "names": {
                 "en": "Psycho Boost",
                 "fr": "Psycho Boost",
@@ -12255,8 +12382,8 @@
         },
         "RETURN": {
             "type": "normal",
-            "power": 50,
-            "energy": 40,
+            "power": 130,
+            "energy": 70,
             "energyGain": 0,
             "cooldown": 500,
             "names": {
@@ -12339,10 +12466,16 @@
         },
         "SAND_TOMB": {
             "type": "ground",
-            "power": 80,
-            "energy": 60,
+            "power": 25,
+            "energy": 40,
             "energyGain": 0,
             "cooldown": 500,
+            "buffs": [
+                0,
+                -1
+            ],
+            "buffTarget": "opponent",
+            "buffApplyChance": "1",
             "names": {
                 "en": "Sand Tomb",
                 "fr": "Tourbi-Sable",
