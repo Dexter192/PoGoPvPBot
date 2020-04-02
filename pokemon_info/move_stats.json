@@ -12,7 +12,31 @@
             ],
             "legacyMoves": []
         },
+        "bulbasaur+shadow": {
+            "fastMoves": [
+                "TACKLE",
+                "VINE_WHIP"
+            ],
+            "chargeMoves": [
+                "POWER_WHIP",
+                "SEED_BOMB",
+                "SLUDGE_BOMB"
+            ],
+            "legacyMoves": []
+        },
         "ivysaur": {
+            "fastMoves": [
+                "RAZOR_LEAF",
+                "VINE_WHIP"
+            ],
+            "chargeMoves": [
+                "POWER_WHIP",
+                "SLUDGE_BOMB",
+                "SOLAR_BEAM"
+            ],
+            "legacyMoves": []
+        },
+        "ivysaur+shadow": {
             "fastMoves": [
                 "RAZOR_LEAF",
                 "VINE_WHIP"
@@ -39,7 +63,31 @@
                 "FRENZY_PLANT"
             ]
         },
+        "venusaur+shadow": {
+            "fastMoves": [
+                "RAZOR_LEAF",
+                "VINE_WHIP"
+            ],
+            "chargeMoves": [
+                "PETAL_BLIZZARD",
+                "SLUDGE_BOMB",
+                "SOLAR_BEAM"
+            ],
+            "legacyMoves": []
+        },
         "charmander": {
+            "fastMoves": [
+                "EMBER",
+                "SCRATCH"
+            ],
+            "chargeMoves": [
+                "FLAME_BURST",
+                "FLAME_CHARGE",
+                "FLAMETHROWER"
+            ],
+            "legacyMoves": []
+        },
+        "charmander+shadow": {
             "fastMoves": [
                 "EMBER",
                 "SCRATCH"
@@ -66,6 +114,18 @@
                 "SCRATCH"
             ]
         },
+        "charmeleon+shadow": {
+            "fastMoves": [
+                "EMBER",
+                "FIRE_FANG"
+            ],
+            "chargeMoves": [
+                "FIRE_PUNCH",
+                "FLAME_BURST",
+                "FLAMETHROWER"
+            ],
+            "legacyMoves": []
+        },
         "charizard": {
             "fastMoves": [
                 "AIR_SLASH",
@@ -87,6 +147,18 @@
                 "WING_ATTACK"
             ]
         },
+        "charizard+shadow": {
+            "fastMoves": [
+                "AIR_SLASH",
+                "FIRE_SPIN"
+            ],
+            "chargeMoves": [
+                "DRAGON_CLAW",
+                "FIRE_BLAST",
+                "OVERHEAT"
+            ],
+            "legacyMoves": []
+        },
         "squirtle": {
             "fastMoves": [
                 "BUBBLE",
@@ -99,7 +171,31 @@
             ],
             "legacyMoves": []
         },
+        "squirtle+shadow": {
+            "fastMoves": [
+                "BUBBLE",
+                "TACKLE"
+            ],
+            "chargeMoves": [
+                "AQUA_JET",
+                "AQUA_TAIL",
+                "WATER_PULSE"
+            ],
+            "legacyMoves": []
+        },
         "wartortle": {
+            "fastMoves": [
+                "BITE",
+                "WATER_GUN"
+            ],
+            "chargeMoves": [
+                "AQUA_JET",
+                "HYDRO_PUMP",
+                "ICE_BEAM"
+            ],
+            "legacyMoves": []
+        },
+        "wartortle+shadow": {
             "fastMoves": [
                 "BITE",
                 "WATER_GUN"
@@ -126,6 +222,19 @@
             "legacyMoves": [
                 "HYDRO_CANNON"
             ]
+        },
+        "blastoise+shadow": {
+            "fastMoves": [
+                "BITE",
+                "WATER_GUN"
+            ],
+            "chargeMoves": [
+                "FLASH_CANNON",
+                "HYDRO_PUMP",
+                "ICE_BEAM",
+                "SKULL_BASH"
+            ],
+            "legacyMoves": []
         },
         "caterpie": {
             "fastMoves": [
@@ -172,7 +281,27 @@
             ],
             "legacyMoves": []
         },
+        "weedle+shadow": {
+            "fastMoves": [
+                "BUG_BITE",
+                "POISON_STING"
+            ],
+            "chargeMoves": [
+                "STRUGGLE"
+            ],
+            "legacyMoves": []
+        },
         "kakuna": {
+            "fastMoves": [
+                "BUG_BITE",
+                "POISON_STING"
+            ],
+            "chargeMoves": [
+                "STRUGGLE"
+            ],
+            "legacyMoves": []
+        },
+        "kakuna+shadow": {
             "fastMoves": [
                 "BUG_BITE",
                 "POISON_STING"
@@ -197,6 +326,19 @@
             "legacyMoves": [
                 "BUG_BITE"
             ]
+        },
+        "beedrill+shadow": {
+            "fastMoves": [
+                "INFESTATION",
+                "POISON_JAB"
+            ],
+            "chargeMoves": [
+                "AERIAL_ACE",
+                "SLUDGE_BOMB",
+                "X_SCISSOR",
+                "FELL_STINGER"
+            ],
+            "legacyMoves": []
         },
         "pidgey": {
             "fastMoves": [
@@ -263,6 +405,18 @@
             ],
             "legacyMoves": []
         },
+        "rattata+shadow": {
+            "fastMoves": [
+                "QUICK_ATTACK",
+                "TACKLE"
+            ],
+            "chargeMoves": [
+                "BODY_SLAM",
+                "DIG",
+                "HYPER_FANG"
+            ],
+            "legacyMoves": []
+        },
         "raticate": {
             "fastMoves": [
                 "BITE",
@@ -282,6 +436,18 @@
             ],
             "chargeMoves": [
                 "CRUNCH",
+                "HYPER_BEAM",
+                "HYPER_FANG"
+            ],
+            "legacyMoves": []
+        },
+        "raticate+shadow": {
+            "fastMoves": [
+                "BITE",
+                "QUICK_ATTACK"
+            ],
+            "chargeMoves": [
+                "DIG",
                 "HYPER_BEAM",
                 "HYPER_FANG"
             ],
@@ -365,6 +531,18 @@
                 "THUNDER"
             ]
         },
+        "pikachu+libre": {
+            "fastMoves": [
+                "THUNDER_SHOCK",
+                "CHARM"
+            ],
+            "chargeMoves": [
+                "FLYING_PRESS",
+                "PLAY_ROUGH",
+                "THUNDER_PUNCH"
+            ],
+            "legacyMoves": []
+        },
         "raichu": {
             "fastMoves": [
                 "SPARK",
@@ -380,8 +558,7 @@
                 "SKULL_BASH"
             ],
             "legacyMoves": [
-                "THUNDER",
-                "THUNDER_SHOCK"
+                "THUNDER"
             ]
         },
         "raichu+alolan": {
@@ -425,6 +602,18 @@
             ],
             "legacyMoves": []
         },
+        "sandshrew+shadow": {
+            "fastMoves": [
+                "MUD_SHOT",
+                "SCRATCH"
+            ],
+            "chargeMoves": [
+                "DIG",
+                "ROCK_SLIDE",
+                "SAND_TOMB"
+            ],
+            "legacyMoves": []
+        },
         "sandslash": {
             "fastMoves": [
                 "METAL_CLAW",
@@ -447,6 +636,18 @@
                 "BULLDOZE",
                 "GYRO_BALL",
                 "ICE_PUNCH"
+            ],
+            "legacyMoves": []
+        },
+        "sandslash+shadow": {
+            "fastMoves": [
+                "METAL_CLAW",
+                "MUD_SHOT"
+            ],
+            "chargeMoves": [
+                "BULLDOZE",
+                "EARTHQUAKE",
+                "ROCK_TOMB"
             ],
             "legacyMoves": []
         },
@@ -580,6 +781,18 @@
             ],
             "legacyMoves": []
         },
+        "vulpix+shadow": {
+            "fastMoves": [
+                "EMBER",
+                "QUICK_ATTACK"
+            ],
+            "chargeMoves": [
+                "BODY_SLAM",
+                "FLAME_CHARGE",
+                "FLAMETHROWER"
+            ],
+            "legacyMoves": []
+        },
         "ninetales": {
             "fastMoves": [
                 "EMBER",
@@ -611,6 +824,19 @@
                 "DAZZLING_GLEAM",
                 "ICE_BEAM",
                 "PSYSHOCK"
+            ],
+            "legacyMoves": []
+        },
+        "ninetales+shadow": {
+            "fastMoves": [
+                "FEINT_ATTACK",
+                "FIRE_SPIN"
+            ],
+            "chargeMoves": [
+                "HEAT_WAVE",
+                "OVERHEAT",
+                "PSYSHOCK",
+                "SOLAR_BEAM"
             ],
             "legacyMoves": []
         },
@@ -660,6 +886,18 @@
                 "SLUDGE_BOMB"
             ]
         },
+        "zubat+shadow": {
+            "fastMoves": [
+                "BITE",
+                "QUICK_ATTACK"
+            ],
+            "chargeMoves": [
+                "AIR_CUTTER",
+                "POISON_FANG",
+                "SWIFT"
+            ],
+            "legacyMoves": []
+        },
         "golbat": {
             "fastMoves": [
                 "BITE",
@@ -675,7 +913,31 @@
                 "OMINOUS_WIND"
             ]
         },
+        "golbat+shadow": {
+            "fastMoves": [
+                "BITE",
+                "WING_ATTACK"
+            ],
+            "chargeMoves": [
+                "AIR_CUTTER",
+                "POISON_FANG",
+                "SHADOW_BALL"
+            ],
+            "legacyMoves": []
+        },
         "oddish": {
+            "fastMoves": [
+                "ACID",
+                "RAZOR_LEAF"
+            ],
+            "chargeMoves": [
+                "MOONBLAST",
+                "SEED_BOMB",
+                "SLUDGE_BOMB"
+            ],
+            "legacyMoves": []
+        },
+        "oddish+shadow": {
             "fastMoves": [
                 "ACID",
                 "RAZOR_LEAF"
@@ -699,7 +961,32 @@
             ],
             "legacyMoves": []
         },
+        "gloom+shadow": {
+            "fastMoves": [
+                "ACID",
+                "RAZOR_LEAF"
+            ],
+            "chargeMoves": [
+                "MOONBLAST",
+                "PETAL_BLIZZARD",
+                "SLUDGE_BOMB"
+            ],
+            "legacyMoves": []
+        },
         "vileplume": {
+            "fastMoves": [
+                "ACID",
+                "RAZOR_LEAF"
+            ],
+            "chargeMoves": [
+                "MOONBLAST",
+                "PETAL_BLIZZARD",
+                "SOLAR_BEAM",
+                "SLUDGE_BOMB"
+            ],
+            "legacyMoves": []
+        },
+        "vileplume+shadow": {
             "fastMoves": [
                 "ACID",
                 "RAZOR_LEAF"
@@ -751,6 +1038,18 @@
             ],
             "legacyMoves": []
         },
+        "venonat+shadow": {
+            "fastMoves": [
+                "BUG_BITE",
+                "CONFUSION"
+            ],
+            "chargeMoves": [
+                "POISON_FANG",
+                "PSYBEAM",
+                "SIGNAL_BEAM"
+            ],
+            "legacyMoves": []
+        },
         "venomoth": {
             "fastMoves": [
                 "BUG_BITE",
@@ -764,9 +1063,21 @@
                 "SILVER_WIND"
             ],
             "legacyMoves": [
-                "BUG_BITE",
-                "POISON_FANG"
+                "BUG_BITE"
             ]
+        },
+        "venomoth+shadow": {
+            "fastMoves": [
+                "CONFUSION",
+                "INFESTATION"
+            ],
+            "chargeMoves": [
+                "BUG_BUZZ",
+                "POISON_FANG",
+                "PSYCHIC",
+                "SILVER_WIND"
+            ],
+            "legacyMoves": []
         },
         "diglett": {
             "fastMoves": [
@@ -849,6 +1160,18 @@
             ],
             "legacyMoves": []
         },
+        "meowth+shadow": {
+            "fastMoves": [
+                "BITE",
+                "SCRATCH"
+            ],
+            "chargeMoves": [
+                "DARK_PULSE",
+                "FOUL_PLAY",
+                "NIGHT_SLASH"
+            ],
+            "legacyMoves": []
+        },
         "persian": {
             "fastMoves": [
                 "FEINT_ATTACK",
@@ -876,6 +1199,18 @@
             ],
             "legacyMoves": []
         },
+        "persian+shadow": {
+            "fastMoves": [
+                "FEINT_ATTACK",
+                "SCRATCH"
+            ],
+            "chargeMoves": [
+                "FOUL_PLAY",
+                "PLAY_ROUGH",
+                "POWER_GEM"
+            ],
+            "legacyMoves": []
+        },
         "psyduck": {
             "fastMoves": [
                 "WATER_GUN",
@@ -888,7 +1223,34 @@
             ],
             "legacyMoves": []
         },
+        "psyduck+shadow": {
+            "fastMoves": [
+                "WATER_GUN",
+                "ZEN_HEADBUTT"
+            ],
+            "chargeMoves": [
+                "AQUA_TAIL",
+                "CROSS_CHOP",
+                "PSYBEAM"
+            ],
+            "legacyMoves": []
+        },
         "golduck": {
+            "fastMoves": [
+                "CONFUSION",
+                "WATER_GUN"
+            ],
+            "chargeMoves": [
+                "HYDRO_PUMP",
+                "ICE_BEAM",
+                "PSYCHIC",
+                "BUBBLE_BEAM",
+                "SYNCHRONOISE",
+                "CROSS_CHOP"
+            ],
+            "legacyMoves": []
+        },
+        "golduck+shadow": {
             "fastMoves": [
                 "CONFUSION",
                 "WATER_GUN"
@@ -944,6 +1306,18 @@
             ],
             "legacyMoves": []
         },
+        "growlithe+shadow": {
+            "fastMoves": [
+                "BITE",
+                "EMBER"
+            ],
+            "chargeMoves": [
+                "BODY_SLAM",
+                "FLAME_WHEEL",
+                "FLAMETHROWER"
+            ],
+            "legacyMoves": []
+        },
         "arcanine": {
             "fastMoves": [
                 "BITE",
@@ -963,7 +1337,33 @@
                 "BULLDOZE"
             ]
         },
+        "arcanine+shadow": {
+            "fastMoves": [
+                "FIRE_FANG",
+                "SNARL",
+                "THUNDER_FANG"
+            ],
+            "chargeMoves": [
+                "CRUNCH",
+                "FIRE_BLAST",
+                "FLAMETHROWER",
+                "WILD_CHARGE"
+            ],
+            "legacyMoves": []
+        },
         "poliwag": {
+            "fastMoves": [
+                "BUBBLE",
+                "MUD_SHOT"
+            ],
+            "chargeMoves": [
+                "BODY_SLAM",
+                "BUBBLE_BEAM",
+                "MUD_BOMB"
+            ],
+            "legacyMoves": []
+        },
+        "poliwag+shadow": {
             "fastMoves": [
                 "BUBBLE",
                 "MUD_SHOT"
@@ -990,6 +1390,18 @@
                 "SCALD"
             ]
         },
+        "poliwhirl+shadow": {
+            "fastMoves": [
+                "BUBBLE",
+                "MUD_SHOT"
+            ],
+            "chargeMoves": [
+                "BUBBLE_BEAM",
+                "MUD_BOMB",
+                "WATER_PULSE"
+            ],
+            "legacyMoves": []
+        },
         "poliwrath": {
             "fastMoves": [
                 "BUBBLE",
@@ -1007,6 +1419,20 @@
                 "SUBMISSION"
             ]
         },
+        "poliwrath+shadow": {
+            "fastMoves": [
+                "BUBBLE",
+                "MUD_SHOT",
+                "ROCK_SMASH"
+            ],
+            "chargeMoves": [
+                "DYNAMIC_PUNCH",
+                "HYDRO_PUMP",
+                "ICE_PUNCH",
+                "POWER_UP_PUNCH"
+            ],
+            "legacyMoves": []
+        },
         "abra": {
             "fastMoves": [
                 "CHARGE_BEAM",
@@ -1019,7 +1445,31 @@
             ],
             "legacyMoves": []
         },
+        "abra+shadow": {
+            "fastMoves": [
+                "CHARGE_BEAM",
+                "ZEN_HEADBUTT"
+            ],
+            "chargeMoves": [
+                "PSYSHOCK",
+                "SHADOW_BALL",
+                "SIGNAL_BEAM"
+            ],
+            "legacyMoves": []
+        },
         "kadabra": {
+            "fastMoves": [
+                "CONFUSION",
+                "PSYCHO_CUT"
+            ],
+            "chargeMoves": [
+                "DAZZLING_GLEAM",
+                "PSYBEAM",
+                "SHADOW_BALL"
+            ],
+            "legacyMoves": []
+        },
+        "kadabra+shadow": {
             "fastMoves": [
                 "CONFUSION",
                 "PSYCHO_CUT"
@@ -1048,6 +1498,19 @@
                 "DAZZLING_GLEAM",
                 "PSYCHIC"
             ]
+        },
+        "alakazam+shadow": {
+            "fastMoves": [
+                "CONFUSION",
+                "PSYCHO_CUT"
+            ],
+            "chargeMoves": [
+                "FIRE_PUNCH",
+                "FOCUS_BLAST",
+                "FUTURE_SIGHT",
+                "SHADOW_BALL"
+            ],
+            "legacyMoves": []
         },
         "machop": {
             "fastMoves": [
@@ -1112,6 +1575,18 @@
             ],
             "legacyMoves": []
         },
+        "bellsprout+shadow": {
+            "fastMoves": [
+                "ACID",
+                "VINE_WHIP"
+            ],
+            "chargeMoves": [
+                "POWER_WHIP",
+                "SLUDGE_BOMB",
+                "WRAP"
+            ],
+            "legacyMoves": []
+        },
         "weepinbell": {
             "fastMoves": [
                 "ACID",
@@ -1127,7 +1602,33 @@
                 "RAZOR_LEAF"
             ]
         },
+        "weepinbell+shadow": {
+            "fastMoves": [
+                "ACID",
+                "BULLET_SEED"
+            ],
+            "chargeMoves": [
+                "POWER_WHIP",
+                "SEED_BOMB",
+                "SLUDGE_BOMB"
+            ],
+            "legacyMoves": []
+        },
         "victreebel": {
+            "fastMoves": [
+                "ACID",
+                "RAZOR_LEAF"
+            ],
+            "chargeMoves": [
+                "LEAF_BLADE",
+                "SLUDGE_BOMB",
+                "SOLAR_BEAM",
+                "ACID_SPRAY",
+                "LEAF_TORNADO"
+            ],
+            "legacyMoves": []
+        },
+        "victreebel+shadow": {
             "fastMoves": [
                 "ACID",
                 "RAZOR_LEAF"
@@ -1190,6 +1691,18 @@
             ],
             "legacyMoves": []
         },
+        "geodude+shadow": {
+            "fastMoves": [
+                "ROCK_THROW",
+                "TACKLE"
+            ],
+            "chargeMoves": [
+                "DIG",
+                "ROCK_SLIDE",
+                "ROCK_TOMB"
+            ],
+            "legacyMoves": []
+        },
         "graveler": {
             "fastMoves": [
                 "MUD_SHOT",
@@ -1219,6 +1732,18 @@
             ],
             "legacyMoves": []
         },
+        "graveler+shadow": {
+            "fastMoves": [
+                "MUD_SLAP",
+                "ROCK_THROW"
+            ],
+            "chargeMoves": [
+                "DIG",
+                "ROCK_BLAST",
+                "STONE_EDGE"
+            ],
+            "legacyMoves": []
+        },
         "golem": {
             "fastMoves": [
                 "MUD_SHOT",
@@ -1244,6 +1769,19 @@
                 "ROCK_BLAST",
                 "STONE_EDGE",
                 "WILD_CHARGE"
+            ],
+            "legacyMoves": []
+        },
+        "golem+shadow": {
+            "fastMoves": [
+                "MUD_SLAP",
+                "ROCK_THROW"
+            ],
+            "chargeMoves": [
+                "ANCIENT_POWER",
+                "EARTHQUAKE",
+                "ROCK_BLAST",
+                "STONE_EDGE"
             ],
             "legacyMoves": []
         },
@@ -1313,6 +1851,18 @@
             ],
             "legacyMoves": []
         },
+        "magnemite+shadow": {
+            "fastMoves": [
+                "SPARK",
+                "THUNDER_SHOCK"
+            ],
+            "chargeMoves": [
+                "DISCHARGE",
+                "MAGNET_BOMB",
+                "THUNDERBOLT"
+            ],
+            "legacyMoves": []
+        },
         "magneton": {
             "fastMoves": [
                 "CHARGE_BEAM",
@@ -1325,10 +1875,21 @@
                 "MAGNET_BOMB",
                 "ZAP_CANNON"
             ],
-            "legacyMoves": [
-                "DISCHARGE",
+            "legacyMoves": []
+        },
+        "magneton+shadow": {
+            "fastMoves": [
+                "CHARGE_BEAM",
+                "SPARK",
                 "THUNDER_SHOCK"
-            ]
+            ],
+            "chargeMoves": [
+                "DISCHARGE",
+                "FLASH_CANNON",
+                "MAGNET_BOMB",
+                "ZAP_CANNON"
+            ],
+            "legacyMoves": []
         },
         "farfetchd": {
             "fastMoves": [
@@ -1441,6 +2002,18 @@
                 "ACID"
             ]
         },
+        "grimer+shadow": {
+            "fastMoves": [
+                "MUD_SLAP",
+                "POISON_JAB"
+            ],
+            "chargeMoves": [
+                "MUD_BOMB",
+                "SLUDGE",
+                "SLUDGE_BOMB"
+            ],
+            "legacyMoves": []
+        },
         "muk": {
             "fastMoves": [
                 "ACID",
@@ -1474,7 +2047,33 @@
             ],
             "legacyMoves": []
         },
+        "muk+shadow": {
+            "fastMoves": [
+                "INFESTATION",
+                "POISON_JAB"
+            ],
+            "chargeMoves": [
+                "DARK_PULSE",
+                "GUNK_SHOT",
+                "SLUDGE_WAVE",
+                "THUNDER_PUNCH",
+                "ACID_SPRAY"
+            ],
+            "legacyMoves": []
+        },
         "shellder": {
+            "fastMoves": [
+                "ICE_SHARD",
+                "TACKLE"
+            ],
+            "chargeMoves": [
+                "BUBBLE_BEAM",
+                "ICY_WIND",
+                "WATER_PULSE"
+            ],
+            "legacyMoves": []
+        },
+        "shellder+shadow": {
             "fastMoves": [
                 "ICE_SHARD",
                 "TACKLE"
@@ -1501,6 +2100,19 @@
             "legacyMoves": [
                 "BLIZZARD"
             ]
+        },
+        "cloyster+shadow": {
+            "fastMoves": [
+                "FROST_BREATH",
+                "ICE_SHARD"
+            ],
+            "chargeMoves": [
+                "AURORA_BEAM",
+                "AVALANCHE",
+                "HYDRO_PUMP",
+                "ICY_WIND"
+            ],
+            "legacyMoves": []
         },
         "gastly": {
             "fastMoves": [
@@ -1532,8 +2144,7 @@
                 "SLUDGE_BOMB"
             ],
             "legacyMoves": [
-                "LICK",
-                "SHADOW_BALL"
+                "LICK"
             ]
         },
         "gengar": {
@@ -1587,6 +2198,18 @@
             ],
             "legacyMoves": []
         },
+        "drowzee+shadow": {
+            "fastMoves": [
+                "CONFUSION",
+                "POUND"
+            ],
+            "chargeMoves": [
+                "PSYBEAM",
+                "PSYCHIC",
+                "PSYSHOCK"
+            ],
+            "legacyMoves": []
+        },
         "hypno": {
             "fastMoves": [
                 "CONFUSION",
@@ -1603,9 +2226,24 @@
                 "THUNDER_PUNCH"
             ],
             "legacyMoves": [
-                "PSYSHOCK",
-                "SHADOW_BALL"
+                "PSYSHOCK"
             ]
+        },
+        "hypno+shadow": {
+            "fastMoves": [
+                "CONFUSION",
+                "ZEN_HEADBUTT"
+            ],
+            "chargeMoves": [
+                "FOCUS_BLAST",
+                "FUTURE_SIGHT",
+                "PSYCHIC",
+                "SHADOW_BALL",
+                "FIRE_PUNCH",
+                "ICE_PUNCH",
+                "THUNDER_PUNCH"
+            ],
+            "legacyMoves": []
         },
         "krabby": {
             "fastMoves": [
@@ -1678,6 +2316,18 @@
             ],
             "legacyMoves": []
         },
+        "exeggcute+shadow": {
+            "fastMoves": [
+                "BULLET_SEED",
+                "CONFUSION"
+            ],
+            "chargeMoves": [
+                "ANCIENT_POWER",
+                "PSYCHIC",
+                "SEED_BOMB"
+            ],
+            "legacyMoves": []
+        },
         "exeggutor": {
             "fastMoves": [
                 "BULLET_SEED",
@@ -1706,7 +2356,32 @@
             ],
             "legacyMoves": []
         },
+        "exeggutor+shadow": {
+            "fastMoves": [
+                "BULLET_SEED",
+                "CONFUSION",
+                "EXTRASENSORY"
+            ],
+            "chargeMoves": [
+                "PSYCHIC",
+                "SEED_BOMB",
+                "SOLAR_BEAM"
+            ],
+            "legacyMoves": []
+        },
         "cubone": {
+            "fastMoves": [
+                "MUD_SLAP",
+                "ROCK_SMASH"
+            ],
+            "chargeMoves": [
+                "BONE_CLUB",
+                "BULLDOZE",
+                "DIG"
+            ],
+            "legacyMoves": []
+        },
+        "cubone+shadow": {
             "fastMoves": [
                 "MUD_SLAP",
                 "ROCK_SMASH"
@@ -1744,6 +2419,18 @@
             ],
             "legacyMoves": []
         },
+        "marowak+shadow": {
+            "fastMoves": [
+                "MUD_SLAP",
+                "ROCK_SMASH"
+            ],
+            "chargeMoves": [
+                "BONE_CLUB",
+                "DIG",
+                "EARTHQUAKE"
+            ],
+            "legacyMoves": []
+        },
         "hitmonlee": {
             "fastMoves": [
                 "LOW_KICK",
@@ -1760,6 +2447,18 @@
                 "BRICK_BREAK",
                 "STOMP"
             ]
+        },
+        "hitmonlee+shadow": {
+            "fastMoves": [
+                "LOW_KICK",
+                "ROCK_SMASH"
+            ],
+            "chargeMoves": [
+                "CLOSE_COMBAT",
+                "LOW_SWEEP",
+                "STONE_EDGE"
+            ],
+            "legacyMoves": []
         },
         "hitmonchan": {
             "fastMoves": [
@@ -1780,6 +2479,20 @@
                 "ROCK_SMASH"
             ]
         },
+        "hitmonchan+shadow": {
+            "fastMoves": [
+                "BULLET_PUNCH",
+                "COUNTER"
+            ],
+            "chargeMoves": [
+                "CLOSE_COMBAT",
+                "FIRE_PUNCH",
+                "ICE_PUNCH",
+                "THUNDER_PUNCH",
+                "POWER_UP_PUNCH"
+            ],
+            "legacyMoves": []
+        },
         "lickitung": {
             "fastMoves": [
                 "LICK",
@@ -1788,9 +2501,12 @@
             "chargeMoves": [
                 "HYPER_BEAM",
                 "POWER_WHIP",
-                "STOMP"
+                "STOMP",
+                "BODY_SLAM"
             ],
-            "legacyMoves": []
+            "legacyMoves": [
+                "BODY_SLAM"
+            ]
         },
         "koffing": {
             "fastMoves": [
@@ -2048,6 +2764,18 @@
                 "STEEL_WING"
             ]
         },
+        "scyther+shadow": {
+            "fastMoves": [
+                "AIR_SLASH",
+                "FURY_CUTTER"
+            ],
+            "chargeMoves": [
+                "AERIAL_ACE",
+                "NIGHT_SLASH",
+                "X_SCISSOR"
+            ],
+            "legacyMoves": []
+        },
         "jynx": {
             "fastMoves": [
                 "CONFUSION",
@@ -2078,7 +2806,31 @@
             ],
             "legacyMoves": []
         },
+        "electabuzz+shadow": {
+            "fastMoves": [
+                "LOW_KICK",
+                "THUNDER_SHOCK"
+            ],
+            "chargeMoves": [
+                "THUNDER",
+                "THUNDER_PUNCH",
+                "THUNDERBOLT"
+            ],
+            "legacyMoves": []
+        },
         "magmar": {
+            "fastMoves": [
+                "EMBER",
+                "KARATE_CHOP"
+            ],
+            "chargeMoves": [
+                "FIRE_BLAST",
+                "FIRE_PUNCH",
+                "FLAMETHROWER"
+            ],
+            "legacyMoves": []
+        },
+        "magmar+shadow": {
             "fastMoves": [
                 "EMBER",
                 "KARATE_CHOP"
@@ -2107,6 +2859,20 @@
                 "SUBMISSION"
             ]
         },
+        "pinsir+shadow": {
+            "fastMoves": [
+                "BUG_BITE",
+                "FURY_CUTTER",
+                "ROCK_SMASH"
+            ],
+            "chargeMoves": [
+                "CLOSE_COMBAT",
+                "VICE_GRIP",
+                "X_SCISSOR",
+                "SUPER_POWER"
+            ],
+            "legacyMoves": []
+        },
         "tauros": {
             "fastMoves": [
                 "TACKLE",
@@ -2120,6 +2886,15 @@
             "legacyMoves": []
         },
         "magikarp": {
+            "fastMoves": [
+                "SPLASH"
+            ],
+            "chargeMoves": [
+                "STRUGGLE"
+            ],
+            "legacyMoves": []
+        },
+        "magikarp+shadow": {
             "fastMoves": [
                 "SPLASH"
             ],
@@ -2147,6 +2922,20 @@
                 "DRAGON_TAIL"
             ]
         },
+        "gyarados+shadow": {
+            "fastMoves": [
+                "BITE",
+                "DRAGON_BREATH",
+                "WATERFALL"
+            ],
+            "chargeMoves": [
+                "CRUNCH",
+                "HYDRO_PUMP",
+                "OUTRAGE",
+                "TWISTER"
+            ],
+            "legacyMoves": []
+        },
         "lapras": {
             "fastMoves": [
                 "FROST_BREATH",
@@ -2166,6 +2955,19 @@
                 "ICE_BEAM",
                 "ICE_SHARD"
             ]
+        },
+        "lapras+shadow": {
+            "fastMoves": [
+                "FROST_BREATH",
+                "WATER_GUN"
+            ],
+            "chargeMoves": [
+                "BLIZZARD",
+                "HYDRO_PUMP",
+                "SURF",
+                "SKULL_BASH"
+            ],
+            "legacyMoves": []
         },
         "ditto": {
             "fastMoves": [
@@ -2278,6 +3080,33 @@
                 "ZEN_HEADBUTT"
             ]
         },
+        "porygon+shadow": {
+            "fastMoves": [
+                "CHARGE_BEAM",
+                "HIDDEN_POWER_BUG",
+                "HIDDEN_POWER_DARK",
+                "HIDDEN_POWER_DRAGON",
+                "HIDDEN_POWER_ELECTRIC",
+                "HIDDEN_POWER_FIGHTING",
+                "HIDDEN_POWER_FIRE",
+                "HIDDEN_POWER_FLYING",
+                "HIDDEN_POWER_GHOST",
+                "HIDDEN_POWER_GRASS",
+                "HIDDEN_POWER_GROUND",
+                "HIDDEN_POWER_ICE",
+                "HIDDEN_POWER_POISON",
+                "HIDDEN_POWER_PSYCHIC",
+                "HIDDEN_POWER_ROCK",
+                "HIDDEN_POWER_STEEL",
+                "HIDDEN_POWER_WATER"
+            ],
+            "chargeMoves": [
+                "HYPER_BEAM",
+                "SOLAR_BEAM",
+                "ZAP_CANNON"
+            ],
+            "legacyMoves": []
+        },
         "omanyte": {
             "fastMoves": [
                 "MUD_SHOT",
@@ -2295,6 +3124,18 @@
                 "ROCK_TOMB"
             ]
         },
+        "omanyte+shadow": {
+            "fastMoves": [
+                "MUD_SHOT",
+                "WATER_GUN"
+            ],
+            "chargeMoves": [
+                "ANCIENT_POWER",
+                "BUBBLE_BEAM",
+                "ROCK_BLAST"
+            ],
+            "legacyMoves": []
+        },
         "omastar": {
             "fastMoves": [
                 "MUD_SHOT",
@@ -2311,6 +3152,18 @@
                 "ROCK_SLIDE",
                 "ROCK_THROW"
             ]
+        },
+        "omastar+shadow": {
+            "fastMoves": [
+                "MUD_SHOT",
+                "WATER_GUN"
+            ],
+            "chargeMoves": [
+                "ANCIENT_POWER",
+                "HYDRO_PUMP",
+                "ROCK_BLAST"
+            ],
+            "legacyMoves": []
         },
         "kabuto": {
             "fastMoves": [
@@ -2374,6 +3227,22 @@
                 "YAWN"
             ]
         },
+        "snorlax+shadow": {
+            "fastMoves": [
+                "LICK",
+                "ZEN_HEADBUTT"
+            ],
+            "chargeMoves": [
+                "BODY_SLAM",
+                "EARTHQUAKE",
+                "HEAVY_SLAM",
+                "HYPER_BEAM",
+                "OUTRAGE",
+                "SKULL_BASH",
+                "SUPER_POWER"
+            ],
+            "legacyMoves": []
+        },
         "articuno": {
             "fastMoves": [
                 "FROST_BREATH",
@@ -2390,6 +3259,19 @@
                 "HURRICANE"
             ]
         },
+        "articuno+shadow": {
+            "fastMoves": [
+                "FROST_BREATH",
+                "ICE_SHARD"
+            ],
+            "chargeMoves": [
+                "BLIZZARD",
+                "ICE_BEAM",
+                "ICY_WIND",
+                "ANCIENT_POWER"
+            ],
+            "legacyMoves": []
+        },
         "zapdos": {
             "fastMoves": [
                 "CHARGE_BEAM",
@@ -2405,6 +3287,19 @@
             "legacyMoves": [
                 "THUNDER_SHOCK"
             ]
+        },
+        "zapdos+shadow": {
+            "fastMoves": [
+                "CHARGE_BEAM"
+            ],
+            "chargeMoves": [
+                "THUNDER",
+                "THUNDERBOLT",
+                "ZAP_CANNON",
+                "ANCIENT_POWER",
+                "DRILL_PECK"
+            ],
+            "legacyMoves": []
         },
         "moltres": {
             "fastMoves": [
@@ -2424,6 +3319,19 @@
                 "SKY_ATTACK"
             ]
         },
+        "moltres+shadow": {
+            "fastMoves": [
+                "FIRE_SPIN",
+                "WING_ATTACK"
+            ],
+            "chargeMoves": [
+                "FIRE_BLAST",
+                "HEAT_WAVE",
+                "OVERHEAT",
+                "ANCIENT_POWER"
+            ],
+            "legacyMoves": []
+        },
         "dratini": {
             "fastMoves": [
                 "DRAGON_BREATH",
@@ -2436,7 +3344,31 @@
             ],
             "legacyMoves": []
         },
+        "dratini+shadow": {
+            "fastMoves": [
+                "DRAGON_BREATH",
+                "IRON_TAIL"
+            ],
+            "chargeMoves": [
+                "AQUA_TAIL",
+                "TWISTER",
+                "WRAP"
+            ],
+            "legacyMoves": []
+        },
         "dragonair": {
+            "fastMoves": [
+                "DRAGON_BREATH",
+                "IRON_TAIL"
+            ],
+            "chargeMoves": [
+                "AQUA_TAIL",
+                "DRAGON_PULSE",
+                "WRAP"
+            ],
+            "legacyMoves": []
+        },
+        "dragonair+shadow": {
             "fastMoves": [
                 "DRAGON_BREATH",
                 "IRON_TAIL"
@@ -2466,6 +3398,20 @@
                 "DRACO_METEOR",
                 "DRAGON_PULSE"
             ]
+        },
+        "dragonite+shadow": {
+            "fastMoves": [
+                "DRAGON_BREATH",
+                "DRAGON_TAIL",
+                "STEEL_WING"
+            ],
+            "chargeMoves": [
+                "DRAGON_CLAW",
+                "HURRICANE",
+                "HYPER_BEAM",
+                "OUTRAGE"
+            ],
+            "legacyMoves": []
         },
         "mewtwo": {
             "fastMoves": [
@@ -2497,9 +3443,12 @@
                 "DYNAMIC_PUNCH",
                 "ROCK_SLIDE",
                 "EARTHQUAKE",
-                "FUTURE_SIGHT"
+                "FUTURE_SIGHT",
+                "PSYSTRIKE"
             ],
-            "legacyMoves": []
+            "legacyMoves": [
+                "PSYSTRIKE"
+            ]
         },
         "mew": {
             "fastMoves": [
@@ -2775,6 +3724,18 @@
             ],
             "legacyMoves": []
         },
+        "crobat+shadow": {
+            "fastMoves": [
+                "AIR_SLASH",
+                "BITE"
+            ],
+            "chargeMoves": [
+                "AIR_CUTTER",
+                "SHADOW_BALL",
+                "SLUDGE_BOMB"
+            ],
+            "legacyMoves": []
+        },
         "chinchou": {
             "fastMoves": [
                 "BUBBLE",
@@ -2790,7 +3751,8 @@
         "lanturn": {
             "fastMoves": [
                 "CHARGE_BEAM",
-                "WATER_GUN"
+                "WATER_GUN",
+                "SPARK"
             ],
             "chargeMoves": [
                 "HYDRO_PUMP",
@@ -2943,7 +3905,31 @@
             ],
             "legacyMoves": []
         },
+        "mareep+shadow": {
+            "fastMoves": [
+                "TACKLE",
+                "THUNDER_SHOCK"
+            ],
+            "chargeMoves": [
+                "BODY_SLAM",
+                "DISCHARGE",
+                "THUNDERBOLT"
+            ],
+            "legacyMoves": []
+        },
         "flaaffy": {
+            "fastMoves": [
+                "CHARGE_BEAM",
+                "TACKLE"
+            ],
+            "chargeMoves": [
+                "DISCHARGE",
+                "POWER_GEM",
+                "THUNDERBOLT"
+            ],
+            "legacyMoves": []
+        },
+        "flaaffy+shadow": {
             "fastMoves": [
                 "CHARGE_BEAM",
                 "TACKLE"
@@ -2965,16 +3951,45 @@
                 "FOCUS_BLAST",
                 "POWER_GEM",
                 "THUNDER",
-                "ZAP_CANNON"
+                "ZAP_CANNON",
+                "THUNDER_PUNCH"
             ],
             "legacyMoves": [
                 "DRAGON_PULSE"
             ]
         },
+        "ampharos+shadow": {
+            "fastMoves": [
+                "CHARGE_BEAM",
+                "VOLT_SWITCH"
+            ],
+            "chargeMoves": [
+                "FOCUS_BLAST",
+                "POWER_GEM",
+                "THUNDER",
+                "ZAP_CANNON",
+                "THUNDER_PUNCH"
+            ],
+            "legacyMoves": []
+        },
         "bellossom": {
             "fastMoves": [
                 "ACID",
-                "RAZOR_LEAF"
+                "RAZOR_LEAF",
+                "BULLET_SEED"
+            ],
+            "chargeMoves": [
+                "DAZZLING_GLEAM",
+                "LEAF_BLADE",
+                "PETAL_BLIZZARD"
+            ],
+            "legacyMoves": []
+        },
+        "bellossom+shadow": {
+            "fastMoves": [
+                "ACID",
+                "RAZOR_LEAF",
+                "BULLET_SEED"
             ],
             "chargeMoves": [
                 "DAZZLING_GLEAM",
@@ -3034,6 +4049,18 @@
                 "EARTHQUAKE"
             ]
         },
+        "politoed+shadow": {
+            "fastMoves": [
+                "BUBBLE",
+                "MUD_SHOT"
+            ],
+            "chargeMoves": [
+                "BLIZZARD",
+                "HYDRO_PUMP",
+                "SURF"
+            ],
+            "legacyMoves": []
+        },
         "hoppip": {
             "fastMoves": [
                 "BULLET_SEED",
@@ -3066,6 +4093,7 @@
             "chargeMoves": [
                 "DAZZLING_GLEAM",
                 "ENERGY_BALL",
+                "AERIAL_ACE",
                 "SOLAR_BEAM"
             ],
             "legacyMoves": []
@@ -3208,6 +4236,18 @@
             ],
             "legacyMoves": []
         },
+        "misdreavus+shadow": {
+            "fastMoves": [
+                "ASTONISH",
+                "HEX"
+            ],
+            "chargeMoves": [
+                "DARK_PULSE",
+                "OMINOUS_WIND",
+                "SHADOW_SNEAK"
+            ],
+            "legacyMoves": []
+        },
         "unown": {
             "fastMoves": [
                 "HIDDEN_POWER_BUG",
@@ -3233,6 +4273,17 @@
             "legacyMoves": []
         },
         "wobbuffet": {
+            "fastMoves": [
+                "COUNTER",
+                "SPLASH",
+                "CHARM"
+            ],
+            "chargeMoves": [
+                "MIRROR_COAT"
+            ],
+            "legacyMoves": []
+        },
+        "wobbuffet+shadow": {
             "fastMoves": [
                 "COUNTER",
                 "SPLASH",
@@ -3369,6 +4420,18 @@
             ],
             "legacyMoves": []
         },
+        "scizor+shadow": {
+            "fastMoves": [
+                "BULLET_PUNCH",
+                "FURY_CUTTER"
+            ],
+            "chargeMoves": [
+                "IRON_HEAD",
+                "NIGHT_SLASH",
+                "X_SCISSOR"
+            ],
+            "legacyMoves": []
+        },
         "shuckle": {
             "fastMoves": [
                 "ROCK_THROW",
@@ -3394,6 +4457,18 @@
             "legacyMoves": []
         },
         "sneasel": {
+            "fastMoves": [
+                "FEINT_ATTACK",
+                "ICE_SHARD"
+            ],
+            "chargeMoves": [
+                "AVALANCHE",
+                "FOUL_PLAY",
+                "ICE_PUNCH"
+            ],
+            "legacyMoves": []
+        },
+        "sneasel+shadow": {
             "fastMoves": [
                 "FEINT_ATTACK",
                 "ICE_SHARD"
@@ -3532,6 +4607,17 @@
                 "QUICK_ATTACK"
             ]
         },
+        "delibird+shadow": {
+            "fastMoves": [
+                "PRESENT"
+            ],
+            "chargeMoves": [
+                "AERIAL_ACE",
+                "ICE_PUNCH",
+                "ICY_WIND"
+            ],
+            "legacyMoves": []
+        },
         "mantine": {
             "fastMoves": [
                 "BUBBLE",
@@ -3570,7 +4656,32 @@
             ],
             "legacyMoves": []
         },
+        "houndour+shadow": {
+            "fastMoves": [
+                "EMBER",
+                "FEINT_ATTACK"
+            ],
+            "chargeMoves": [
+                "CRUNCH",
+                "DARK_PULSE",
+                "FLAMETHROWER"
+            ],
+            "legacyMoves": []
+        },
         "houndoom": {
+            "fastMoves": [
+                "FIRE_FANG",
+                "SNARL"
+            ],
+            "chargeMoves": [
+                "CRUNCH",
+                "FIRE_BLAST",
+                "FLAMETHROWER",
+                "FOUL_PLAY"
+            ],
+            "legacyMoves": []
+        },
+        "houndoom+shadow": {
             "fastMoves": [
                 "FIRE_FANG",
                 "SNARL"
@@ -3653,7 +4764,47 @@
             ],
             "legacyMoves": []
         },
+        "porygon2+shadow": {
+            "fastMoves": [
+                "LOCK_ON",
+                "CHARGE_BEAM",
+                "HIDDEN_POWER_BUG",
+                "HIDDEN_POWER_DARK",
+                "HIDDEN_POWER_DRAGON",
+                "HIDDEN_POWER_ELECTRIC",
+                "HIDDEN_POWER_FIGHTING",
+                "HIDDEN_POWER_FIRE",
+                "HIDDEN_POWER_FLYING",
+                "HIDDEN_POWER_GHOST",
+                "HIDDEN_POWER_GRASS",
+                "HIDDEN_POWER_GROUND",
+                "HIDDEN_POWER_ICE",
+                "HIDDEN_POWER_POISON",
+                "HIDDEN_POWER_PSYCHIC",
+                "HIDDEN_POWER_ROCK",
+                "HIDDEN_POWER_STEEL",
+                "HIDDEN_POWER_WATER"
+            ],
+            "chargeMoves": [
+                "HYPER_BEAM",
+                "SOLAR_BEAM",
+                "ZAP_CANNON"
+            ],
+            "legacyMoves": []
+        },
         "stantler": {
+            "fastMoves": [
+                "TACKLE",
+                "ZEN_HEADBUTT"
+            ],
+            "chargeMoves": [
+                "MEGAHORN",
+                "STOMP",
+                "WILD_CHARGE"
+            ],
+            "legacyMoves": []
+        },
+        "stantler+shadow": {
             "fastMoves": [
                 "TACKLE",
                 "ZEN_HEADBUTT"
@@ -3970,7 +5121,33 @@
             ],
             "legacyMoves": []
         },
+        "raikou+shadow": {
+            "fastMoves": [
+                "THUNDER_SHOCK",
+                "VOLT_SWITCH"
+            ],
+            "chargeMoves": [
+                "SHADOW_BALL",
+                "THUNDER",
+                "THUNDERBOLT",
+                "WILD_CHARGE"
+            ],
+            "legacyMoves": []
+        },
         "entei": {
+            "fastMoves": [
+                "FIRE_FANG",
+                "FIRE_SPIN"
+            ],
+            "chargeMoves": [
+                "FIRE_BLAST",
+                "FLAMETHROWER",
+                "IRON_HEAD",
+                "OVERHEAT"
+            ],
+            "legacyMoves": []
+        },
+        "entei+shadow": {
             "fastMoves": [
                 "FIRE_FANG",
                 "FIRE_SPIN"
@@ -4042,7 +5219,31 @@
             ],
             "legacyMoves": []
         },
+        "larvitar+shadow": {
+            "fastMoves": [
+                "BITE",
+                "ROCK_SMASH"
+            ],
+            "chargeMoves": [
+                "ANCIENT_POWER",
+                "CRUNCH",
+                "STOMP"
+            ],
+            "legacyMoves": []
+        },
         "pupitar": {
+            "fastMoves": [
+                "BITE",
+                "ROCK_SMASH"
+            ],
+            "chargeMoves": [
+                "ANCIENT_POWER",
+                "CRUNCH",
+                "DIG"
+            ],
+            "legacyMoves": []
+        },
+        "pupitar+shadow": {
             "fastMoves": [
                 "BITE",
                 "ROCK_SMASH"
@@ -4059,6 +5260,21 @@
                 "BITE",
                 "IRON_TAIL",
                 "SMACK_DOWN"
+            ],
+            "chargeMoves": [
+                "CRUNCH",
+                "FIRE_BLAST",
+                "STONE_EDGE"
+            ],
+            "legacyMoves": [
+                "SMACK_DOWN"
+            ]
+        },
+        "tyranitar+shadow": {
+            "fastMoves": [
+                "SMACK_DOWN",
+                "BITE",
+                "IRON_TAIL"
             ],
             "chargeMoves": [
                 "CRUNCH",
@@ -4216,7 +5432,31 @@
             ],
             "legacyMoves": []
         },
+        "mudkip+shadow": {
+            "fastMoves": [
+                "TACKLE",
+                "WATER_GUN"
+            ],
+            "chargeMoves": [
+                "DIG",
+                "SLUDGE",
+                "STOMP"
+            ],
+            "legacyMoves": []
+        },
         "marshtomp": {
+            "fastMoves": [
+                "MUD_SHOT",
+                "WATER_GUN"
+            ],
+            "chargeMoves": [
+                "MUD_BOMB",
+                "SLUDGE",
+                "SURF"
+            ],
+            "legacyMoves": []
+        },
+        "marshtomp+shadow": {
             "fastMoves": [
                 "MUD_SHOT",
                 "WATER_GUN"
@@ -4243,6 +5483,19 @@
             "legacyMoves": [
                 "HYDRO_CANNON"
             ]
+        },
+        "swampert+shadow": {
+            "fastMoves": [
+                "MUD_SHOT",
+                "WATER_GUN"
+            ],
+            "chargeMoves": [
+                "EARTHQUAKE",
+                "SLUDGE_WAVE",
+                "SURF",
+                "MUDDY_WATER"
+            ],
+            "legacyMoves": []
         },
         "poochyena": {
             "fastMoves": [
@@ -4403,12 +5656,25 @@
             "chargeMoves": [
                 "BLIZZARD",
                 "HYDRO_PUMP",
+                "ENERGY_BALL",
                 "ICE_BEAM",
                 "SOLAR_BEAM"
             ],
             "legacyMoves": []
         },
         "seedot": {
+            "fastMoves": [
+                "BULLET_SEED",
+                "QUICK_ATTACK"
+            ],
+            "chargeMoves": [
+                "ENERGY_BALL",
+                "FOUL_PLAY",
+                "GRASS_KNOT"
+            ],
+            "legacyMoves": []
+        },
+        "seedot+shadow": {
             "fastMoves": [
                 "BULLET_SEED",
                 "QUICK_ATTACK"
@@ -4432,7 +5698,33 @@
             ],
             "legacyMoves": []
         },
+        "nuzleaf+shadow": {
+            "fastMoves": [
+                "FEINT_ATTACK",
+                "RAZOR_LEAF"
+            ],
+            "chargeMoves": [
+                "FOUL_PLAY",
+                "GRASS_KNOT",
+                "LEAF_BLADE"
+            ],
+            "legacyMoves": []
+        },
         "shiftry": {
+            "fastMoves": [
+                "FEINT_ATTACK",
+                "RAZOR_LEAF",
+                "SNARL"
+            ],
+            "chargeMoves": [
+                "FOUL_PLAY",
+                "HURRICANE",
+                "LEAF_BLADE",
+                "LEAF_TORNADO"
+            ],
+            "legacyMoves": []
+        },
+        "shiftry+shadow": {
             "fastMoves": [
                 "FEINT_ATTACK",
                 "RAZOR_LEAF",
@@ -4504,7 +5796,31 @@
             ],
             "legacyMoves": []
         },
+        "ralts+shadow": {
+            "fastMoves": [
+                "CHARGE_BEAM",
+                "CONFUSION"
+            ],
+            "chargeMoves": [
+                "DISARMING_VOICE",
+                "PSYSHOCK",
+                "SHADOW_SNEAK"
+            ],
+            "legacyMoves": []
+        },
         "kirlia": {
+            "fastMoves": [
+                "CHARGE_BEAM",
+                "CONFUSION"
+            ],
+            "chargeMoves": [
+                "DISARMING_VOICE",
+                "PSYCHIC",
+                "SHADOW_SNEAK"
+            ],
+            "legacyMoves": []
+        },
+        "kirlia+shadow": {
             "fastMoves": [
                 "CHARGE_BEAM",
                 "CONFUSION"
@@ -4532,6 +5848,19 @@
                 "SYNCHRONOISE"
             ]
         },
+        "gardevoir+shadow": {
+            "fastMoves": [
+                "CHARGE_BEAM",
+                "CONFUSION",
+                "CHARM"
+            ],
+            "chargeMoves": [
+                "DAZZLING_GLEAM",
+                "PSYCHIC",
+                "SHADOW_BALL"
+            ],
+            "legacyMoves": []
+        },
         "surskit": {
             "fastMoves": [
                 "BUBBLE",
@@ -4552,7 +5881,8 @@
             "chargeMoves": [
                 "AIR_CUTTER",
                 "OMINOUS_WIND",
-                "SILVER_WIND"
+                "SILVER_WIND",
+                "BUBBLE_BEAM"
             ],
             "legacyMoves": []
         },
@@ -4779,7 +6109,34 @@
             ],
             "legacyMoves": []
         },
+        "sableye+shadow": {
+            "fastMoves": [
+                "FEINT_ATTACK",
+                "SHADOW_CLAW"
+            ],
+            "chargeMoves": [
+                "FOUL_PLAY",
+                "POWER_GEM",
+                "SHADOW_SNEAK"
+            ],
+            "legacyMoves": []
+        },
         "mawile": {
+            "fastMoves": [
+                "ASTONISH",
+                "BITE",
+                "FIRE_FANG",
+                "ICE_FANG"
+            ],
+            "chargeMoves": [
+                "IRON_HEAD",
+                "PLAY_ROUGH",
+                "VICE_GRIP",
+                "POWER_UP_PUNCH"
+            ],
+            "legacyMoves": []
+        },
+        "mawile+shadow": {
             "fastMoves": [
                 "ASTONISH",
                 "BITE",
@@ -4888,7 +6245,8 @@
             "chargeMoves": [
                 "DISCHARGE",
                 "SWIFT",
-                "THUNDERBOLT"
+                "THUNDERBOLT",
+                "GRASS_KNOT"
             ],
             "legacyMoves": []
         },
@@ -4900,7 +6258,8 @@
             "chargeMoves": [
                 "DISCHARGE",
                 "SWIFT",
-                "THUNDERBOLT"
+                "THUNDERBOLT",
+                "GRASS_KNOT"
             ],
             "legacyMoves": []
         },
@@ -4977,7 +6336,31 @@
             ],
             "legacyMoves": []
         },
+        "carvanha+shadow": {
+            "fastMoves": [
+                "BITE",
+                "SNARL"
+            ],
+            "chargeMoves": [
+                "AQUA_JET",
+                "CRUNCH",
+                "POISON_FANG"
+            ],
+            "legacyMoves": []
+        },
         "sharpedo": {
+            "fastMoves": [
+                "BITE",
+                "WATERFALL"
+            ],
+            "chargeMoves": [
+                "CRUNCH",
+                "HYDRO_PUMP",
+                "POISON_FANG"
+            ],
+            "legacyMoves": []
+        },
+        "sharpedo+shadow": {
             "fastMoves": [
                 "BITE",
                 "WATERFALL"
@@ -5098,7 +6481,31 @@
             ],
             "legacyMoves": []
         },
+        "trapinch+shadow": {
+            "fastMoves": [
+                "MUD_SHOT",
+                "STRUGGLE_BUG"
+            ],
+            "chargeMoves": [
+                "CRUNCH",
+                "DIG",
+                "SAND_TOMB"
+            ],
+            "legacyMoves": []
+        },
         "vibrava": {
+            "fastMoves": [
+                "DRAGON_BREATH",
+                "MUD_SHOT"
+            ],
+            "chargeMoves": [
+                "BUG_BUZZ",
+                "BULLDOZE",
+                "SAND_TOMB"
+            ],
+            "legacyMoves": []
+        },
+        "vibrava+shadow": {
             "fastMoves": [
                 "DRAGON_BREATH",
                 "MUD_SHOT"
@@ -5125,6 +6532,18 @@
                 "EARTH_POWER"
             ]
         },
+        "flygon+shadow": {
+            "fastMoves": [
+                "DRAGON_TAIL",
+                "MUD_SHOT"
+            ],
+            "chargeMoves": [
+                "DRAGON_CLAW",
+                "EARTHQUAKE",
+                "STONE_EDGE"
+            ],
+            "legacyMoves": []
+        },
         "cacnea": {
             "fastMoves": [
                 "POISON_STING",
@@ -5137,7 +6556,31 @@
             ],
             "legacyMoves": []
         },
+        "cacnea+shadow": {
+            "fastMoves": [
+                "POISON_STING",
+                "SUCKER_PUNCH"
+            ],
+            "chargeMoves": [
+                "BRICK_BREAK",
+                "GRASS_KNOT",
+                "SEED_BOMB"
+            ],
+            "legacyMoves": []
+        },
         "cacturne": {
+            "fastMoves": [
+                "POISON_JAB",
+                "SUCKER_PUNCH"
+            ],
+            "chargeMoves": [
+                "DARK_PULSE",
+                "DYNAMIC_PUNCH",
+                "GRASS_KNOT"
+            ],
+            "legacyMoves": []
+        },
+        "cacturne+shadow": {
             "fastMoves": [
                 "POISON_JAB",
                 "SUCKER_PUNCH"
@@ -5311,7 +6754,8 @@
         "cradily": {
             "fastMoves": [
                 "ACID",
-                "INFESTATION"
+                "INFESTATION",
+                "BULLET_SEED"
             ],
             "chargeMoves": [
                 "BULLDOZE",
@@ -5441,7 +6885,31 @@
             ],
             "legacyMoves": []
         },
+        "shuppet+shadow": {
+            "fastMoves": [
+                "ASTONISH",
+                "FEINT_ATTACK"
+            ],
+            "chargeMoves": [
+                "NIGHT_SHADE",
+                "OMINOUS_WIND",
+                "SHADOW_SNEAK"
+            ],
+            "legacyMoves": []
+        },
         "banette": {
+            "fastMoves": [
+                "HEX",
+                "SHADOW_CLAW"
+            ],
+            "chargeMoves": [
+                "DAZZLING_GLEAM",
+                "SHADOW_BALL",
+                "THUNDER"
+            ],
+            "legacyMoves": []
+        },
+        "banette+shadow": {
             "fastMoves": [
                 "HEX",
                 "SHADOW_CLAW"
@@ -5465,7 +6933,31 @@
             ],
             "legacyMoves": []
         },
+        "duskull+shadow": {
+            "fastMoves": [
+                "ASTONISH",
+                "HEX"
+            ],
+            "chargeMoves": [
+                "NIGHT_SHADE",
+                "OMINOUS_WIND",
+                "SHADOW_SNEAK"
+            ],
+            "legacyMoves": []
+        },
         "dusclops": {
+            "fastMoves": [
+                "FEINT_ATTACK",
+                "HEX"
+            ],
+            "chargeMoves": [
+                "FIRE_PUNCH",
+                "ICE_PUNCH",
+                "SHADOW_PUNCH"
+            ],
+            "legacyMoves": []
+        },
+        "dusclops+shadow": {
             "fastMoves": [
                 "FEINT_ATTACK",
                 "HEX"
@@ -5502,6 +6994,18 @@
             "legacyMoves": []
         },
         "absol": {
+            "fastMoves": [
+                "PSYCHO_CUT",
+                "SNARL"
+            ],
+            "chargeMoves": [
+                "DARK_PULSE",
+                "MEGAHORN",
+                "THUNDER"
+            ],
+            "legacyMoves": []
+        },
+        "absol+shadow": {
             "fastMoves": [
                 "PSYCHO_CUT",
                 "SNARL"
@@ -5654,7 +7158,31 @@
             ],
             "legacyMoves": []
         },
+        "bagon+shadow": {
+            "fastMoves": [
+                "BITE",
+                "EMBER"
+            ],
+            "chargeMoves": [
+                "CRUNCH",
+                "FLAMETHROWER",
+                "TWISTER"
+            ],
+            "legacyMoves": []
+        },
         "shelgon": {
+            "fastMoves": [
+                "DRAGON_BREATH",
+                "EMBER"
+            ],
+            "chargeMoves": [
+                "DRAGON_PULSE",
+                "FLAMETHROWER",
+                "TWISTER"
+            ],
+            "legacyMoves": []
+        },
+        "shelgon+shadow": {
             "fastMoves": [
                 "DRAGON_BREATH",
                 "EMBER"
@@ -5680,6 +7208,20 @@
             ],
             "legacyMoves": []
         },
+        "salamence+shadow": {
+            "fastMoves": [
+                "BITE",
+                "DRAGON_TAIL",
+                "FIRE_FANG"
+            ],
+            "chargeMoves": [
+                "DRACO_METEOR",
+                "FIRE_BLAST",
+                "HYDRO_PUMP",
+                "OUTRAGE"
+            ],
+            "legacyMoves": []
+        },
         "beldum": {
             "fastMoves": [
                 "TAKE_DOWN"
@@ -5689,7 +7231,28 @@
             ],
             "legacyMoves": []
         },
+        "beldum+shadow": {
+            "fastMoves": [
+                "TAKE_DOWN"
+            ],
+            "chargeMoves": [
+                "STRUGGLE"
+            ],
+            "legacyMoves": []
+        },
         "metang": {
+            "fastMoves": [
+                "METAL_CLAW",
+                "ZEN_HEADBUTT"
+            ],
+            "chargeMoves": [
+                "GYRO_BALL",
+                "PSYCHIC",
+                "PSYSHOCK"
+            ],
+            "legacyMoves": []
+        },
+        "metang+shadow": {
             "fastMoves": [
                 "METAL_CLAW",
                 "ZEN_HEADBUTT"
@@ -5715,6 +7278,18 @@
             "legacyMoves": [
                 "METEOR_MASH"
             ]
+        },
+        "metagross+shadow": {
+            "fastMoves": [
+                "BULLET_PUNCH",
+                "ZEN_HEADBUTT"
+            ],
+            "chargeMoves": [
+                "EARTHQUAKE",
+                "FLASH_CANNON",
+                "PSYCHIC"
+            ],
+            "legacyMoves": []
         },
         "regirock": {
             "fastMoves": [
@@ -5888,7 +7463,31 @@
             ],
             "legacyMoves": []
         },
+        "turtwig+shadow": {
+            "fastMoves": [
+                "RAZOR_LEAF",
+                "TACKLE"
+            ],
+            "chargeMoves": [
+                "BODY_SLAM",
+                "ENERGY_BALL",
+                "SEED_BOMB"
+            ],
+            "legacyMoves": []
+        },
         "grotle": {
+            "fastMoves": [
+                "BITE",
+                "RAZOR_LEAF"
+            ],
+            "chargeMoves": [
+                "BODY_SLAM",
+                "ENERGY_BALL",
+                "SOLAR_BEAM"
+            ],
+            "legacyMoves": []
+        },
+        "grotle+shadow": {
             "fastMoves": [
                 "BITE",
                 "RAZOR_LEAF"
@@ -5915,6 +7514,19 @@
             "legacyMoves": [
                 "FRENZY_PLANT"
             ]
+        },
+        "torterra+shadow": {
+            "fastMoves": [
+                "BITE",
+                "RAZOR_LEAF"
+            ],
+            "chargeMoves": [
+                "EARTHQUAKE",
+                "SOLAR_BEAM",
+                "SAND_TOMB",
+                "STONE_EDGE"
+            ],
+            "legacyMoves": []
         },
         "chimchar": {
             "fastMoves": [
@@ -6304,7 +7916,9 @@
         "vespiquen": {
             "fastMoves": [
                 "BUG_BITE",
-                "POISON_STING"
+                "POISON_STING",
+                "FURY_CUTTER",
+                "AIR_SLASH"
             ],
             "chargeMoves": [
                 "BUG_BUZZ",
@@ -6385,7 +7999,8 @@
             "chargeMoves": [
                 "DAZZLING_GLEAM",
                 "HYPER_BEAM",
-                "SOLAR_BEAM"
+                "SOLAR_BEAM",
+                "WEATHER_BALL_FIRE"
             ],
             "legacyMoves": []
         },
@@ -6563,6 +8178,18 @@
             "legacyMoves": []
         },
         "mismagius": {
+            "fastMoves": [
+                "HEX",
+                "SUCKER_PUNCH"
+            ],
+            "chargeMoves": [
+                "DARK_PULSE",
+                "DAZZLING_GLEAM",
+                "SHADOW_BALL"
+            ],
+            "legacyMoves": []
+        },
+        "mismagius+shadow": {
             "fastMoves": [
                 "HEX",
                 "SUCKER_PUNCH"
@@ -6944,6 +8571,18 @@
             ],
             "legacyMoves": []
         },
+        "snover+shadow": {
+            "fastMoves": [
+                "ICE_SHARD",
+                "POWDER_SNOW"
+            ],
+            "chargeMoves": [
+                "ENERGY_BALL",
+                "ICE_BEAM",
+                "STOMP"
+            ],
+            "legacyMoves": []
+        },
         "abomasnow": {
             "fastMoves": [
                 "POWDER_SNOW",
@@ -6956,7 +8595,32 @@
             ],
             "legacyMoves": []
         },
+        "abomasnow+shadow": {
+            "fastMoves": [
+                "POWDER_SNOW",
+                "RAZOR_LEAF"
+            ],
+            "chargeMoves": [
+                "BLIZZARD",
+                "ENERGY_BALL",
+                "OUTRAGE"
+            ],
+            "legacyMoves": []
+        },
         "weavile": {
+            "fastMoves": [
+                "FEINT_ATTACK",
+                "ICE_SHARD",
+                "SNARL"
+            ],
+            "chargeMoves": [
+                "AVALANCHE",
+                "FOCUS_BLAST",
+                "FOUL_PLAY"
+            ],
+            "legacyMoves": []
+        },
+        "weavile+shadow": {
             "fastMoves": [
                 "FEINT_ATTACK",
                 "ICE_SHARD",
@@ -6982,6 +8646,19 @@
             ],
             "legacyMoves": []
         },
+        "magnezone+shadow": {
+            "fastMoves": [
+                "CHARGE_BEAM",
+                "SPARK"
+            ],
+            "chargeMoves": [
+                "FLASH_CANNON",
+                "WILD_CHARGE",
+                "ZAP_CANNON",
+                "MIRROR_SHOT"
+            ],
+            "legacyMoves": []
+        },
         "lickilicky": {
             "fastMoves": [
                 "LICK",
@@ -6991,9 +8668,12 @@
                 "EARTHQUAKE",
                 "HYPER_BEAM",
                 "SOLAR_BEAM",
-                "SHADOW_BALL"
+                "SHADOW_BALL",
+                "BODY_SLAM"
             ],
-            "legacyMoves": []
+            "legacyMoves": [
+                "BODY_SLAM"
+            ]
         },
         "rhyperior": {
             "fastMoves": [
@@ -7005,9 +8685,12 @@
                 "STONE_EDGE",
                 "SURF",
                 "SKULL_BASH",
-                "SUPER_POWER"
+                "SUPER_POWER",
+                "ROCK_WRECKER"
             ],
-            "legacyMoves": []
+            "legacyMoves": [
+                "ROCK_WRECKER"
+            ]
         },
         "tangrowth": {
             "fastMoves": [
@@ -7016,6 +8699,7 @@
             ],
             "chargeMoves": [
                 "ANCIENT_POWER",
+                "ROCK_SLIDE",
                 "SLUDGE_BOMB",
                 "SOLAR_BEAM",
                 "POWER_WHIP"
@@ -7035,7 +8719,33 @@
             ],
             "legacyMoves": []
         },
+        "electivire+shadow": {
+            "fastMoves": [
+                "LOW_KICK",
+                "THUNDER_SHOCK"
+            ],
+            "chargeMoves": [
+                "THUNDER",
+                "THUNDER_PUNCH",
+                "WILD_CHARGE",
+                "ICE_PUNCH"
+            ],
+            "legacyMoves": []
+        },
         "magmortar": {
+            "fastMoves": [
+                "FIRE_SPIN",
+                "KARATE_CHOP"
+            ],
+            "chargeMoves": [
+                "BRICK_BREAK",
+                "FIRE_BLAST",
+                "FIRE_PUNCH",
+                "PSYCHIC"
+            ],
+            "legacyMoves": []
+        },
+        "magmortar+shadow": {
             "fastMoves": [
                 "FIRE_SPIN",
                 "KARATE_CHOP"
@@ -7176,6 +8886,35 @@
             ],
             "legacyMoves": []
         },
+        "porygon+z+shadow": {
+            "fastMoves": [
+                "LOCK_ON",
+                "CHARGE_BEAM",
+                "HIDDEN_POWER_BUG",
+                "HIDDEN_POWER_DARK",
+                "HIDDEN_POWER_DRAGON",
+                "HIDDEN_POWER_ELECTRIC",
+                "HIDDEN_POWER_FIGHTING",
+                "HIDDEN_POWER_FIRE",
+                "HIDDEN_POWER_FLYING",
+                "HIDDEN_POWER_GHOST",
+                "HIDDEN_POWER_GRASS",
+                "HIDDEN_POWER_GROUND",
+                "HIDDEN_POWER_ICE",
+                "HIDDEN_POWER_POISON",
+                "HIDDEN_POWER_PSYCHIC",
+                "HIDDEN_POWER_ROCK",
+                "HIDDEN_POWER_STEEL",
+                "HIDDEN_POWER_WATER"
+            ],
+            "chargeMoves": [
+                "BLIZZARD",
+                "HYPER_BEAM",
+                "SOLAR_BEAM",
+                "ZAP_CANNON"
+            ],
+            "legacyMoves": []
+        },
         "gallade": {
             "fastMoves": [
                 "CONFUSION",
@@ -7192,6 +8931,19 @@
                 "SYNCHRONOISE"
             ]
         },
+        "gallade+shadow": {
+            "fastMoves": [
+                "CONFUSION",
+                "LOW_KICK",
+                "CHARM"
+            ],
+            "chargeMoves": [
+                "CLOSE_COMBAT",
+                "LEAF_BLADE",
+                "PSYCHIC"
+            ],
+            "legacyMoves": []
+        },
         "probopass": {
             "fastMoves": [
                 "ROCK_THROW",
@@ -7205,6 +8957,18 @@
             "legacyMoves": []
         },
         "dusknoir": {
+            "fastMoves": [
+                "ASTONISH",
+                "HEX"
+            ],
+            "chargeMoves": [
+                "DARK_PULSE",
+                "OMINOUS_WIND",
+                "PSYCHIC"
+            ],
+            "legacyMoves": []
+        },
+        "dusknoir+shadow": {
             "fastMoves": [
                 "ASTONISH",
                 "HEX"
@@ -8502,8 +10266,7 @@
             ],
             "chargeMoves": [
                 "FIRE_PUNCH",
-                "FLAME_CHARGE",
-                "PSYCHIC"
+                "FLAME_CHARGE"
             ],
             "legacyMoves": []
         },
@@ -9700,9 +11463,12 @@
             "chargeMoves": [
                 "CLOSE_COMBAT",
                 "IRON_HEAD",
-                "STONE_EDGE"
+                "STONE_EDGE",
+                "SACRED_SWORD"
             ],
-            "legacyMoves": []
+            "legacyMoves": [
+                "SACRED_SWORD"
+            ]
         },
         "terrakion": {
             "fastMoves": [
@@ -10086,7 +11852,7 @@
         },
         "ANCIENT_POWER": {
             "type": "rock",
-            "power": 70,
+            "power": 45,
             "energy": 45,
             "energyGain": 0,
             "cooldown": 500,
@@ -10394,7 +12160,7 @@
             "type": "grass",
             "power": 5,
             "energy": 0,
-            "energyGain": 11,
+            "energyGain": 13,
             "cooldown": 1500,
             "names": {
                 "en": "Bullet Seed",
@@ -10823,9 +12589,15 @@
         "ENERGY_BALL": {
             "type": "grass",
             "power": 90,
-            "energy": 60,
+            "energy": 55,
             "energyGain": 0,
             "cooldown": 500,
+            "buffs": [
+                0,
+                -1
+            ],
+            "buffTarget": "opponent",
+            "buffApplyChance": ".1",
             "names": {
                 "en": "Energy Ball",
                 "fr": "Éco-Sphère",
@@ -11020,6 +12792,20 @@
                 "de": "Lichtkanone",
                 "it": "Cannonflash",
                 "es": "Foco Resplandor"
+            }
+        },
+        "FLYING_PRESS": {
+            "type": "fighting",
+            "power": 90,
+            "energy": 40,
+            "energyGain": 0,
+            "cooldown": 500,
+            "names": {
+                "en": "Flying Press",
+                "fr": "Flying Press",
+                "de": "Flying Press",
+                "it": "Schiacciatuffo",
+                "es": "Plancha Voladora"
             }
         },
         "FOCUS_BLAST": {
@@ -11667,7 +13453,7 @@
             "energyGain": 0,
             "cooldown": 500,
             "buffs": [
-                -1,
+                -2,
                 0
             ],
             "buffTarget": "opponent",
@@ -11762,7 +13548,7 @@
         },
         "MEGAHORN": {
             "type": "bug",
-            "power": 90,
+            "power": 100,
             "energy": 55,
             "energyGain": 0,
             "cooldown": 500,
@@ -11964,8 +13750,8 @@
         },
         "OMINOUS_WIND": {
             "type": "ghost",
-            "power": 50,
-            "energy": 40,
+            "power": 45,
+            "energy": 45,
             "energyGain": 0,
             "cooldown": 500,
             "buffs": [
@@ -12450,6 +14236,34 @@
                 "es": "Tumba Rocas"
             }
         },
+        "ROCK_WRECKER": {
+            "type": "rock",
+            "power": 110,
+            "energy": 50,
+            "energyGain": 0,
+            "cooldown": 500,
+            "names": {
+                "en": "Rock Wrecker",
+                "fr": "Roc-Boulet",
+                "de": "Felswerfer",
+                "it": "Devastomasso",
+                "es": "Romperrocas"
+            }
+        },
+        "SACRED_SWORD": {
+            "type": "fighting",
+            "power": 60,
+            "energy": 35,
+            "energyGain": 0,
+            "cooldown": 500,
+            "names": {
+                "en": "Sacred Sword",
+                "fr": "Lame Sainte",
+                "de": "Sanctoklinge",
+                "it": "Spadasolenne",
+                "es": "Espada Santa"
+            }
+        },
         "SAND_TOMB": {
             "type": "ground",
             "power": 25,
@@ -12594,7 +14408,7 @@
         },
         "SILVER_WIND": {
             "type": "bug",
-            "power": 70,
+            "power": 45,
             "energy": 45,
             "energyGain": 0,
             "cooldown": 500,
@@ -13047,7 +14861,7 @@
             "energyGain": 0,
             "cooldown": 500,
             "names": {
-                "en": "Vice Grip",
+                "en": "Vise Grip",
                 "fr": "Force Poigne",
                 "de": "Klammer",
                 "it": "Presa",
@@ -13072,8 +14886,8 @@
             "type": "electric",
             "power": 12,
             "energy": 0,
-            "energyGain": 10,
-            "cooldown": 2500,
+            "energyGain": 16,
+            "cooldown": 2000,
             "names": {
                 "en": "Volt Switch",
                 "fr": "Change Éclair",
