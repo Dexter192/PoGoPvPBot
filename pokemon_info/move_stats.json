@@ -3348,11 +3348,12 @@
             ],
             "chargeMoves": [
                 "EARTHQUAKE",
-                "FRENZY_PLANT",
                 "PETAL_BLIZZARD",
                 "SOLAR_BEAM"
             ],
-            "legacyMoves": []
+            "legacyMoves": [
+            "FRENZY_PLANT"
+            ]
         },
         "cyndaquil": {
             "fastMoves": [
