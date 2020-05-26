@@ -8964,7 +8964,9 @@
                 "FUTURE_SIGHT",
                 "MOONBLAST"
             ],
-            "legacyMoves": []
+            "legacyMoves": [
+            	"GRASS_KNOT"
+            ]
         },
         "phione": {
             "fastMoves": [
