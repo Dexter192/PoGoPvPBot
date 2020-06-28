@@ -51,7 +51,7 @@
 		"iv_stats_PercentMinimum": "<b>Percent minimum:</b> {}%\n",
 		"iv_no_argument":"Please specify a Pokémon",
 		"iv_error":"I could not perform the request",
-		"language_not_supported":"I am afraid don't support that language yet! \nThe current supported languages are: *{}* \nJoin this [Telegram Group](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ) if you want to add your language!",
+		"language_not_supported":"I am afraid don't support that language yet! \nThe current supported languages are: *{}* \nSet the language with \"/language es\"\nIf your language is not supported, you can join this [Telegram Group](https://t.me/joinchat/ET9xmhO2jGHqZ1adIeeFRQ) and help adding it!",
 		"rank_disabled":"This feature is disabled until there is an open API by TSA",
 		"language_hint":"I have noticed that you speak a different language. You can set your bot to your language using the /language command",
 		"only_for_admins":"Only admins can change this setting",
