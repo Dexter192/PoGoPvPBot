@@ -260,6 +260,10 @@ def iv_rank(update, context):
     if len(context.args) > 0 and context.args[0] == '2500':
         context.args.pop(0)
         league = '2500'
+
+    if len(context.args) > 0 and context.args[0] == '500':
+        context.args.pop(0)
+        league = '500'
         
     #The user didn't specify a pokemon
     if(len(context.args) == 0):
