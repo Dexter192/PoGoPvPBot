@@ -5,6 +5,7 @@ logger = logging.getLogger('Info')
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler
 import json 
 import iv_check
+import xl_iv_check
 import silph
 import pvp_poll
 import re
@@ -176,7 +177,10 @@ def main():
 
     #Handle /iv
     dispatcher.add_handler(CommandHandler("iv", iv_check.iv_rank))    
-    
+
+    #Handle /xl iv
+    dispatcher.add_handler(CommandHandler("xl", xl_iv_check.xl_iv_rank))
+
     #Confirm config request
     updater.dispatcher.add_handler(CallbackQueryHandler(response_menu.confirm_config, pattern='Confirm'))
     
