@@ -176,16 +176,16 @@ def main():
     dispatcher.add_handler(CommandHandler("legacy", moves.legacy))
 
     #Handle /iv
-    dispatcher.add_handler(CommandHandler("iv", iv_check.iv_rank))    
+    dispatcher.add_handler(CommandHandler("iv", iv_check.iv_rank))
 
     #Handle /xl iv
-    dispatcher.add_handler(CommandHandler("xl", xl_iv_check.xl_iv_rank))
+    dispatcher.add_handler(CommandHandler("xl", iv_check.xl_rank))
 
     #Confirm config request
     updater.dispatcher.add_handler(CallbackQueryHandler(response_menu.confirm_config, pattern='Confirm'))
     
     #This handles form requests
-    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_form, pattern="{\"IVs\":.*"))
+    updater.dispatcher.add_handler(CallbackQueryHandler(iv_check.update_form, pattern=".*,.*,.*"))#pattern="{\"IVs\":.*"))
 
     #This handles config changes
     updater.dispatcher.add_handler(CallbackQueryHandler(response_menu.update_response))

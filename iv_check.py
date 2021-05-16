@@ -15,7 +15,7 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 #The json file of currently supported language responses
 jsonresponse = language_support.responses
-    
+
 
 """
 If the user has given IVs additional to the pokemon we want to see where this IV distribution ranks
@@ -28,30 +28,30 @@ When the user does not give IVs, return the optimal IVs for that pokemon
 @param league: The desired league CP cap ('1500' or '2500')
 @return: A formatted response for the IV distribution of this pokemon
 """
-def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=None, sta=None, league='1500'):
+def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=None, sta=None, league='1500', xl=False):
     try:
         purified = False
         if "purified" in pokemon_name:
             pokemon_name = pokemon_name.split("+")[0]
             purified = True
-            
-        df = pd.read_csv('ranking/'+league+'/'+pokemon_name+'.csv')
-        
+
+        df = pd.read_csv('ranking/'+league+ xl*'-xl' +'/'+pokemon_name+'.csv')
+
         if purified:
             if iv_config['Feasible Combinations']:
                 df = df[(df.ivs.apply(lambda x: int(x.split(' ')[0]) > 1))]
                 df = df[(df.ivs.apply(lambda x: int(x.split(' ')[1]) > 1))]
                 df = df[(df.ivs.apply(lambda x: int(x.split(' ')[2]) > 1))]
                 df = df[df['maxlevel'] >= 25]
-        
+
                 df = df.reset_index(drop=True)
                 df['rank'] = np.arange(len(df))+1
             pokemon_name += "+purified"
-            
-        
+
+
         if iv_config['Feasible Combinations']:
             df = filter_min_level(df, pokemon_name)
-        
+
         #Check, if we want to get optimal IVs or given
         if att is None:
             row = df.loc[df['rank'] == 1]
@@ -68,12 +68,12 @@ def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=
             response = responses['iv_no_valid_combo']
             return response.format(pokemon_name), iv
 
-        #Compute the Stat product on the fly 
+        #Compute the Stat product on the fly
         optimal_stat_product = df.iloc[0]['stat-product']
         percent = round((100/optimal_stat_product)*row.iloc[0]['stat-product'], 2)
         index_worst = df.shape[0]-1
         percent_worst = round((100/optimal_stat_product)*df.iloc[index_worst]['stat-product'], 2)
-        
+
         local_name = get_local_name(pokemon_name, initial_language)
         response = response.format(local_name.capitalize(), row.iloc[0]['rank'])
         #Print IV Distribution
@@ -105,7 +105,7 @@ def iv_given(pokemon_name, initial_language, responses, iv_config, att=None, de=
         #Print stat percent minimum
         if iv_config['Percent minimum']:
             response += responses['iv_stats_PercentMinimum'].format(percent_worst)
-               
+
         return response, iv
     #We cannot find this pokemon
     except:
@@ -136,16 +136,16 @@ def filter_min_level(df, name):
         min_df = min_df.reset_index(drop=True)
         min_df['rank'] = np.arange(len(min_df))+1
     return min_df
-    
+
 """
 Get the iv combination of a specified rank
 TODO: This should be refactored!
 """
-def iv_given_rank(pokemon_name, initial_language, responses, iv_config, rank, league='1500'):
-        df = pd.read_csv('ranking/'+league+'/'+pokemon_name+'.csv')
+def iv_given_rank(pokemon_name, initial_language, responses, iv_config, rank, league='1500', xl=False):
+        df = pd.read_csv('ranking/'+league+xl*'-xl'+'/'+pokemon_name+'.csv')
         ivs = df.loc[int(rank)-1]['ivs']
         ivs = ivs.split(' ')
-        response = iv_given(pokemon_name, initial_language, responses, iv_config, ivs[0], ivs[1], ivs[2], league)
+        response = iv_given(pokemon_name, initial_language, responses, iv_config, ivs[0], ivs[1], ivs[2], league, xl)
         return response, ivs
 
 """
@@ -153,9 +153,13 @@ def iv_given_rank(pokemon_name, initial_language, responses, iv_config, rank, le
 """
 def get_local_name(eng_name, col_index):
     purified = False
+    mega = False
     if "purified" in eng_name:
         eng_name = eng_name.split("+")[0]
         purified = True
+    if "mega" in eng_name.lower():
+        eng_name = eng_name.split("+")[1]
+        mega = True
 
     name = eng_name.lower().capitalize()
     df = pd.read_csv('pokemon_info/translations.csv')
@@ -164,6 +168,8 @@ def get_local_name(eng_name, col_index):
         name = df.loc[idx[0], col_index]
         if purified:
             name += "+purified"
+        if mega:
+            name = "Mega+" + name
         return name
     except:
         logger.info("Cannot find local name for (%s)", eng_name)
@@ -178,10 +184,14 @@ def get_local_name(eng_name, col_index):
 """
 def get_english_name(local_name, group_language):
     purified = False
+    mega = False
     if "purified" in local_name:
         local_name = local_name.split("+")[0]
         purified = True
-    
+    if "mega" in local_name.lower():
+        local_name = local_name.split("+")[1]
+        mega = True
+
     name = local_name.lower().capitalize()
     df = pd.read_csv('pokemon_info/translations.csv')
     #Drop all entries which don't match the local name
@@ -200,6 +210,8 @@ def get_english_name(local_name, group_language):
         name = df.iloc[localized.index[0], 0]
         if purified:
             name += "+purified"
+        if mega:
+            name = "mega+"+name
         return name, index_tuple[0][1], different_language
     except:
         logger.info("Cannot find english name for (%s)", local_name)
@@ -211,7 +223,7 @@ the input and the pokemon names.
 @param local_name: The name that the user entered
 @param group_language: The language settings of the group (for speed we assume that the user entered the name in his language)
 @param translations: The dataframe with all translations  
-"""        
+"""
 def closest_name_match(local_name, group_language, translations):
     closest = float('inf')
     closest_index = -1
@@ -221,10 +233,10 @@ def closest_name_match(local_name, group_language, translations):
             closest = dst
             closest_index = index
     return translations[group_language][closest_index]
-    
+
 """
 This message takes a single pokemon and returns the whole family as a list
-"""        
+"""
 def get_pokemon_family(pokemon_name, group_language):
     eng_name, initial_language, different_language = get_english_name(pokemon_name, group_language)
     eng_name = eng_name.capitalize()
@@ -232,14 +244,22 @@ def get_pokemon_family(pokemon_name, group_language):
     index = df.where(df == eng_name).dropna(how='all').index
     return df.loc[index[0]].dropna(), initial_language, different_language
 
+def iv_rank(update, context):
+    xl = False
+    return get_iv_rank(update, context, xl)
+
+def xl_rank(update, context):
+    xl = True
+    return get_iv_rank(update, context, xl)
+
 """
 This method is called when the user types /iv
 - It retrieves the language
 - checks, if we want to enable or disable iv checks in groups
 - checks, if IV queries are allowed in this group 
 - Performs an IV request
-"""    
-def iv_rank(update, context):
+"""
+def get_iv_rank(update, context, xl):
     #Retrieve the current language
     language = database.get_language(update.message.chat_id)
     responses = jsonresponse[language]
@@ -255,7 +275,7 @@ def iv_rank(update, context):
         logger.info("Disabled /iv request attempted by (%s)", update._effective_user.username)
         context.bot.delete_message(chat_id=update.message.chat_id,message_id=update.message.message_id)
         return
-    
+
     league = '1500'
     if len(context.args) > 0 and context.args[0] == '2500':
         context.args.pop(0)
@@ -264,11 +284,11 @@ def iv_rank(update, context):
     if len(context.args) > 0 and context.args[0] == '500':
         context.args.pop(0)
         league = '500'
-        
+
     #The user didn't specify a pokemon
     if(len(context.args) == 0):
         if update.message.chat_id < 0:
-            admins = (admin.user.id for admin in context.bot.get_chat_administrators(update.message.chat.id))     
+            admins = (admin.user.id for admin in context.bot.get_chat_administrators(update.message.chat.id))
             if update._effective_user.id in admins:
                 response = responses['iv_menu']
                 context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=response_menu.custom_keyboard(update.message.chat_id, response_menu.types["iv"]))
@@ -276,8 +296,8 @@ def iv_rank(update, context):
             else:
                 response = responses['only_for_admins']
                 bot_message = context.bot.send_message(parse_mode='Markdown', chat_id=update.message.chat_id, text=response)
-                return 
-        else:    
+                return
+        else:
             logger.info("Invalid pokemon")
             response = responses['iv_menu']
             context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=response_menu.custom_keyboard(update.message.chat_id, response_menu.types["iv"]))
@@ -287,7 +307,7 @@ def iv_rank(update, context):
         try:
             #Load the IV_Config for the current chat id (i.e. which attributes should be returned)
             iv_config = database.get_iv_config(update.message.chat_id, "IV")
-            
+
             if context.args[0][0] is '+':
                 evolutions, initial_language, different_language = get_pokemon_family(context.args[0][1:], language)
             else:
@@ -296,25 +316,25 @@ def iv_rank(update, context):
             for evo in evolutions:
                 #If the user just specified a Pokemon - Return the optimal distribution
                 if(len(context.args) == 1):
-                    response, ivs = iv_given(evo.lower(), initial_language, responses, iv_config, None, None, None, league)
+                    response, ivs = iv_given(evo.lower(), initial_language, responses, iv_config, None, None, None, league, xl)
                 #When a user requests a specific rank
                 if(len(context.args) == 2):
                     rank = context.args[1]
                     rank = context.args[1]
-                    response, ivs = iv_given_rank(evo.lower(), initial_language, responses, iv_config, rank, league)
+                    response, ivs = iv_given_rank(evo.lower(), initial_language, responses, iv_config, rank, league, xl)
                 #If the user gave IVs with the pokemon - Return where this one ranks
                 elif(len(context.args) == 4):
                     att = normalize_iv(context.args[1])
                     de = normalize_iv(context.args[2])
                     sta = normalize_iv(context.args[3])
-                    response, ivs = iv_given(evo.lower(), initial_language, responses, iv_config, att, de, sta, league)
+                    response, ivs = iv_given(evo.lower(), initial_language, responses, iv_config, att, de, sta, league, xl)
                 logger.info('Return %s', response.encode("utf-8"))
-                
+
                 if different_language:
                     context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=responses['language_hint'])
 
                 #Send the response to the user
-                data = {"IVs": ivs}
+                data = {"IVs": ivs, 'league': [str(league)], 'xl': [str(int(xl))]}
                 forms = find_forms(evo)
                 #forms = ["", "+alolan", "+purified"]
                 context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=form_keyboard(evo.lower(), forms, data))
@@ -348,8 +368,8 @@ def find_forms(poke_name):
         return forms
     except:
         return None
-    
-    
+
+
 def form_keyboard(poke_name, forms, callback_data):
     raw_poke_name = poke_name.split("+")
     keyboard = []
@@ -359,7 +379,7 @@ def form_keyboard(poke_name, forms, callback_data):
             continue
         callback_data['Name'] = raw_poke_name[0] + form
         #Indicate the pattern -due to limited space in the pattern this is short
-        data_string = json.dumps(callback_data)
+        data_string = ','.join(callback_data["IVs"] + callback_data["league"] + callback_data["xl"] + [raw_poke_name[0] + form])
         button_string = callback_data['Name'].capitalize() + " - " + callback_data['IVs'][0] + " " + callback_data['IVs'][1] + " " + callback_data['IVs'][2]
         keyboard.append([InlineKeyboardButton(button_string, callback_data=data_string)])
     return InlineKeyboardMarkup(keyboard)
@@ -368,27 +388,30 @@ def update_form(update, context):
     try:
         language = database.get_language(update._effective_chat.id)
         responses = jsonresponse[language]
-        
+
         iv_config = database.get_iv_config(update._effective_chat.id, "IV")
-        
-        data = json.loads(update.callback_query.data)
+
+        #data = json.loads(update.callback_query.data)
+        split_data = update.callback_query.data.split(',')
+        data = {"IVs": split_data[0:3], "league": [split_data[3]], "xl": [split_data[4]], "Name": split_data[5]}
+
         en_name, initial_language, different_language = get_english_name(data['Name'], language)
-        
-        response, ivs = iv_given(en_name.lower(), initial_language, responses, iv_config, data['IVs'][0], data['IVs'][1], data['IVs'][2])
+
+        response, ivs = iv_given(en_name.lower(), initial_language, responses, iv_config, data['IVs'][0], data['IVs'][1], data['IVs'][2], data['league'][0], data['xl'][0]=='1')
         #context.bot.send_message(parse_mode='HTML', chat_id=update.message.chat_id, text=response, reply_markup=form_keyboard(data))
-        data = {"IVs": data['IVs']}
+        #data = {"IVs": data['IVs']}
         forms = find_forms(en_name)
         context.bot.edit_message_text(parse_mode='HTML', chat_id=update._effective_chat.id, message_id=update._effective_message.message_id, text=response, reply_markup=form_keyboard(en_name, forms, data))
 
     except:
         logger.warn("Could not update iv form query: " + str(update.callback_query.bot.data))
-    
+
 
 """
 This method converts a given IV in a number in the range 0..15.
 It accepts standard numbers (no operation is done), hexadecimal representation, or the circled
 numbers (white background/black background) that is used in apps such as CalcyIV.
-"""    
+"""
 def normalize_iv(iv):
     if(isinstance(iv, str) and iv.isdecimal()):
         # Note: we're not checking if the value is in the range 0..15.
