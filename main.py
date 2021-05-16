@@ -5,7 +5,6 @@ logger = logging.getLogger('Info')
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler
 import json 
 import iv_check
-import xl_iv_check
 import silph
 import pvp_poll
 import re
