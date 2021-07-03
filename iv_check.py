@@ -311,7 +311,7 @@ def get_iv_rank(update, context, xl):
             #Load the IV_Config for the current chat id (i.e. which attributes should be returned)
             iv_config = database.get_iv_config(update.message.chat_id, "IV")
 
-            if context.args[0][0] is '+':
+            if context.args[0][0] == '+':
                 evolutions, initial_language, different_language = get_pokemon_family(context.args[0][1:], language)
             else:
                 evolutions, initial_language, different_language = get_english_name(context.args[0], language)
