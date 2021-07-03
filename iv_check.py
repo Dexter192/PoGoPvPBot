@@ -228,6 +228,9 @@ def closest_name_match(local_name, group_language, translations):
     closest = float('inf')
     closest_index = -1
     for index, name in translations[group_language].iteritems():
+        if "+" not in local_name and "+" in name:
+            # Quick fix for people searching for forms w/o giving the form itself.
+            name = name.split("+")[0]
         dst = stringdist.levenshtein(local_name, name)
         if dst < closest:
             closest = dst
