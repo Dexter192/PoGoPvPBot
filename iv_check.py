@@ -323,7 +323,6 @@ def get_iv_rank(update, context, xl):
                 #When a user requests a specific rank
                 if(len(context.args) == 2):
                     rank = context.args[1]
-                    rank = context.args[1]
                     response, ivs = iv_given_rank(evo.lower(), initial_language, responses, iv_config, rank, league, xl)
                 #If the user gave IVs with the pokemon - Return where this one ranks
                 elif(len(context.args) == 4):
