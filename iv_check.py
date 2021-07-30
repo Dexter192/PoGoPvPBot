@@ -157,7 +157,7 @@ def get_local_name(eng_name, col_index):
     if "purified" in eng_name:
         eng_name = eng_name.split("+")[0]
         purified = True
-    if "mega" in eng_name.lower():
+    if "mega+" in eng_name.lower():
         eng_name = eng_name.split("+")[1]
         mega = True
 
@@ -188,7 +188,7 @@ def get_english_name(local_name, group_language):
     if "purified" in local_name:
         local_name = local_name.split("+")[0]
         purified = True
-    if "mega" in local_name.lower():
+    if "mega+" in local_name.lower():
         local_name = local_name.split("+")[1]
         mega = True
 
