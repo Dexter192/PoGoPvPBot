@@ -4,3 +4,4 @@
 /config.json
 /nohup.out
 /*.pyc
+/.venv/*
